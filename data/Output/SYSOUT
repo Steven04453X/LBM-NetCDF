@@ -1,0 +1,3666 @@
+job started at Fri 27 Oct 2023 06:08:01 PM PDT
+  @@@ LINEAR BAROCLINIC MODEL @@@ 99/01/01
+  @@@ ACALN: CALENDAR 93/11/12
+ &NMCALN
+ OAUTO   = T,
+ OGREGO  = T,
+ OIDEAL  = F,
+ OPERPT  = F,
+ IDAYMO  =          30,
+ IMONYR  =          12,
+ IYRPP   =           0,
+ IMONPP  =           3,
+ IDAYPP  =          21,
+ ISECMN  =          60,
+ IMINHR  =          60,
+ IHRDAY  =          24
+ /
+  @@@ AADMN: LBM2.2 TINTGR MAIN 05/08/16
+ &NMCHCK
+ OCHECK  = F,
+ OCKALL  = F
+ /
+ &NMFRC
+ FFRC    = /pscratch/sd/c/chenzm/my_data/Model/LBM_NetCDF/data/Forcing/frc.t42l20.Ziming_test.grd                                    
+                                                                                                                                     
+                                                                                                                                     
+                                                                                                                                     
+                                                                                                                                     
+                                                   ,
+ OPER    = F,
+ NFCS    =           1,
+ OVD     = T
+ /
+ &NMSFRC
+ FSFRC   = /pscratch/sd/c/chenzm/my_data/Model/LBM_NetCDF/data/Forcing/frc.t42l20.Ziming_test.grd                                    
+                                                                                                                                     
+                                                                                                                                     
+                                                                                                                                     
+                                                                                                                                     
+                                                   ,
+ OFRC    = T,
+ OSSTF   = T,
+ NSFCS   =           1,
+ FSEND   =          -1,           1,          30, 3*0
+ /
+  NAMELIST NMPCON: 
+ &NMPCON
+ ER      =   6370000.00000000     ,
+ GRAV    =   9.80000019073486     ,
+ CP      =   1004.59997558594     ,
+ RAIR    =   287.040008544922     ,
+ EL      =   2500000.00000000     ,
+ CPVAP   =   1810.00000000000     ,
+ RVAP    =   461.000000000000     ,
+ DWATR   =   1000.00000000000     ,
+ EPSV    =  0.622646439359917     ,
+ ES0     =   611.000000000000     ,
+ STB     =  5.669999936230852E-008,
+ FKARM   =  0.400000005960464     ,
+ EPSVT   =  0.606047889759080     ,
+ EMELT   =   340000.000000000     ,
+ TMELT   =   273.149993896484     ,
+ CPWATR  =   4200.00000000000     ,
+ CPICE   =   2000.00000000000     ,
+ TFRZS   =   271.350006103516     ,
+ TQICE   =   273.149993896484     
+ /
+  *** precision check ..    1.10000000000000     
+  *** precision check ..    1.01000000000000     
+  *** precision check ..    1.00100000000000     
+  *** precision check ..    1.00010000000000     
+  *** precision check ..    1.00001000000000     
+  *** precision check ..    1.00000100000000     
+  *** precision check ..    1.00000010000000     
+  *** precision check ..    1.00000001000000     
+  *** precision check ..    1.00000000100000     
+  *** precision check ..    1.00000000010000     
+  *** precision check ..    1.00000000001000     
+  *** precision check ..    1.00000000000100     
+  *** precision check ..    1.00000000000010     
+  *** precision check ..    1.00000000000001     
+  *** precision check ..    1.00000000000000     
+  *** precision check ..    1.00000000000000     
+  ### check SUMGW =   0.999999999999945     
+  @@@ ASETUP : SET EXP. PARAMETERS 96/04/30
+ &NMRUN
+ RUN     = linear model    
+ /
+ &NMTIME
+ START   =           0, 2*1, 3*0,
+ END     =           0,           1,          30, 3*0,
+ PERPET  =          -1, 2*1, 3*0,
+ DUR     =  -999.000000000000     ,
+ TUNIT   = DAY             
+ /
+  ### MODEL START TIME = 0000/01/01-00:00:00 
+  ### MODEL END   TIME = 0000/01/30-00:00:00 
+  @@@ TSTART:  0.000000000000000E+000
+  @@@ TEND:     2505600.00000000     
+  @@@ TFSEND:  -999.000000000000     
+  @@@ OPNINI : OPEN INITIAL DATA  96/06/17
+ &NMINIT
+ CLASS   = ALL             ,
+ FILE    = /pscratch/sd/c/chenzm/my_data/Model/LBM_NetCDF/bs/gt3/ziming.sum1.t42l20                                                  
+       ,
+ TINIT   =        -999, 2*1, 3*0,
+ DTBFR   =  0.000000000000000E+000,
+ DTAFTR  =  0.000000000000000E+000,
+ TUNIT   = DAY             ,
+ DFMT    = UR              
+ /
+  @@@ IFOPN: OPEN FILE 93/12/14
+ &NMFILE
+ IFILMN  =          20,
+ IFILMX  =          99
+ /
+  *** FILE OPEND for READ UNIT =           20  NAME = 
+ /pscratch/sd/c/chenzm/my_data/Model/LBM_NetCDF/bs/gt3/ziming.sum1.t42l20       
+                                                  
+  ### TRY TO READ START AT T =            0           1           1           0
+           0           0
+ astrt-2.F: u start!
+  @@@ IGTIO: GTOOL3 I/O PACKAGE 96/12/02
+ igtio.F: IERR=0 is done!
+ igtio.F: IERR=           0
+  *** READIN GAU              TIME= 0000/01/01-00:00:00  DSET= basic state     
+ astrt-2.F: u GDRDTS done!
+ astrt-2.F: u done!
+ igtio.F: IERR=0 is done!
+ igtio.F: IERR=           0
+  *** READIN GAV              TIME= 0000/01/01-00:00:00  DSET= basic state     
+ astrt-2.F: v done!
+ igtio.F: IERR=0 is done!
+ igtio.F: IERR=           0
+  *** READIN GAT              TIME= 0000/01/01-00:00:00  DSET= basic state     
+ igtio.F: IERR=0 is done!
+ igtio.F: IERR=           0
+  *** READIN GAPS             TIME= 0000/01/01-00:00:00  DSET= basic state     
+ igtio.F: IERR=0 is done!
+ igtio.F: IERR=           0
+  *** READIN GAQ              TIME= 0000/01/01-00:00:00  DSET= basic state     
+ &NMINIT
+ CLASS   = ALL             ,
+ FILE    = /pscratch/sd/c/chenzm/my_data/Model/LBM_NetCDF/bs/gt3/ziming.sum1.t42l20                                                  
+       ,
+ TINIT   =        -999, 2*1, 3*0,
+ DTBFR   =  0.000000000000000E+000,
+ DTAFTR  =  0.000000000000000E+000,
+ TUNIT   = DAY             ,
+ DFMT    = UR              
+ /
+  *** FILE OPEND for READ UNIT =           20  NAME = 
+ /pscratch/sd/c/chenzm/my_data/Model/LBM_NetCDF/bs/gt3/ziming.sum1.t42l20       
+                                                  
+  ### TRY TO READ START AT T =            0           1           1           0
+           0           0
+ astrt-2.F: u start!
+ igtio.F: IERR=           1
+ astrt-2.F: u GDRDTS done!
+  ### RDSTRT: No Initial GB Data. GA=GB Assumed
+  *** READ DATA CONTROL GRZ :
+ &NMDATA
+ ITEM    = GRZ             ,
+ ITEMD   =                 ,
+ FILE    =                                                                                                                           
+       ,
+ DEFALT  =  0.000000000000000E+000,
+ XSEL    =          -1,
+ YSEL    =          -1,
+ ZSEL    =          -1,
+ MSEL    =    12843136,
+ START   =        -999, 5*0,
+ END     =        -999, 5*0,
+ DFMT    = UR4             ,
+ FACT    =   1.00000000000000     ,
+ PIN     = F,
+ DIUR    =           0,
+ OINTRP  = T,
+ CLIMAT  = T
+ /
+ &NMPLEV
+ KPLEV   =          17,
+ PLEV    =   1000.00000000000     ,   950.000000000000     ,   900.000000000000     ,   850.000000000000     ,
+    700.000000000000     ,   500.000000000000     ,   400.000000000000     ,   300.000000000000     ,   250.000000000000     ,
+    200.000000000000     ,   150.000000000000     ,   100.000000000000     ,   70.0000000000000     ,   50.0000000000000     ,
+    30.0000000000000     ,   20.0000000000000     ,   10.0000000000000     ,  0.000000000000000E+000,
+ HPLEV   = STDPL17         
+ /
+            U-min =   -33.4706764221191       at           26          29
+          14  in start GF
+            U-max =    88.1512069702148       at           17          53
+          20  in start GF
+            V-min =   -10.7251052856445       at           23          36
+          13  in start GF
+            V-max =    14.2983455657959       at           20          29
+           3  in start GF
+            T-min =    184.818771362305       at          128          63
+          17  in start GF
+            T-max =    311.801300048828       at           19          24
+           1  in start GF
+            PS-min =    514.900024414062       at           32          21
+           1  in start GF
+            PS-max =    1032.22473144531       at          101          40
+           1  in start GF
+            Q-min =  -1.319997390965000E-004  at           25          27
+          12  in start GF
+            Q-max =   2.057645469903946E-002  at           33          25
+           1  in start GF
+  @@@ IDIAG: DIAGNOSE OUTPUT 93/12/07
+ &NMDIAG
+ IDIAG   =           1,
+ JDIAG   =           1,
+ KDIAG   =          -1,
+ FILE    = CON                                                                                                                       
+       ,
+ TINTV   =   10.0000000000000     ,
+ TUNIT   = DAY             ,
+ START   =        -999, 2*1, 3*0,
+ NCOLS   =         132
+ /
+ GDU:
+  0.17383      0.17613      0.42818      0.69125      0.62452      0.52787      0.55275      0.55810      0.48501      0.48127      
+  0.40969      0.42306      0.49549      0.46464      0.34450      0.63228E-01 -0.14819     -0.29945     -0.37097      -1.1305      
+ GDV:
+  0.52813      0.62419      0.54044      0.42585      0.34530      0.30640      0.42604      0.75339       1.2228       1.8407      
+   2.3183       2.3371       2.1033       2.0057       1.6663       1.2097      0.91757      0.70181      0.33749       1.0284      
+ GDT:
+   273.04       273.20       272.93       271.96       269.19       265.34       260.48       253.33       243.85       234.30      
+   227.45       227.93       230.31       230.30       230.29       230.35       230.59       230.69       232.18       239.52      
+ GDPS:
+   1014.4                                                                                                                           
+ GDQ:
+  0.36259E-02  0.36584E-02  0.33116E-02  0.28481E-02  0.25090E-02  0.20236E-02  0.13875E-02  0.82450E-03  0.40817E-03  0.13418E-03  
+  0.50843E-04 -0.64025E-05  0.25496E-05 -0.10695E-05  0.23869E-06 -0.61455E-07  0.21825E-07  0.18343E-07 -0.58531E-08   0.0000      
+  *** STEP=           1  TIME=0000/01/01-00:00:00 
+  @@@ ASTEP : TIME STEP ESTIMATION 93/11/17
+ &NMDELT
+ DELT    =   20.0000000000000     ,
+ TUNIT   = MIN ,
+ INISTP  =           2,
+ DTMIN   =   1.00000000000000     ,
+ DTLCM   =   60.0000000000000     ,
+ SAFER   =  0.800000000000000     ,
+ INTCAL  =   120.000000000000     
+ /
+ **** MAX.EDDY-WIND :  0.000000000000000E+000  AT:           0           0
+           0
+  *** HISTORY CONTROL U  :
+  @@@ IHDEF: HISTORY DEFAULT 93/12/07
+ &NMHISD
+ FILE    =                                                                                                                           
+       ,
+ START   =        -999, 5*0,
+ END     =        -999, 5*0,
+ TINTV   =   1.00000000000000     ,
+ TAVRG   =   1.00000000000000     ,
+ TUNIT   = DAY             ,
+ XSEL    =          -1,
+ YSEL    =          -1,
+ ZSEL    =          -1,
+ MSEL    =           0,
+ DFMT    = UR4             ,
+ FACT    =   1.00000000000000     ,
+ POUT    = F,
+ PSMLT   = F,
+ DIUR    =           0
+ /
+ &NMHIST
+ ITEM    = U               ,
+ FILE    = u                                                                                                                         
+       ,
+ XSEL    =          -1,
+ YSEL    =          -1,
+ ZSEL    =          -1,
+ MSEL    =           0,
+ TINTV   =   1.00000000000000     ,
+ TAVRG   =   1.00000000000000     ,
+ TUNIT   = DAY             ,
+ START   =        -999, 5*0,
+ END     =        -999, 5*0,
+ DFMT    = UR4             ,
+ FACT    =   1.00000000000000     ,
+ POUT    = F,
+ PSMLT   = F,
+ DIUR    =           0,
+ SQUARE  = F
+ /
+  *** FILE OPEND for WRITE UNIT =           21  NAME = 
+ u                                                                              
+                                                  
+  @@@ IHSUB: HISTORY SUMMING UP 96/12/04
+  *** HISTORY CONTROL V  :
+ &NMHIST
+ ITEM    = V               ,
+ FILE    = v                                                                                                                         
+       ,
+ XSEL    =          -1,
+ YSEL    =          -1,
+ ZSEL    =          -1,
+ MSEL    =           0,
+ TINTV   =   1.00000000000000     ,
+ TAVRG   =   1.00000000000000     ,
+ TUNIT   = DAY             ,
+ START   =        -999, 5*0,
+ END     =        -999, 5*0,
+ DFMT    = UR4             ,
+ FACT    =   1.00000000000000     ,
+ POUT    = F,
+ PSMLT   = F,
+ DIUR    =           0,
+ SQUARE  = F
+ /
+  *** FILE OPEND for WRITE UNIT =           22  NAME = 
+ v                                                                              
+                                                  
+  *** HISTORY CONTROL T  :
+ &NMHIST
+ ITEM    = T               ,
+ FILE    = t                                                                                                                         
+       ,
+ XSEL    =          -1,
+ YSEL    =          -1,
+ ZSEL    =          -1,
+ MSEL    =           0,
+ TINTV   =   1.00000000000000     ,
+ TAVRG   =   1.00000000000000     ,
+ TUNIT   = DAY             ,
+ START   =        -999, 5*0,
+ END     =        -999, 5*0,
+ DFMT    = UR4             ,
+ FACT    =   1.00000000000000     ,
+ POUT    = F,
+ PSMLT   = F,
+ DIUR    =           0,
+ SQUARE  = F
+ /
+  *** FILE OPEND for WRITE UNIT =           23  NAME = 
+ t                                                                              
+                                                  
+  *** HISTORY CONTROL PS :
+ &NMHIST
+ ITEM    = PS              ,
+ FILE    = p                                                                                                                         
+       ,
+ XSEL    =          -1,
+ YSEL    =          -1,
+ ZSEL    =          -1,
+ MSEL    =           0,
+ TINTV   =   1.00000000000000     ,
+ TAVRG   =   1.00000000000000     ,
+ TUNIT   = DAY             ,
+ START   =        -999, 5*0,
+ END     =        -999, 5*0,
+ DFMT    = UR4             ,
+ FACT    =   1.00000000000000     ,
+ POUT    = F,
+ PSMLT   = F,
+ DIUR    =           0,
+ SQUARE  = F
+ /
+  *** FILE OPEND for WRITE UNIT =           24  NAME = 
+ p                                                                              
+                                                  
+  *** HISTORY CONTROL Q  :
+  *** HISTORY CONTROL QT :
+  @@@ DADMN: DYNAMICS CONTROL 98/11/13
+  *** precision check ..    1.10000000000000     
+  *** precision check ..    1.01000000000000     
+  *** precision check ..    1.00100000000000     
+  *** precision check ..    1.00010000000000     
+  *** precision check ..    1.00001000000000     
+  *** precision check ..    1.00000100000000     
+  *** precision check ..    1.00000010000000     
+  *** precision check ..    1.00000001000000     
+  *** precision check ..    1.00000000100000     
+  *** precision check ..    1.00000000010000     
+  *** precision check ..    1.00000000001000     
+  *** precision check ..    1.00000000000100     
+  *** precision check ..    1.00000000000010     
+  *** precision check ..    1.00000000000001     
+  *** precision check ..    1.00000000000000     
+  *** precision check ..    1.00000000000000     
+  @@@ DSETC: SET HORIZONTAL DIFFUSION 94/11/30
+ &NMHDIF
+ ORDER   =           4,
+ TEFOLD  =   1.00000000000000     ,
+ TUNIT   = DAY ,
+ TEFV    =  -1.00000000000000     ,
+ TEFD    =  -1.00000000000000     ,
+ TEFT    =  -1.00000000000000     ,
+ TEFQ    =  -1.00000000000000     ,
+ ORDERK  = 20*-1,
+ TEFOLK  = 20*-1.00000000000000       ,
+ TEFVK   = 20*-1.00000000000000       ,
+ TEFDK   = 20*-1.00000000000000       ,
+ TEFTK   = 20*-1.00000000000000       ,
+ TEFQK   = 20*-1.00000000000000       ,
+ ORAYCL  = F,
+ RAYCL0  =   30.0000000000000     ,
+ RAYLEI  = 20*-1.00000000000000       ,
+ RAYLED  = 20*-1.00000000000000       ,
+ RAY0    =   30.0000000000000     ,
+ RAY0D   =  -1.00000000000000     ,
+ RZOFS   =  -1.00000000000000     ,
+ RZSCLH  =   7000.00000000000     ,
+ ZSCLH   =   8000.00000000000     
+ /
+  @@@ DSETV: SET V.COEFFICIENTS 00/06/08
+ &NMTBAR
+ OTBAR0  = F,
+ TBAR0   =   300.000000000000     
+ /
+  @@@ DSETC: SET COEFFICIENTS 93/11/05
+ &NMDAYL
+ DAYLEN  =   24.0000000000000     ,
+ TUNIT   = HOUR
+ /
+  @@@ DSETC: LAPLACIAN FACTOR 95/06/15
+  @@@ DSETVDF: SET VERTICAL DIFFUSION 01/05/16
+ &NMVDIF
+ VDIFV   = 20*1000.00000000000        ,
+ VDIFD   = 20*1000.00000000000        ,
+ VDIFT   = 20*1000.00000000000        ,
+ VDIFQ   = 20*0.000000000000000E+000  
+ /
+     ### HUMIDITY: NOT APPLIED ###
+  *** HISTORY CONTROL DUDYN :
+  *** HISTORY CONTROL DVDYN :
+  *** HISTORY CONTROL DTDYN :
+  *** HISTORY CONTROL DPDYN :
+  @@@ DTERM: DYNAMICS EQ. TERMS 98/11/12
+     $$$ STEADY FORCING FILE:
+ /pscratch/sd/c/chenzm/my_data/Model/LBM_NetCDF/data/Forcing/frc.t42l20.Ziming_t
+ est.grd                                                                        
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                      $$$
+ vor.
+ div.
+ tmp.
+ lnps
+  @@@ DVECT: U,V -> VOR,DIV 96/06/25
+  @@@ DSPHE: SPHERICAL TRANSFORM INTFC. 93/12/07
+  *** HISTORY CONTROL PSI :
+ &NMHIST
+ ITEM    = PSI             ,
+ FILE    = psi                                                                                                                       
+       ,
+ XSEL    =          -1,
+ YSEL    =          -1,
+ ZSEL    =          -1,
+ MSEL    =           0,
+ TINTV   =   1.00000000000000     ,
+ TAVRG   =   1.00000000000000     ,
+ TUNIT   = DAY             ,
+ START   =        -999, 5*0,
+ END     =        -999, 5*0,
+ DFMT    = UR4             ,
+ FACT    =   1.00000000000000     ,
+ POUT    = F,
+ PSMLT   = F,
+ DIUR    =           0,
+ SQUARE  = F
+ /
+  *** FILE OPEND for WRITE UNIT =           25  NAME = 
+ psi                                                                            
+                                                  
+  *** HISTORY CONTROL CHI :
+ &NMHIST
+ ITEM    = CHI             ,
+ FILE    = chi                                                                                                                       
+       ,
+ XSEL    =          -1,
+ YSEL    =          -1,
+ ZSEL    =          -1,
+ MSEL    =           0,
+ TINTV   =   1.00000000000000     ,
+ TAVRG   =   1.00000000000000     ,
+ TUNIT   = DAY             ,
+ START   =        -999, 5*0,
+ END     =        -999, 5*0,
+ DFMT    = UR4             ,
+ FACT    =   1.00000000000000     ,
+ POUT    = F,
+ PSMLT   = F,
+ DIUR    =           0,
+ SQUARE  = F
+ /
+  *** FILE OPEND for WRITE UNIT =           26  NAME = 
+ chi                                                                            
+                                                  
+  @@@ VIRTMB: VERTUAL TEMP. 01/06/15
+  *** HISTORY CONTROL OMGF :
+ &NMHIST
+ ITEM    = OMGF            ,
+ FILE    = w                                                                                                                         
+       ,
+ XSEL    =          -1,
+ YSEL    =          -1,
+ ZSEL    =          -1,
+ MSEL    =           0,
+ TINTV   =   1.00000000000000     ,
+ TAVRG   =   1.00000000000000     ,
+ TUNIT   = DAY             ,
+ START   =        -999, 5*0,
+ END     =        -999, 5*0,
+ DFMT    = UR4             ,
+ FACT    =   1.00000000000000     ,
+ POUT    = F,
+ PSMLT   = F,
+ DIUR    =           0,
+ SQUARE  = F
+ /
+  *** FILE OPEND for WRITE UNIT =           27  NAME = 
+ w                                                                              
+                                                  
+  @@@ DDIAG: DYNAMICS DIAGNOSTICS 96/05/28
+ &NMSLP
+ TLAPS   =  4.999999888241291E-003
+ /
+  *** HISTORY CONTROL VOR :
+  *** HISTORY CONTROL DIV :
+  *** HISTORY CONTROL SIGD   :
+  *** HISTORY CONTROL PID    :
+  *** HISTORY CONTROL OMG    :
+  @@@ DHYDR: HYDROSTATICS 94/11/25
+  *** HISTORY CONTROL Z :
+ &NMHIST
+ ITEM    = Z               ,
+ FILE    = z                                                                                                                         
+       ,
+ XSEL    =          -1,
+ YSEL    =          -1,
+ ZSEL    =          -1,
+ MSEL    =           0,
+ TINTV   =   1.00000000000000     ,
+ TAVRG   =   1.00000000000000     ,
+ TUNIT   = DAY             ,
+ START   =        -999, 5*0,
+ END     =        -999, 5*0,
+ DFMT    = UR4             ,
+ FACT    =   1.00000000000000     ,
+ POUT    = F,
+ PSMLT   = F,
+ DIUR    =           0,
+ SQUARE  = F
+ /
+  *** FILE OPEND for WRITE UNIT =           28  NAME = 
+ z                                                                              
+                                                  
+  *** HISTORY CONTROL SLP :
+  *** HISTORY CONTROL UV :
+  *** HISTORY CONTROL UT :
+  *** HISTORY CONTROL UQ :
+  *** HISTORY CONTROL UZ :
+  *** HISTORY CONTROL VT :
+  *** HISTORY CONTROL VQ :
+  *** HISTORY CONTROL VZ :
+  *** HISTORY CONTROL PRECW :
+  *** HISTORY CONTROL KE  :
+  *** HISTORY CONTROL IE  :
+  *** HISTORY CONTROL PE  :
+  *** HISTORY CONTROL LE  :
+  *** HISTORY CONTROL ENS :
+  *** HISTORY CONTROL TM  :
+  @@@ DSTEP: DYNAMICAL STEP 98/11/12
+ &NMDCOR
+ OTPDIF  = F,
+ OQPDIF  = F,
+ OFRICH  = F
+ /
+  @@@ DINTG: TIME INTEGRATION 95/06/06
+ &NMDAMP
+ DDRAGV  = 3*1.00000000000000        ,   5.00000000000000     , 14*30.0000000000000        , 2*1.00000000000000        ,
+ DDRAGD  = 3*1.00000000000000        ,   5.00000000000000     , 14*30.0000000000000        , 2*1.00000000000000        ,
+ DDRAGT  = 3*1.00000000000000        ,   5.00000000000000     , 14*30.0000000000000        , 2*1.00000000000000        ,
+ DDRAGQ  = 20*-1.00000000000000       ,
+ TUNIT   = DAY 
+ /
+  @@@ DMTRX: SEMI-IMP. MATRIX 95/07/27
+  @@@ AQUIT: CHECK QUIT BY FORCE 93/12/25
+ &NMQUIT
+ QUIT    = QUIT                                                                                                                      
+       ,
+ TINTV   =   1.00000000000000     ,
+ TUNIT   = HOUR            
+ /
+  *** STEP=           2  TIME=0000/01/01-00:00:00 
+ **** MAX.EDDY-WIND :  2.967170142734866E-003  AT:          76          27
+          20
+  *** STEP=           3  TIME=0000/01/01-00:00:00 
+ **** MAX.EDDY-WIND :  1.042465419562828E-002  AT:          76          27
+          18
+  @@@ DADVN: TIME ADVANCE & FILTER 96/05/29
+ &NMTFIL
+ TFIL    =  5.000000000000000E-002
+ /
+  ####### HISTORY USAGE REPORT ########
+ ITEM           FILE XSEL YSEL ZSEL     START      END        TINTV      TAVRG      SIZE
+ U                21   -1   -1   -1 0000/01/01 ****/00/00   1.00       1.00       163840
+ V                22   -1   -1   -1 0000/01/01 ****/00/00   1.00       1.00       163840
+ T                23   -1   -1   -1 0000/01/01 ****/00/00   1.00       1.00       163840
+ PS               24   -1   -1   -1 0000/01/01 ****/00/00   1.00       1.00         8192
+ PSI              25   -1   -1   -1 0000/01/01 ****/00/00   1.00       1.00       163840
+ CHI              26   -1   -1   -1 0000/01/01 ****/00/00   1.00       1.00       163840
+ OMGF             27   -1   -1   -1 0000/01/01 ****/00/00   1.00       1.00       163840
+ Z                28   -1   -1   -1 0000/01/01 ****/00/00   1.00       1.00       163840
+     TOTAL NUMBER =            8     TOTAL SIZE   =      1155072
+  @@@ OPNRST : OPEN RESTART FILE  96/06/17
+ &NMRSTR
+ CLASS   = ALL             ,
+ FILE    = /pscratch/sd/c/chenzm/my_data/Model/LBM_NetCDF/data/Output/Restart.amat                                                   
+       ,
+ TINTV   =   1.00000000000000     ,
+ TUNIT   = MON             ,
+ START   =        -999, 2*1, 3*0,
+ DFMT    = UR8             ,
+ OVERWT  = T
+ /
+  *** FILE OPEND for WRITE UNIT =           29  NAME = 
+ /pscratch/sd/c/chenzm/my_data/Model/LBM_NetCDF/data/Output/Restart.amat        
+                                                  
+ &NMRSTR
+ CLASS   = ALL             ,
+ FILE    = /pscratch/sd/c/chenzm/my_data/Model/LBM_NetCDF/data/Output/Restart.amat                                                   
+       ,
+ TINTV   =   1.00000000000000     ,
+ TUNIT   = MON             ,
+ START   =        -999, 2*1, 3*0,
+ DFMT    = UR8             ,
+ OVERWT  = T
+ /
+  *** FILE OPEND for WRITE UNIT =           29  NAME = 
+ /pscratch/sd/c/chenzm/my_data/Model/LBM_NetCDF/data/Output/Restart.amat        
+                                                  
+  *** STEP=           4  TIME=0000/01/01-00:20:00 
+  *** STEP=           5  TIME=0000/01/01-00:40:00 
+  *** STEP=           6  TIME=0000/01/01-01:00:00 
+  *** STEP=           7  TIME=0000/01/01-01:20:00 
+  *** STEP=           8  TIME=0000/01/01-01:40:00 
+  *** STEP=           9  TIME=0000/01/01-02:00:00 
+ **** MAX.EDDY-WIND :  0.230451179912352       AT:          76          27
+          15
+  *** STEP=          10  TIME=0000/01/01-02:20:00 
+  *** STEP=          11  TIME=0000/01/01-02:40:00 
+  *** STEP=          12  TIME=0000/01/01-03:00:00 
+  *** STEP=          13  TIME=0000/01/01-03:20:00 
+  *** STEP=          14  TIME=0000/01/01-03:40:00 
+  *** STEP=          15  TIME=0000/01/01-04:00:00 
+ **** MAX.EDDY-WIND :  0.550543588321810       AT:          76          28
+          14
+  *** STEP=          16  TIME=0000/01/01-04:20:00 
+  *** STEP=          17  TIME=0000/01/01-04:40:00 
+  *** STEP=          18  TIME=0000/01/01-05:00:00 
+  *** STEP=          19  TIME=0000/01/01-05:20:00 
+  *** STEP=          20  TIME=0000/01/01-05:40:00 
+  *** STEP=          21  TIME=0000/01/01-06:00:00 
+ **** MAX.EDDY-WIND :  0.844987002402817       AT:          76          28
+          14
+  *** STEP=          22  TIME=0000/01/01-06:20:00 
+  *** STEP=          23  TIME=0000/01/01-06:40:00 
+  *** STEP=          24  TIME=0000/01/01-07:00:00 
+  *** STEP=          25  TIME=0000/01/01-07:20:00 
+  *** STEP=          26  TIME=0000/01/01-07:40:00 
+  *** STEP=          27  TIME=0000/01/01-08:00:00 
+ **** MAX.EDDY-WIND :   1.02549553544033       AT:          76          23
+          13
+  *** STEP=          28  TIME=0000/01/01-08:20:00 
+  *** STEP=          29  TIME=0000/01/01-08:40:00 
+  *** STEP=          30  TIME=0000/01/01-09:00:00 
+  *** STEP=          31  TIME=0000/01/01-09:20:00 
+  *** STEP=          32  TIME=0000/01/01-09:40:00 
+  *** STEP=          33  TIME=0000/01/01-10:00:00 
+ **** MAX.EDDY-WIND :   1.21034094957099       AT:          77          23
+          13
+  *** STEP=          34  TIME=0000/01/01-10:20:00 
+  *** STEP=          35  TIME=0000/01/01-10:40:00 
+  *** STEP=          36  TIME=0000/01/01-11:00:00 
+  *** STEP=          37  TIME=0000/01/01-11:20:00 
+  *** STEP=          38  TIME=0000/01/01-11:40:00 
+  *** STEP=          39  TIME=0000/01/01-12:00:00 
+ **** MAX.EDDY-WIND :   1.35317147544628       AT:          78          23
+          13
+  *** STEP=          40  TIME=0000/01/01-12:20:00 
+  *** STEP=          41  TIME=0000/01/01-12:40:00 
+  *** STEP=          42  TIME=0000/01/01-13:00:00 
+  *** STEP=          43  TIME=0000/01/01-13:20:00 
+  *** STEP=          44  TIME=0000/01/01-13:40:00 
+  *** STEP=          45  TIME=0000/01/01-14:00:00 
+ **** MAX.EDDY-WIND :   1.47036340271925       AT:          76          27
+          13
+  *** STEP=          46  TIME=0000/01/01-14:20:00 
+  *** STEP=          47  TIME=0000/01/01-14:40:00 
+  *** STEP=          48  TIME=0000/01/01-15:00:00 
+  *** STEP=          49  TIME=0000/01/01-15:20:00 
+  *** STEP=          50  TIME=0000/01/01-15:40:00 
+  *** STEP=          51  TIME=0000/01/01-16:00:00 
+ **** MAX.EDDY-WIND :   1.70581713941423       AT:          76          27
+          13
+  *** STEP=          52  TIME=0000/01/01-16:20:00 
+  *** STEP=          53  TIME=0000/01/01-16:40:00 
+  *** STEP=          54  TIME=0000/01/01-17:00:00 
+  *** STEP=          55  TIME=0000/01/01-17:20:00 
+  *** STEP=          56  TIME=0000/01/01-17:40:00 
+  *** STEP=          57  TIME=0000/01/01-18:00:00 
+ **** MAX.EDDY-WIND :   1.95458047440679       AT:          76          27
+          13
+  *** STEP=          58  TIME=0000/01/01-18:20:00 
+  *** STEP=          59  TIME=0000/01/01-18:40:00 
+  *** STEP=          60  TIME=0000/01/01-19:00:00 
+  *** STEP=          61  TIME=0000/01/01-19:20:00 
+  *** STEP=          62  TIME=0000/01/01-19:40:00 
+  *** STEP=          63  TIME=0000/01/01-20:00:00 
+ **** MAX.EDDY-WIND :   2.20884070215700       AT:          76          27
+          13
+  *** STEP=          64  TIME=0000/01/01-20:20:00 
+  *** STEP=          65  TIME=0000/01/01-20:40:00 
+  *** STEP=          66  TIME=0000/01/01-21:00:00 
+  *** STEP=          67  TIME=0000/01/01-21:20:00 
+  *** STEP=          68  TIME=0000/01/01-21:40:00 
+  *** STEP=          69  TIME=0000/01/01-22:00:00 
+ **** MAX.EDDY-WIND :   2.46189593268527       AT:          76          27
+          13
+  *** STEP=          70  TIME=0000/01/01-22:20:00 
+  *** STEP=          71  TIME=0000/01/01-22:40:00 
+  *** STEP=          72  TIME=0000/01/01-23:00:00 
+  *** STEP=          73  TIME=0000/01/01-23:20:00 
+  *** STEP=          74  TIME=0000/01/01-23:40:00 
+  *** OUTPUT U                TIME= 0000/01/01-12:00:00 
+  *** OUTPUT V                TIME= 0000/01/01-12:00:00 
+  *** OUTPUT T                TIME= 0000/01/01-12:00:00 
+  *** OUTPUT PS               TIME= 0000/01/01-12:00:00 
+  *** OUTPUT PSI              TIME= 0000/01/01-12:00:00 
+  *** OUTPUT CHI              TIME= 0000/01/01-12:00:00 
+  *** OUTPUT OMGF             TIME= 0000/01/01-12:00:00 
+  *** OUTPUT Z                TIME= 0000/01/01-12:00:00 
+  *** STEP=          75  TIME=0000/01/02-00:00:00 
+ **** MAX.EDDY-WIND :   2.70857903704971       AT:          76          27
+          13
+  *** STEP=          76  TIME=0000/01/02-00:20:00 
+  *** STEP=          77  TIME=0000/01/02-00:40:00 
+  *** STEP=          78  TIME=0000/01/02-01:00:00 
+  *** STEP=          79  TIME=0000/01/02-01:20:00 
+  *** STEP=          80  TIME=0000/01/02-01:40:00 
+  *** STEP=          81  TIME=0000/01/02-02:00:00 
+ **** MAX.EDDY-WIND :   2.94488887191137       AT:          76          27
+          13
+  *** STEP=          82  TIME=0000/01/02-02:20:00 
+  *** STEP=          83  TIME=0000/01/02-02:40:00 
+  *** STEP=          84  TIME=0000/01/02-03:00:00 
+  *** STEP=          85  TIME=0000/01/02-03:20:00 
+  *** STEP=          86  TIME=0000/01/02-03:40:00 
+  *** STEP=          87  TIME=0000/01/02-04:00:00 
+ **** MAX.EDDY-WIND :   3.16994356311362       AT:          76          27
+          13
+  *** STEP=          88  TIME=0000/01/02-04:20:00 
+  *** STEP=          89  TIME=0000/01/02-04:40:00 
+  *** STEP=          90  TIME=0000/01/02-05:00:00 
+  *** STEP=          91  TIME=0000/01/02-05:20:00 
+  *** STEP=          92  TIME=0000/01/02-05:40:00 
+  *** STEP=          93  TIME=0000/01/02-06:00:00 
+ **** MAX.EDDY-WIND :   3.38440018850547       AT:          76          27
+          13
+  *** STEP=          94  TIME=0000/01/02-06:20:00 
+  *** STEP=          95  TIME=0000/01/02-06:40:00 
+  *** STEP=          96  TIME=0000/01/02-07:00:00 
+  *** STEP=          97  TIME=0000/01/02-07:20:00 
+  *** STEP=          98  TIME=0000/01/02-07:40:00 
+  *** STEP=          99  TIME=0000/01/02-08:00:00 
+ **** MAX.EDDY-WIND :   3.59114178496034       AT:          76          27
+          13
+  *** STEP=         100  TIME=0000/01/02-08:20:00 
+  *** STEP=         101  TIME=0000/01/02-08:40:00 
+  *** STEP=         102  TIME=0000/01/02-09:00:00 
+  *** STEP=         103  TIME=0000/01/02-09:20:00 
+  *** STEP=         104  TIME=0000/01/02-09:40:00 
+  *** STEP=         105  TIME=0000/01/02-10:00:00 
+ **** MAX.EDDY-WIND :   3.79332674180710       AT:          76          27
+          13
+  *** STEP=         106  TIME=0000/01/02-10:20:00 
+  *** STEP=         107  TIME=0000/01/02-10:40:00 
+  *** STEP=         108  TIME=0000/01/02-11:00:00 
+  *** STEP=         109  TIME=0000/01/02-11:20:00 
+  *** STEP=         110  TIME=0000/01/02-11:40:00 
+  *** STEP=         111  TIME=0000/01/02-12:00:00 
+ **** MAX.EDDY-WIND :   3.99570483331511       AT:          76          27
+          13
+  *** STEP=         112  TIME=0000/01/02-12:20:00 
+  *** STEP=         113  TIME=0000/01/02-12:40:00 
+  *** STEP=         114  TIME=0000/01/02-13:00:00 
+  *** STEP=         115  TIME=0000/01/02-13:20:00 
+  *** STEP=         116  TIME=0000/01/02-13:40:00 
+  *** STEP=         117  TIME=0000/01/02-14:00:00 
+ **** MAX.EDDY-WIND :   4.20539099687233       AT:          76          27
+          13
+  *** STEP=         118  TIME=0000/01/02-14:20:00 
+  *** STEP=         119  TIME=0000/01/02-14:40:00 
+  *** STEP=         120  TIME=0000/01/02-15:00:00 
+  *** STEP=         121  TIME=0000/01/02-15:20:00 
+  *** STEP=         122  TIME=0000/01/02-15:40:00 
+  *** STEP=         123  TIME=0000/01/02-16:00:00 
+ **** MAX.EDDY-WIND :   4.42498691342530       AT:          76          27
+          13
+  *** STEP=         124  TIME=0000/01/02-16:20:00 
+  *** STEP=         125  TIME=0000/01/02-16:40:00 
+  *** STEP=         126  TIME=0000/01/02-17:00:00 
+  *** STEP=         127  TIME=0000/01/02-17:20:00 
+  *** STEP=         128  TIME=0000/01/02-17:40:00 
+  *** STEP=         129  TIME=0000/01/02-18:00:00 
+ **** MAX.EDDY-WIND :   4.64593771022685       AT:          76          27
+          13
+  *** STEP=         130  TIME=0000/01/02-18:20:00 
+  *** STEP=         131  TIME=0000/01/02-18:40:00 
+  *** STEP=         132  TIME=0000/01/02-19:00:00 
+  *** STEP=         133  TIME=0000/01/02-19:20:00 
+  *** STEP=         134  TIME=0000/01/02-19:40:00 
+  *** STEP=         135  TIME=0000/01/02-20:00:00 
+ **** MAX.EDDY-WIND :   4.86802146279906       AT:          76          27
+          13
+  *** STEP=         136  TIME=0000/01/02-20:20:00 
+  *** STEP=         137  TIME=0000/01/02-20:40:00 
+  *** STEP=         138  TIME=0000/01/02-21:00:00 
+  *** STEP=         139  TIME=0000/01/02-21:20:00 
+  *** STEP=         140  TIME=0000/01/02-21:40:00 
+  *** STEP=         141  TIME=0000/01/02-22:00:00 
+ **** MAX.EDDY-WIND :   5.09515281207608       AT:          76          27
+          13
+  *** STEP=         142  TIME=0000/01/02-22:20:00 
+  *** STEP=         143  TIME=0000/01/02-22:40:00 
+  *** STEP=         144  TIME=0000/01/02-23:00:00 
+  *** STEP=         145  TIME=0000/01/02-23:20:00 
+  *** STEP=         146  TIME=0000/01/02-23:40:00 
+  *** OUTPUT U                TIME= 0000/01/02-12:00:00 
+  *** OUTPUT V                TIME= 0000/01/02-12:00:00 
+  *** OUTPUT T                TIME= 0000/01/02-12:00:00 
+  *** OUTPUT PS               TIME= 0000/01/02-12:00:00 
+  *** OUTPUT PSI              TIME= 0000/01/02-12:00:00 
+  *** OUTPUT CHI              TIME= 0000/01/02-12:00:00 
+  *** OUTPUT OMGF             TIME= 0000/01/02-12:00:00 
+  *** OUTPUT Z                TIME= 0000/01/02-12:00:00 
+  *** STEP=         147  TIME=0000/01/03-00:00:00 
+ **** MAX.EDDY-WIND :   5.31494358108201       AT:          76          27
+          13
+  *** STEP=         148  TIME=0000/01/03-00:20:00 
+  *** STEP=         149  TIME=0000/01/03-00:40:00 
+  *** STEP=         150  TIME=0000/01/03-01:00:00 
+  *** STEP=         151  TIME=0000/01/03-01:20:00 
+  *** STEP=         152  TIME=0000/01/03-01:40:00 
+  *** STEP=         153  TIME=0000/01/03-02:00:00 
+ **** MAX.EDDY-WIND :   5.52260209465577       AT:          76          27
+          13
+  *** STEP=         154  TIME=0000/01/03-02:20:00 
+  *** STEP=         155  TIME=0000/01/03-02:40:00 
+  *** STEP=         156  TIME=0000/01/03-03:00:00 
+  *** STEP=         157  TIME=0000/01/03-03:20:00 
+  *** STEP=         158  TIME=0000/01/03-03:40:00 
+  *** STEP=         159  TIME=0000/01/03-04:00:00 
+ **** MAX.EDDY-WIND :   5.72466626248547       AT:          76          27
+          13
+  *** STEP=         160  TIME=0000/01/03-04:20:00 
+  *** STEP=         161  TIME=0000/01/03-04:40:00 
+  *** STEP=         162  TIME=0000/01/03-05:00:00 
+  *** STEP=         163  TIME=0000/01/03-05:20:00 
+  *** STEP=         164  TIME=0000/01/03-05:40:00 
+  *** STEP=         165  TIME=0000/01/03-06:00:00 
+ **** MAX.EDDY-WIND :   5.92016910321032       AT:          75          27
+          13
+  *** STEP=         166  TIME=0000/01/03-06:20:00 
+  *** STEP=         167  TIME=0000/01/03-06:40:00 
+  *** STEP=         168  TIME=0000/01/03-07:00:00 
+  *** STEP=         169  TIME=0000/01/03-07:20:00 
+  *** STEP=         170  TIME=0000/01/03-07:40:00 
+  *** STEP=         171  TIME=0000/01/03-08:00:00 
+ **** MAX.EDDY-WIND :   6.12068806841507       AT:          75          27
+          13
+  *** STEP=         172  TIME=0000/01/03-08:20:00 
+  *** STEP=         173  TIME=0000/01/03-08:40:00 
+  *** STEP=         174  TIME=0000/01/03-09:00:00 
+  *** STEP=         175  TIME=0000/01/03-09:20:00 
+  *** STEP=         176  TIME=0000/01/03-09:40:00 
+  *** STEP=         177  TIME=0000/01/03-10:00:00 
+ **** MAX.EDDY-WIND :   6.31843762567426       AT:          75          27
+          13
+  *** STEP=         178  TIME=0000/01/03-10:20:00 
+  *** STEP=         179  TIME=0000/01/03-10:40:00 
+  *** STEP=         180  TIME=0000/01/03-11:00:00 
+  *** STEP=         181  TIME=0000/01/03-11:20:00 
+  *** STEP=         182  TIME=0000/01/03-11:40:00 
+  *** STEP=         183  TIME=0000/01/03-12:00:00 
+ **** MAX.EDDY-WIND :   6.51615318156199       AT:          75          27
+          13
+  *** STEP=         184  TIME=0000/01/03-12:20:00 
+  *** STEP=         185  TIME=0000/01/03-12:40:00 
+  *** STEP=         186  TIME=0000/01/03-13:00:00 
+  *** STEP=         187  TIME=0000/01/03-13:20:00 
+  *** STEP=         188  TIME=0000/01/03-13:40:00 
+  *** STEP=         189  TIME=0000/01/03-14:00:00 
+ **** MAX.EDDY-WIND :   6.71476281546598       AT:          75          27
+          13
+  *** STEP=         190  TIME=0000/01/03-14:20:00 
+  *** STEP=         191  TIME=0000/01/03-14:40:00 
+  *** STEP=         192  TIME=0000/01/03-15:00:00 
+  *** STEP=         193  TIME=0000/01/03-15:20:00 
+  *** STEP=         194  TIME=0000/01/03-15:40:00 
+  *** STEP=         195  TIME=0000/01/03-16:00:00 
+ **** MAX.EDDY-WIND :   6.91436341523535       AT:          75          27
+          13
+  *** STEP=         196  TIME=0000/01/03-16:20:00 
+  *** STEP=         197  TIME=0000/01/03-16:40:00 
+  *** STEP=         198  TIME=0000/01/03-17:00:00 
+  *** STEP=         199  TIME=0000/01/03-17:20:00 
+  *** STEP=         200  TIME=0000/01/03-17:40:00 
+  *** STEP=         201  TIME=0000/01/03-18:00:00 
+ **** MAX.EDDY-WIND :   7.11458445038281       AT:          75          27
+          13
+  *** STEP=         202  TIME=0000/01/03-18:20:00 
+  *** STEP=         203  TIME=0000/01/03-18:40:00 
+  *** STEP=         204  TIME=0000/01/03-19:00:00 
+  *** STEP=         205  TIME=0000/01/03-19:20:00 
+  *** STEP=         206  TIME=0000/01/03-19:40:00 
+  *** STEP=         207  TIME=0000/01/03-20:00:00 
+ **** MAX.EDDY-WIND :   7.31333693717624       AT:          75          27
+          13
+  *** STEP=         208  TIME=0000/01/03-20:20:00 
+  *** STEP=         209  TIME=0000/01/03-20:40:00 
+  *** STEP=         210  TIME=0000/01/03-21:00:00 
+  *** STEP=         211  TIME=0000/01/03-21:20:00 
+  *** STEP=         212  TIME=0000/01/03-21:40:00 
+  *** STEP=         213  TIME=0000/01/03-22:00:00 
+ **** MAX.EDDY-WIND :   7.50928666070819       AT:          75          27
+          13
+  *** STEP=         214  TIME=0000/01/03-22:20:00 
+  *** STEP=         215  TIME=0000/01/03-22:40:00 
+  *** STEP=         216  TIME=0000/01/03-23:00:00 
+  *** STEP=         217  TIME=0000/01/03-23:20:00 
+  *** STEP=         218  TIME=0000/01/03-23:40:00 
+  *** OUTPUT U                TIME= 0000/01/03-12:00:00 
+  *** OUTPUT V                TIME= 0000/01/03-12:00:00 
+  *** OUTPUT T                TIME= 0000/01/03-12:00:00 
+  *** OUTPUT PS               TIME= 0000/01/03-12:00:00 
+  *** OUTPUT PSI              TIME= 0000/01/03-12:00:00 
+  *** OUTPUT CHI              TIME= 0000/01/03-12:00:00 
+  *** OUTPUT OMGF             TIME= 0000/01/03-12:00:00 
+  *** OUTPUT Z                TIME= 0000/01/03-12:00:00 
+  *** STEP=         219  TIME=0000/01/04-00:00:00 
+ **** MAX.EDDY-WIND :   7.70258593644948       AT:          75          27
+          13
+  *** STEP=         220  TIME=0000/01/04-00:20:00 
+  *** STEP=         221  TIME=0000/01/04-00:40:00 
+  *** STEP=         222  TIME=0000/01/04-01:00:00 
+  *** STEP=         223  TIME=0000/01/04-01:20:00 
+  *** STEP=         224  TIME=0000/01/04-01:40:00 
+  *** STEP=         225  TIME=0000/01/04-02:00:00 
+ **** MAX.EDDY-WIND :   7.89548136183862       AT:          75          27
+          13
+  *** STEP=         226  TIME=0000/01/04-02:20:00 
+  *** STEP=         227  TIME=0000/01/04-02:40:00 
+  *** STEP=         228  TIME=0000/01/04-03:00:00 
+  *** STEP=         229  TIME=0000/01/04-03:20:00 
+  *** STEP=         230  TIME=0000/01/04-03:40:00 
+  *** STEP=         231  TIME=0000/01/04-04:00:00 
+ **** MAX.EDDY-WIND :   8.08832173922628       AT:          75          27
+          13
+  *** STEP=         232  TIME=0000/01/04-04:20:00 
+  *** STEP=         233  TIME=0000/01/04-04:40:00 
+  *** STEP=         234  TIME=0000/01/04-05:00:00 
+  *** STEP=         235  TIME=0000/01/04-05:20:00 
+  *** STEP=         236  TIME=0000/01/04-05:40:00 
+  *** STEP=         237  TIME=0000/01/04-06:00:00 
+ **** MAX.EDDY-WIND :   8.27949871366627       AT:          75          27
+          13
+  *** STEP=         238  TIME=0000/01/04-06:20:00 
+  *** STEP=         239  TIME=0000/01/04-06:40:00 
+  *** STEP=         240  TIME=0000/01/04-07:00:00 
+  *** STEP=         241  TIME=0000/01/04-07:20:00 
+  *** STEP=         242  TIME=0000/01/04-07:40:00 
+  *** STEP=         243  TIME=0000/01/04-08:00:00 
+ **** MAX.EDDY-WIND :   8.46740221897859       AT:          75          27
+          13
+  *** STEP=         244  TIME=0000/01/04-08:20:00 
+  *** STEP=         245  TIME=0000/01/04-08:40:00 
+  *** STEP=         246  TIME=0000/01/04-09:00:00 
+  *** STEP=         247  TIME=0000/01/04-09:20:00 
+  *** STEP=         248  TIME=0000/01/04-09:40:00 
+  *** STEP=         249  TIME=0000/01/04-10:00:00 
+ **** MAX.EDDY-WIND :   8.65218943386424       AT:          75          27
+          13
+  *** STEP=         250  TIME=0000/01/04-10:20:00 
+  *** STEP=         251  TIME=0000/01/04-10:40:00 
+  *** STEP=         252  TIME=0000/01/04-11:00:00 
+  *** STEP=         253  TIME=0000/01/04-11:20:00 
+  *** STEP=         254  TIME=0000/01/04-11:40:00 
+  *** STEP=         255  TIME=0000/01/04-12:00:00 
+ **** MAX.EDDY-WIND :   8.83332531275637       AT:          75          27
+          13
+  *** STEP=         256  TIME=0000/01/04-12:20:00 
+  *** STEP=         257  TIME=0000/01/04-12:40:00 
+  *** STEP=         258  TIME=0000/01/04-13:00:00 
+  *** STEP=         259  TIME=0000/01/04-13:20:00 
+  *** STEP=         260  TIME=0000/01/04-13:40:00 
+  *** STEP=         261  TIME=0000/01/04-14:00:00 
+ **** MAX.EDDY-WIND :   9.01120735421427       AT:          75          27
+          13
+  *** STEP=         262  TIME=0000/01/04-14:20:00 
+  *** STEP=         263  TIME=0000/01/04-14:40:00 
+  *** STEP=         264  TIME=0000/01/04-15:00:00 
+  *** STEP=         265  TIME=0000/01/04-15:20:00 
+  *** STEP=         266  TIME=0000/01/04-15:40:00 
+  *** STEP=         267  TIME=0000/01/04-16:00:00 
+ **** MAX.EDDY-WIND :   9.18377653854902       AT:          75          27
+          13
+  *** STEP=         268  TIME=0000/01/04-16:20:00 
+  *** STEP=         269  TIME=0000/01/04-16:40:00 
+  *** STEP=         270  TIME=0000/01/04-17:00:00 
+  *** STEP=         271  TIME=0000/01/04-17:20:00 
+  *** STEP=         272  TIME=0000/01/04-17:40:00 
+  *** STEP=         273  TIME=0000/01/04-18:00:00 
+ **** MAX.EDDY-WIND :   9.34910863173737       AT:          75          27
+          13
+  *** STEP=         274  TIME=0000/01/04-18:20:00 
+  *** STEP=         275  TIME=0000/01/04-18:40:00 
+  *** STEP=         276  TIME=0000/01/04-19:00:00 
+  *** STEP=         277  TIME=0000/01/04-19:20:00 
+  *** STEP=         278  TIME=0000/01/04-19:40:00 
+  *** STEP=         279  TIME=0000/01/04-20:00:00 
+ **** MAX.EDDY-WIND :   9.51388164485389       AT:          75          27
+          13
+  *** STEP=         280  TIME=0000/01/04-20:20:00 
+  *** STEP=         281  TIME=0000/01/04-20:40:00 
+  *** STEP=         282  TIME=0000/01/04-21:00:00 
+  *** STEP=         283  TIME=0000/01/04-21:20:00 
+  *** STEP=         284  TIME=0000/01/04-21:40:00 
+  *** STEP=         285  TIME=0000/01/04-22:00:00 
+ **** MAX.EDDY-WIND :   9.67752176673333       AT:          75          27
+          13
+  *** STEP=         286  TIME=0000/01/04-22:20:00 
+  *** STEP=         287  TIME=0000/01/04-22:40:00 
+  *** STEP=         288  TIME=0000/01/04-23:00:00 
+  *** STEP=         289  TIME=0000/01/04-23:20:00 
+  *** STEP=         290  TIME=0000/01/04-23:40:00 
+  *** OUTPUT U                TIME= 0000/01/04-12:00:00 
+  *** OUTPUT V                TIME= 0000/01/04-12:00:00 
+  *** OUTPUT T                TIME= 0000/01/04-12:00:00 
+  *** OUTPUT PS               TIME= 0000/01/04-12:00:00 
+  *** OUTPUT PSI              TIME= 0000/01/04-12:00:00 
+  *** OUTPUT CHI              TIME= 0000/01/04-12:00:00 
+  *** OUTPUT OMGF             TIME= 0000/01/04-12:00:00 
+  *** OUTPUT Z                TIME= 0000/01/04-12:00:00 
+  *** STEP=         291  TIME=0000/01/05-00:00:00 
+ **** MAX.EDDY-WIND :   9.83911901642130       AT:          75          27
+          13
+  *** STEP=         292  TIME=0000/01/05-00:20:00 
+  *** STEP=         293  TIME=0000/01/05-00:40:00 
+  *** STEP=         294  TIME=0000/01/05-01:00:00 
+  *** STEP=         295  TIME=0000/01/05-01:20:00 
+  *** STEP=         296  TIME=0000/01/05-01:40:00 
+  *** STEP=         297  TIME=0000/01/05-02:00:00 
+ **** MAX.EDDY-WIND :   10.0012538586270       AT:          75          27
+          13
+  *** STEP=         298  TIME=0000/01/05-02:20:00 
+  *** STEP=         299  TIME=0000/01/05-02:40:00 
+  *** STEP=         300  TIME=0000/01/05-03:00:00 
+  *** STEP=         301  TIME=0000/01/05-03:20:00 
+  *** STEP=         302  TIME=0000/01/05-03:40:00 
+  *** STEP=         303  TIME=0000/01/05-04:00:00 
+ **** MAX.EDDY-WIND :   10.1617868507525       AT:          75          27
+          13
+  *** STEP=         304  TIME=0000/01/05-04:20:00 
+  *** STEP=         305  TIME=0000/01/05-04:40:00 
+  *** STEP=         306  TIME=0000/01/05-05:00:00 
+  *** STEP=         307  TIME=0000/01/05-05:20:00 
+  *** STEP=         308  TIME=0000/01/05-05:40:00 
+  *** STEP=         309  TIME=0000/01/05-06:00:00 
+ **** MAX.EDDY-WIND :   10.3212093972659       AT:          75          27
+          13
+  *** STEP=         310  TIME=0000/01/05-06:20:00 
+  *** STEP=         311  TIME=0000/01/05-06:40:00 
+  *** STEP=         312  TIME=0000/01/05-07:00:00 
+  *** STEP=         313  TIME=0000/01/05-07:20:00 
+  *** STEP=         314  TIME=0000/01/05-07:40:00 
+  *** STEP=         315  TIME=0000/01/05-08:00:00 
+ **** MAX.EDDY-WIND :   10.4772706676337       AT:          75          27
+          13
+  *** STEP=         316  TIME=0000/01/05-08:20:00 
+  *** STEP=         317  TIME=0000/01/05-08:40:00 
+  *** STEP=         318  TIME=0000/01/05-09:00:00 
+  *** STEP=         319  TIME=0000/01/05-09:20:00 
+  *** STEP=         320  TIME=0000/01/05-09:40:00 
+  *** STEP=         321  TIME=0000/01/05-10:00:00 
+ **** MAX.EDDY-WIND :   10.6303573844652       AT:          75          27
+          13
+  *** STEP=         322  TIME=0000/01/05-10:20:00 
+  *** STEP=         323  TIME=0000/01/05-10:40:00 
+  *** STEP=         324  TIME=0000/01/05-11:00:00 
+  *** STEP=         325  TIME=0000/01/05-11:20:00 
+  *** STEP=         326  TIME=0000/01/05-11:40:00 
+  *** STEP=         327  TIME=0000/01/05-12:00:00 
+ **** MAX.EDDY-WIND :   10.7806153329933       AT:          75          27
+          13
+  *** STEP=         328  TIME=0000/01/05-12:20:00 
+  *** STEP=         329  TIME=0000/01/05-12:40:00 
+  *** STEP=         330  TIME=0000/01/05-13:00:00 
+  *** STEP=         331  TIME=0000/01/05-13:20:00 
+  *** STEP=         332  TIME=0000/01/05-13:40:00 
+  *** STEP=         333  TIME=0000/01/05-14:00:00 
+ **** MAX.EDDY-WIND :   10.9292374517370       AT:          75          27
+          13
+  *** STEP=         334  TIME=0000/01/05-14:20:00 
+  *** STEP=         335  TIME=0000/01/05-14:40:00 
+  *** STEP=         336  TIME=0000/01/05-15:00:00 
+  *** STEP=         337  TIME=0000/01/05-15:20:00 
+  *** STEP=         338  TIME=0000/01/05-15:40:00 
+  *** STEP=         339  TIME=0000/01/05-16:00:00 
+ **** MAX.EDDY-WIND :   11.0759461555337       AT:          75          27
+          13
+  *** STEP=         340  TIME=0000/01/05-16:20:00 
+  *** STEP=         341  TIME=0000/01/05-16:40:00 
+  *** STEP=         342  TIME=0000/01/05-17:00:00 
+  *** STEP=         343  TIME=0000/01/05-17:20:00 
+  *** STEP=         344  TIME=0000/01/05-17:40:00 
+  *** STEP=         345  TIME=0000/01/05-18:00:00 
+ **** MAX.EDDY-WIND :   11.2200354371421       AT:          75          27
+          13
+  *** STEP=         346  TIME=0000/01/05-18:20:00 
+  *** STEP=         347  TIME=0000/01/05-18:40:00 
+  *** STEP=         348  TIME=0000/01/05-19:00:00 
+  *** STEP=         349  TIME=0000/01/05-19:20:00 
+  *** STEP=         350  TIME=0000/01/05-19:40:00 
+  *** STEP=         351  TIME=0000/01/05-20:00:00 
+ **** MAX.EDDY-WIND :   11.3621050105370       AT:          75          27
+          13
+  *** STEP=         352  TIME=0000/01/05-20:20:00 
+  *** STEP=         353  TIME=0000/01/05-20:40:00 
+  *** STEP=         354  TIME=0000/01/05-21:00:00 
+  *** STEP=         355  TIME=0000/01/05-21:20:00 
+  *** STEP=         356  TIME=0000/01/05-21:40:00 
+  *** STEP=         357  TIME=0000/01/05-22:00:00 
+ **** MAX.EDDY-WIND :   11.5047663794464       AT:          75          27
+          13
+  *** STEP=         358  TIME=0000/01/05-22:20:00 
+  *** STEP=         359  TIME=0000/01/05-22:40:00 
+  *** STEP=         360  TIME=0000/01/05-23:00:00 
+  *** STEP=         361  TIME=0000/01/05-23:20:00 
+  *** STEP=         362  TIME=0000/01/05-23:40:00 
+  *** OUTPUT U                TIME= 0000/01/05-12:00:00 
+  *** OUTPUT V                TIME= 0000/01/05-12:00:00 
+  *** OUTPUT T                TIME= 0000/01/05-12:00:00 
+  *** OUTPUT PS               TIME= 0000/01/05-12:00:00 
+  *** OUTPUT PSI              TIME= 0000/01/05-12:00:00 
+  *** OUTPUT CHI              TIME= 0000/01/05-12:00:00 
+  *** OUTPUT OMGF             TIME= 0000/01/05-12:00:00 
+  *** OUTPUT Z                TIME= 0000/01/05-12:00:00 
+  *** STEP=         363  TIME=0000/01/06-00:00:00 
+ **** MAX.EDDY-WIND :   11.6473929533772       AT:          75          27
+          13
+  *** STEP=         364  TIME=0000/01/06-00:20:00 
+  *** STEP=         365  TIME=0000/01/06-00:40:00 
+  *** STEP=         366  TIME=0000/01/06-01:00:00 
+  *** STEP=         367  TIME=0000/01/06-01:20:00 
+  *** STEP=         368  TIME=0000/01/06-01:40:00 
+  *** STEP=         369  TIME=0000/01/06-02:00:00 
+ **** MAX.EDDY-WIND :   11.7859936294136       AT:          75          27
+          13
+  *** STEP=         370  TIME=0000/01/06-02:20:00 
+  *** STEP=         371  TIME=0000/01/06-02:40:00 
+  *** STEP=         372  TIME=0000/01/06-03:00:00 
+  *** STEP=         373  TIME=0000/01/06-03:20:00 
+  *** STEP=         374  TIME=0000/01/06-03:40:00 
+  *** STEP=         375  TIME=0000/01/06-04:00:00 
+ **** MAX.EDDY-WIND :   11.9198673212477       AT:          75          27
+          13
+  *** STEP=         376  TIME=0000/01/06-04:20:00 
+  *** STEP=         377  TIME=0000/01/06-04:40:00 
+  *** STEP=         378  TIME=0000/01/06-05:00:00 
+  *** STEP=         379  TIME=0000/01/06-05:20:00 
+  *** STEP=         380  TIME=0000/01/06-05:40:00 
+  *** STEP=         381  TIME=0000/01/06-06:00:00 
+ **** MAX.EDDY-WIND :   12.0506105119235       AT:          75          27
+          13
+  *** STEP=         382  TIME=0000/01/06-06:20:00 
+  *** STEP=         383  TIME=0000/01/06-06:40:00 
+  *** STEP=         384  TIME=0000/01/06-07:00:00 
+  *** STEP=         385  TIME=0000/01/06-07:20:00 
+  *** STEP=         386  TIME=0000/01/06-07:40:00 
+  *** STEP=         387  TIME=0000/01/06-08:00:00 
+ **** MAX.EDDY-WIND :   12.1768327803004       AT:          75          27
+          13
+  *** STEP=         388  TIME=0000/01/06-08:20:00 
+  *** STEP=         389  TIME=0000/01/06-08:40:00 
+  *** STEP=         390  TIME=0000/01/06-09:00:00 
+  *** STEP=         391  TIME=0000/01/06-09:20:00 
+  *** STEP=         392  TIME=0000/01/06-09:40:00 
+  *** STEP=         393  TIME=0000/01/06-10:00:00 
+ **** MAX.EDDY-WIND :   12.2977677863139       AT:          75          27
+          13
+  *** STEP=         394  TIME=0000/01/06-10:20:00 
+  *** STEP=         395  TIME=0000/01/06-10:40:00 
+  *** STEP=         396  TIME=0000/01/06-11:00:00 
+  *** STEP=         397  TIME=0000/01/06-11:20:00 
+  *** STEP=         398  TIME=0000/01/06-11:40:00 
+  *** STEP=         399  TIME=0000/01/06-12:00:00 
+ **** MAX.EDDY-WIND :   12.4156950727367       AT:          75          27
+          13
+  *** STEP=         400  TIME=0000/01/06-12:20:00 
+  *** STEP=         401  TIME=0000/01/06-12:40:00 
+  *** STEP=         402  TIME=0000/01/06-13:00:00 
+  *** STEP=         403  TIME=0000/01/06-13:20:00 
+  *** STEP=         404  TIME=0000/01/06-13:40:00 
+  *** STEP=         405  TIME=0000/01/06-14:00:00 
+ **** MAX.EDDY-WIND :   12.5292236270516       AT:          75          27
+          13
+  *** STEP=         406  TIME=0000/01/06-14:20:00 
+  *** STEP=         407  TIME=0000/01/06-14:40:00 
+  *** STEP=         408  TIME=0000/01/06-15:00:00 
+  *** STEP=         409  TIME=0000/01/06-15:20:00 
+  *** STEP=         410  TIME=0000/01/06-15:40:00 
+  *** STEP=         411  TIME=0000/01/06-16:00:00 
+ **** MAX.EDDY-WIND :   12.6384911516974       AT:          75          27
+          13
+  *** STEP=         412  TIME=0000/01/06-16:20:00 
+  *** STEP=         413  TIME=0000/01/06-16:40:00 
+  *** STEP=         414  TIME=0000/01/06-17:00:00 
+  *** STEP=         415  TIME=0000/01/06-17:20:00 
+  *** STEP=         416  TIME=0000/01/06-17:40:00 
+  *** STEP=         417  TIME=0000/01/06-18:00:00 
+ **** MAX.EDDY-WIND :   12.7467940652421       AT:          75          27
+          13
+  *** STEP=         418  TIME=0000/01/06-18:20:00 
+  *** STEP=         419  TIME=0000/01/06-18:40:00 
+  *** STEP=         420  TIME=0000/01/06-19:00:00 
+  *** STEP=         421  TIME=0000/01/06-19:20:00 
+  *** STEP=         422  TIME=0000/01/06-19:40:00 
+  *** STEP=         423  TIME=0000/01/06-20:00:00 
+ **** MAX.EDDY-WIND :   12.8535276599063       AT:          75          27
+          13
+  *** STEP=         424  TIME=0000/01/06-20:20:00 
+  *** STEP=         425  TIME=0000/01/06-20:40:00 
+  *** STEP=         426  TIME=0000/01/06-21:00:00 
+  *** STEP=         427  TIME=0000/01/06-21:20:00 
+  *** STEP=         428  TIME=0000/01/06-21:40:00 
+  *** STEP=         429  TIME=0000/01/06-22:00:00 
+ **** MAX.EDDY-WIND :   12.9593816626441       AT:          75          27
+          13
+  *** STEP=         430  TIME=0000/01/06-22:20:00 
+  *** STEP=         431  TIME=0000/01/06-22:40:00 
+  *** STEP=         432  TIME=0000/01/06-23:00:00 
+  *** STEP=         433  TIME=0000/01/06-23:20:00 
+  *** STEP=         434  TIME=0000/01/06-23:40:00 
+  *** OUTPUT U                TIME= 0000/01/06-12:00:00 
+  *** OUTPUT V                TIME= 0000/01/06-12:00:00 
+  *** OUTPUT T                TIME= 0000/01/06-12:00:00 
+  *** OUTPUT PS               TIME= 0000/01/06-12:00:00 
+  *** OUTPUT PSI              TIME= 0000/01/06-12:00:00 
+  *** OUTPUT CHI              TIME= 0000/01/06-12:00:00 
+  *** OUTPUT OMGF             TIME= 0000/01/06-12:00:00 
+  *** OUTPUT Z                TIME= 0000/01/06-12:00:00 
+  *** STEP=         435  TIME=0000/01/07-00:00:00 
+ **** MAX.EDDY-WIND :   13.0642395392662       AT:          75          27
+          13
+  *** STEP=         436  TIME=0000/01/07-00:20:00 
+  *** STEP=         437  TIME=0000/01/07-00:40:00 
+  *** STEP=         438  TIME=0000/01/07-01:00:00 
+  *** STEP=         439  TIME=0000/01/07-01:20:00 
+  *** STEP=         440  TIME=0000/01/07-01:40:00 
+  *** STEP=         441  TIME=0000/01/07-02:00:00 
+ **** MAX.EDDY-WIND :   13.1677638611866       AT:          75          27
+          13
+  *** STEP=         442  TIME=0000/01/07-02:20:00 
+  *** STEP=         443  TIME=0000/01/07-02:40:00 
+  *** STEP=         444  TIME=0000/01/07-03:00:00 
+  *** STEP=         445  TIME=0000/01/07-03:20:00 
+  *** STEP=         446  TIME=0000/01/07-03:40:00 
+  *** STEP=         447  TIME=0000/01/07-04:00:00 
+ **** MAX.EDDY-WIND :   13.2692362754241       AT:          75          27
+          13
+  *** STEP=         448  TIME=0000/01/07-04:20:00 
+  *** STEP=         449  TIME=0000/01/07-04:40:00 
+  *** STEP=         450  TIME=0000/01/07-05:00:00 
+  *** STEP=         451  TIME=0000/01/07-05:20:00 
+  *** STEP=         452  TIME=0000/01/07-05:40:00 
+  *** STEP=         453  TIME=0000/01/07-06:00:00 
+ **** MAX.EDDY-WIND :   13.3683724895785       AT:          75          27
+          13
+  *** STEP=         454  TIME=0000/01/07-06:20:00 
+  *** STEP=         455  TIME=0000/01/07-06:40:00 
+  *** STEP=         456  TIME=0000/01/07-07:00:00 
+  *** STEP=         457  TIME=0000/01/07-07:20:00 
+  *** STEP=         458  TIME=0000/01/07-07:40:00 
+  *** STEP=         459  TIME=0000/01/07-08:00:00 
+ **** MAX.EDDY-WIND :   13.4661428821506       AT:          75          27
+          13
+  *** STEP=         460  TIME=0000/01/07-08:20:00 
+  *** STEP=         461  TIME=0000/01/07-08:40:00 
+  *** STEP=         462  TIME=0000/01/07-09:00:00 
+  *** STEP=         463  TIME=0000/01/07-09:20:00 
+  *** STEP=         464  TIME=0000/01/07-09:40:00 
+  *** STEP=         465  TIME=0000/01/07-10:00:00 
+ **** MAX.EDDY-WIND :   13.5633303734315       AT:          75          27
+          13
+  *** STEP=         466  TIME=0000/01/07-10:20:00 
+  *** STEP=         467  TIME=0000/01/07-10:40:00 
+  *** STEP=         468  TIME=0000/01/07-11:00:00 
+  *** STEP=         469  TIME=0000/01/07-11:20:00 
+  *** STEP=         470  TIME=0000/01/07-11:40:00 
+  *** STEP=         471  TIME=0000/01/07-12:00:00 
+ **** MAX.EDDY-WIND :   13.6587404608626       AT:          75          27
+          13
+  *** STEP=         472  TIME=0000/01/07-12:20:00 
+  *** STEP=         473  TIME=0000/01/07-12:40:00 
+  *** STEP=         474  TIME=0000/01/07-13:00:00 
+  *** STEP=         475  TIME=0000/01/07-13:20:00 
+  *** STEP=         476  TIME=0000/01/07-13:40:00 
+  *** STEP=         477  TIME=0000/01/07-14:00:00 
+ **** MAX.EDDY-WIND :   13.7515465815605       AT:          75          27
+          13
+  *** STEP=         478  TIME=0000/01/07-14:20:00 
+  *** STEP=         479  TIME=0000/01/07-14:40:00 
+  *** STEP=         480  TIME=0000/01/07-15:00:00 
+  *** STEP=         481  TIME=0000/01/07-15:20:00 
+  *** STEP=         482  TIME=0000/01/07-15:40:00 
+  *** STEP=         483  TIME=0000/01/07-16:00:00 
+ **** MAX.EDDY-WIND :   13.8430617581451       AT:          75          27
+          13
+  *** STEP=         484  TIME=0000/01/07-16:20:00 
+  *** STEP=         485  TIME=0000/01/07-16:40:00 
+  *** STEP=         486  TIME=0000/01/07-17:00:00 
+  *** STEP=         487  TIME=0000/01/07-17:20:00 
+  *** STEP=         488  TIME=0000/01/07-17:40:00 
+  *** STEP=         489  TIME=0000/01/07-18:00:00 
+ **** MAX.EDDY-WIND :   13.9346649439585       AT:          75          27
+          13
+  *** STEP=         490  TIME=0000/01/07-18:20:00 
+  *** STEP=         491  TIME=0000/01/07-18:40:00 
+  *** STEP=         492  TIME=0000/01/07-19:00:00 
+  *** STEP=         493  TIME=0000/01/07-19:20:00 
+  *** STEP=         494  TIME=0000/01/07-19:40:00 
+  *** STEP=         495  TIME=0000/01/07-20:00:00 
+ **** MAX.EDDY-WIND :   14.0241516168959       AT:          75          27
+          13
+  *** STEP=         496  TIME=0000/01/07-20:20:00 
+  *** STEP=         497  TIME=0000/01/07-20:40:00 
+  *** STEP=         498  TIME=0000/01/07-21:00:00 
+  *** STEP=         499  TIME=0000/01/07-21:20:00 
+  *** STEP=         500  TIME=0000/01/07-21:40:00 
+  *** STEP=         501  TIME=0000/01/07-22:00:00 
+ **** MAX.EDDY-WIND :   14.1108149903307       AT:          75          27
+          13
+  *** STEP=         502  TIME=0000/01/07-22:20:00 
+  *** STEP=         503  TIME=0000/01/07-22:40:00 
+  *** STEP=         504  TIME=0000/01/07-23:00:00 
+  *** STEP=         505  TIME=0000/01/07-23:20:00 
+  *** STEP=         506  TIME=0000/01/07-23:40:00 
+  *** OUTPUT U                TIME= 0000/01/07-12:00:00 
+  *** OUTPUT V                TIME= 0000/01/07-12:00:00 
+  *** OUTPUT T                TIME= 0000/01/07-12:00:00 
+  *** OUTPUT PS               TIME= 0000/01/07-12:00:00 
+  *** OUTPUT PSI              TIME= 0000/01/07-12:00:00 
+  *** OUTPUT CHI              TIME= 0000/01/07-12:00:00 
+  *** OUTPUT OMGF             TIME= 0000/01/07-12:00:00 
+  *** OUTPUT Z                TIME= 0000/01/07-12:00:00 
+  *** STEP=         507  TIME=0000/01/08-00:00:00 
+ **** MAX.EDDY-WIND :   14.1964640537871       AT:          75          27
+          13
+  *** STEP=         508  TIME=0000/01/08-00:20:00 
+  *** STEP=         509  TIME=0000/01/08-00:40:00 
+  *** STEP=         510  TIME=0000/01/08-01:00:00 
+  *** STEP=         511  TIME=0000/01/08-01:20:00 
+  *** STEP=         512  TIME=0000/01/08-01:40:00 
+  *** STEP=         513  TIME=0000/01/08-02:00:00 
+ **** MAX.EDDY-WIND :   14.2824719002317       AT:          76          26
+          12
+  *** STEP=         514  TIME=0000/01/08-02:20:00 
+  *** STEP=         515  TIME=0000/01/08-02:40:00 
+  *** STEP=         516  TIME=0000/01/08-03:00:00 
+  *** STEP=         517  TIME=0000/01/08-03:20:00 
+  *** STEP=         518  TIME=0000/01/08-03:40:00 
+  *** STEP=         519  TIME=0000/01/08-04:00:00 
+ **** MAX.EDDY-WIND :   14.3913485913941       AT:          76          26
+          12
+  *** STEP=         520  TIME=0000/01/08-04:20:00 
+  *** STEP=         521  TIME=0000/01/08-04:40:00 
+  *** STEP=         522  TIME=0000/01/08-05:00:00 
+  *** STEP=         523  TIME=0000/01/08-05:20:00 
+  *** STEP=         524  TIME=0000/01/08-05:40:00 
+  *** STEP=         525  TIME=0000/01/08-06:00:00 
+ **** MAX.EDDY-WIND :   14.4997300625063       AT:          76          26
+          12
+  *** STEP=         526  TIME=0000/01/08-06:20:00 
+  *** STEP=         527  TIME=0000/01/08-06:40:00 
+  *** STEP=         528  TIME=0000/01/08-07:00:00 
+  *** STEP=         529  TIME=0000/01/08-07:20:00 
+  *** STEP=         530  TIME=0000/01/08-07:40:00 
+  *** STEP=         531  TIME=0000/01/08-08:00:00 
+ **** MAX.EDDY-WIND :   14.6070591906548       AT:          76          26
+          12
+  *** STEP=         532  TIME=0000/01/08-08:20:00 
+  *** STEP=         533  TIME=0000/01/08-08:40:00 
+  *** STEP=         534  TIME=0000/01/08-09:00:00 
+  *** STEP=         535  TIME=0000/01/08-09:20:00 
+  *** STEP=         536  TIME=0000/01/08-09:40:00 
+  *** STEP=         537  TIME=0000/01/08-10:00:00 
+ **** MAX.EDDY-WIND :   14.7139498602093       AT:          76          26
+          12
+  *** STEP=         538  TIME=0000/01/08-10:20:00 
+  *** STEP=         539  TIME=0000/01/08-10:40:00 
+  *** STEP=         540  TIME=0000/01/08-11:00:00 
+  *** STEP=         541  TIME=0000/01/08-11:20:00 
+  *** STEP=         542  TIME=0000/01/08-11:40:00 
+  *** STEP=         543  TIME=0000/01/08-12:00:00 
+ **** MAX.EDDY-WIND :   14.8203581707503       AT:          76          26
+          12
+  *** STEP=         544  TIME=0000/01/08-12:20:00 
+  *** STEP=         545  TIME=0000/01/08-12:40:00 
+  *** STEP=         546  TIME=0000/01/08-13:00:00 
+  *** STEP=         547  TIME=0000/01/08-13:20:00 
+  *** STEP=         548  TIME=0000/01/08-13:40:00 
+  *** STEP=         549  TIME=0000/01/08-14:00:00 
+ **** MAX.EDDY-WIND :   14.9246671467149       AT:          76          26
+          12
+  *** STEP=         550  TIME=0000/01/08-14:20:00 
+  *** STEP=         551  TIME=0000/01/08-14:40:00 
+  *** STEP=         552  TIME=0000/01/08-15:00:00 
+  *** STEP=         553  TIME=0000/01/08-15:20:00 
+  *** STEP=         554  TIME=0000/01/08-15:40:00 
+  *** STEP=         555  TIME=0000/01/08-16:00:00 
+ **** MAX.EDDY-WIND :   15.0279425773831       AT:          76          26
+          12
+  *** STEP=         556  TIME=0000/01/08-16:20:00 
+  *** STEP=         557  TIME=0000/01/08-16:40:00 
+  *** STEP=         558  TIME=0000/01/08-17:00:00 
+  *** STEP=         559  TIME=0000/01/08-17:20:00 
+  *** STEP=         560  TIME=0000/01/08-17:40:00 
+  *** STEP=         561  TIME=0000/01/08-18:00:00 
+ **** MAX.EDDY-WIND :   15.1294595631001       AT:          76          26
+          12
+  *** STEP=         562  TIME=0000/01/08-18:20:00 
+  *** STEP=         563  TIME=0000/01/08-18:40:00 
+  *** STEP=         564  TIME=0000/01/08-19:00:00 
+  *** STEP=         565  TIME=0000/01/08-19:20:00 
+  *** STEP=         566  TIME=0000/01/08-19:40:00 
+  *** STEP=         567  TIME=0000/01/08-20:00:00 
+ **** MAX.EDDY-WIND :   15.2301316336967       AT:          76          26
+          12
+  *** STEP=         568  TIME=0000/01/08-20:20:00 
+  *** STEP=         569  TIME=0000/01/08-20:40:00 
+  *** STEP=         570  TIME=0000/01/08-21:00:00 
+  *** STEP=         571  TIME=0000/01/08-21:20:00 
+  *** STEP=         572  TIME=0000/01/08-21:40:00 
+  *** STEP=         573  TIME=0000/01/08-22:00:00 
+ **** MAX.EDDY-WIND :   15.3302620364205       AT:          76          26
+          12
+  *** STEP=         574  TIME=0000/01/08-22:20:00 
+  *** STEP=         575  TIME=0000/01/08-22:40:00 
+  *** STEP=         576  TIME=0000/01/08-23:00:00 
+  *** STEP=         577  TIME=0000/01/08-23:20:00 
+  *** STEP=         578  TIME=0000/01/08-23:40:00 
+  *** OUTPUT U                TIME= 0000/01/08-12:00:00 
+  *** OUTPUT V                TIME= 0000/01/08-12:00:00 
+  *** OUTPUT T                TIME= 0000/01/08-12:00:00 
+  *** OUTPUT PS               TIME= 0000/01/08-12:00:00 
+  *** OUTPUT PSI              TIME= 0000/01/08-12:00:00 
+  *** OUTPUT CHI              TIME= 0000/01/08-12:00:00 
+  *** OUTPUT OMGF             TIME= 0000/01/08-12:00:00 
+  *** OUTPUT Z                TIME= 0000/01/08-12:00:00 
+  *** STEP=         579  TIME=0000/01/09-00:00:00 
+ **** MAX.EDDY-WIND :   15.4289188183563       AT:          76          26
+          12
+  *** STEP=         580  TIME=0000/01/09-00:20:00 
+  *** STEP=         581  TIME=0000/01/09-00:40:00 
+  *** STEP=         582  TIME=0000/01/09-01:00:00 
+  *** STEP=         583  TIME=0000/01/09-01:20:00 
+  *** STEP=         584  TIME=0000/01/09-01:40:00 
+  *** STEP=         585  TIME=0000/01/09-02:00:00 
+ **** MAX.EDDY-WIND :   15.5259313985500       AT:          76          26
+          12
+  *** STEP=         586  TIME=0000/01/09-02:20:00 
+  *** STEP=         587  TIME=0000/01/09-02:40:00 
+  *** STEP=         588  TIME=0000/01/09-03:00:00 
+  *** STEP=         589  TIME=0000/01/09-03:20:00 
+  *** STEP=         590  TIME=0000/01/09-03:40:00 
+  *** STEP=         591  TIME=0000/01/09-04:00:00 
+ **** MAX.EDDY-WIND :   15.6216643156871       AT:          76          26
+          12
+  *** STEP=         592  TIME=0000/01/09-04:20:00 
+  *** STEP=         593  TIME=0000/01/09-04:40:00 
+  *** STEP=         594  TIME=0000/01/09-05:00:00 
+  *** STEP=         595  TIME=0000/01/09-05:20:00 
+  *** STEP=         596  TIME=0000/01/09-05:40:00 
+  *** STEP=         597  TIME=0000/01/09-06:00:00 
+ **** MAX.EDDY-WIND :   15.7180787547048       AT:          75          26
+          12
+  *** STEP=         598  TIME=0000/01/09-06:20:00 
+  *** STEP=         599  TIME=0000/01/09-06:40:00 
+  *** STEP=         600  TIME=0000/01/09-07:00:00 
+  *** STEP=         601  TIME=0000/01/09-07:20:00 
+  *** STEP=         602  TIME=0000/01/09-07:40:00 
+  *** STEP=         603  TIME=0000/01/09-08:00:00 
+ **** MAX.EDDY-WIND :   15.8188871716973       AT:          75          26
+          12
+  *** STEP=         604  TIME=0000/01/09-08:20:00 
+  *** STEP=         605  TIME=0000/01/09-08:40:00 
+  *** STEP=         606  TIME=0000/01/09-09:00:00 
+  *** STEP=         607  TIME=0000/01/09-09:20:00 
+  *** STEP=         608  TIME=0000/01/09-09:40:00 
+  *** STEP=         609  TIME=0000/01/09-10:00:00 
+ **** MAX.EDDY-WIND :   15.9186110996456       AT:          75          26
+          12
+  *** STEP=         610  TIME=0000/01/09-10:20:00 
+  *** STEP=         611  TIME=0000/01/09-10:40:00 
+  *** STEP=         612  TIME=0000/01/09-11:00:00 
+  *** STEP=         613  TIME=0000/01/09-11:20:00 
+  *** STEP=         614  TIME=0000/01/09-11:40:00 
+  *** STEP=         615  TIME=0000/01/09-12:00:00 
+ **** MAX.EDDY-WIND :   16.0178273825555       AT:          75          26
+          12
+  *** STEP=         616  TIME=0000/01/09-12:20:00 
+  *** STEP=         617  TIME=0000/01/09-12:40:00 
+  *** STEP=         618  TIME=0000/01/09-13:00:00 
+  *** STEP=         619  TIME=0000/01/09-13:20:00 
+  *** STEP=         620  TIME=0000/01/09-13:40:00 
+  *** STEP=         621  TIME=0000/01/09-14:00:00 
+ **** MAX.EDDY-WIND :   16.1155774524109       AT:          75          26
+          12
+  *** STEP=         622  TIME=0000/01/09-14:20:00 
+  *** STEP=         623  TIME=0000/01/09-14:40:00 
+  *** STEP=         624  TIME=0000/01/09-15:00:00 
+  *** STEP=         625  TIME=0000/01/09-15:20:00 
+  *** STEP=         626  TIME=0000/01/09-15:40:00 
+  *** STEP=         627  TIME=0000/01/09-16:00:00 
+ **** MAX.EDDY-WIND :   16.2121055189490       AT:          75          26
+          12
+  *** STEP=         628  TIME=0000/01/09-16:20:00 
+  *** STEP=         629  TIME=0000/01/09-16:40:00 
+  *** STEP=         630  TIME=0000/01/09-17:00:00 
+  *** STEP=         631  TIME=0000/01/09-17:20:00 
+  *** STEP=         632  TIME=0000/01/09-17:40:00 
+  *** STEP=         633  TIME=0000/01/09-18:00:00 
+ **** MAX.EDDY-WIND :   16.3090422019455       AT:          75          26
+          12
+  *** STEP=         634  TIME=0000/01/09-18:20:00 
+  *** STEP=         635  TIME=0000/01/09-18:40:00 
+  *** STEP=         636  TIME=0000/01/09-19:00:00 
+  *** STEP=         637  TIME=0000/01/09-19:20:00 
+  *** STEP=         638  TIME=0000/01/09-19:40:00 
+  *** STEP=         639  TIME=0000/01/09-20:00:00 
+ **** MAX.EDDY-WIND :   16.4057401736411       AT:          75          26
+          12
+  *** STEP=         640  TIME=0000/01/09-20:20:00 
+  *** STEP=         641  TIME=0000/01/09-20:40:00 
+  *** STEP=         642  TIME=0000/01/09-21:00:00 
+  *** STEP=         643  TIME=0000/01/09-21:20:00 
+  *** STEP=         644  TIME=0000/01/09-21:40:00 
+  *** STEP=         645  TIME=0000/01/09-22:00:00 
+ **** MAX.EDDY-WIND :   16.5014638998822       AT:          75          26
+          12
+  *** STEP=         646  TIME=0000/01/09-22:20:00 
+  *** STEP=         647  TIME=0000/01/09-22:40:00 
+  *** STEP=         648  TIME=0000/01/09-23:00:00 
+  *** STEP=         649  TIME=0000/01/09-23:20:00 
+  *** STEP=         650  TIME=0000/01/09-23:40:00 
+  *** OUTPUT U                TIME= 0000/01/09-12:00:00 
+  *** OUTPUT V                TIME= 0000/01/09-12:00:00 
+  *** OUTPUT T                TIME= 0000/01/09-12:00:00 
+  *** OUTPUT PS               TIME= 0000/01/09-12:00:00 
+  *** OUTPUT PSI              TIME= 0000/01/09-12:00:00 
+  *** OUTPUT CHI              TIME= 0000/01/09-12:00:00 
+  *** OUTPUT OMGF             TIME= 0000/01/09-12:00:00 
+  *** OUTPUT Z                TIME= 0000/01/09-12:00:00 
+  *** STEP=         651  TIME=0000/01/10-00:00:00 
+ **** MAX.EDDY-WIND :   16.5967301203541       AT:          75          26
+          12
+  *** STEP=         652  TIME=0000/01/10-00:20:00 
+  *** STEP=         653  TIME=0000/01/10-00:40:00 
+  *** STEP=         654  TIME=0000/01/10-01:00:00 
+  *** STEP=         655  TIME=0000/01/10-01:20:00 
+  *** STEP=         656  TIME=0000/01/10-01:40:00 
+  *** STEP=         657  TIME=0000/01/10-02:00:00 
+ **** MAX.EDDY-WIND :   16.6906063106472       AT:          75          26
+          12
+  *** STEP=         658  TIME=0000/01/10-02:20:00 
+  *** STEP=         659  TIME=0000/01/10-02:40:00 
+  *** STEP=         660  TIME=0000/01/10-03:00:00 
+  *** STEP=         661  TIME=0000/01/10-03:20:00 
+  *** STEP=         662  TIME=0000/01/10-03:40:00 
+  *** STEP=         663  TIME=0000/01/10-04:00:00 
+ **** MAX.EDDY-WIND :   16.7830649658357       AT:          75          26
+          12
+  *** STEP=         664  TIME=0000/01/10-04:20:00 
+  *** STEP=         665  TIME=0000/01/10-04:40:00 
+  *** STEP=         666  TIME=0000/01/10-05:00:00 
+  *** STEP=         667  TIME=0000/01/10-05:20:00 
+  *** STEP=         668  TIME=0000/01/10-05:40:00 
+  *** STEP=         669  TIME=0000/01/10-06:00:00 
+ **** MAX.EDDY-WIND :   16.8746082764424       AT:          75          26
+          12
+  *** STEP=         670  TIME=0000/01/10-06:20:00 
+  *** STEP=         671  TIME=0000/01/10-06:40:00 
+  *** STEP=         672  TIME=0000/01/10-07:00:00 
+  *** STEP=         673  TIME=0000/01/10-07:20:00 
+  *** STEP=         674  TIME=0000/01/10-07:40:00 
+  *** STEP=         675  TIME=0000/01/10-08:00:00 
+ **** MAX.EDDY-WIND :   16.9656227862008       AT:          75          26
+          12
+  *** STEP=         676  TIME=0000/01/10-08:20:00 
+  *** STEP=         677  TIME=0000/01/10-08:40:00 
+  *** STEP=         678  TIME=0000/01/10-09:00:00 
+  *** STEP=         679  TIME=0000/01/10-09:20:00 
+  *** STEP=         680  TIME=0000/01/10-09:40:00 
+  *** STEP=         681  TIME=0000/01/10-10:00:00 
+ **** MAX.EDDY-WIND :   17.0560917331924       AT:          75          26
+          12
+  *** STEP=         682  TIME=0000/01/10-10:20:00 
+  *** STEP=         683  TIME=0000/01/10-10:40:00 
+  *** STEP=         684  TIME=0000/01/10-11:00:00 
+  *** STEP=         685  TIME=0000/01/10-11:20:00 
+  *** STEP=         686  TIME=0000/01/10-11:40:00 
+  *** STEP=         687  TIME=0000/01/10-12:00:00 
+ **** MAX.EDDY-WIND :   17.1447080362532       AT:          75          26
+          12
+  *** STEP=         688  TIME=0000/01/10-12:20:00 
+  *** STEP=         689  TIME=0000/01/10-12:40:00 
+  *** STEP=         690  TIME=0000/01/10-13:00:00 
+  *** STEP=         691  TIME=0000/01/10-13:20:00 
+  *** STEP=         692  TIME=0000/01/10-13:40:00 
+  *** STEP=         693  TIME=0000/01/10-14:00:00 
+ **** MAX.EDDY-WIND :   17.2316587383711       AT:          75          26
+          12
+  *** STEP=         694  TIME=0000/01/10-14:20:00 
+  *** STEP=         695  TIME=0000/01/10-14:40:00 
+  *** STEP=         696  TIME=0000/01/10-15:00:00 
+  *** STEP=         697  TIME=0000/01/10-15:20:00 
+  *** STEP=         698  TIME=0000/01/10-15:40:00 
+  *** STEP=         699  TIME=0000/01/10-16:00:00 
+ **** MAX.EDDY-WIND :   17.3173226947004       AT:          75          26
+          12
+  *** STEP=         700  TIME=0000/01/10-16:20:00 
+  *** STEP=         701  TIME=0000/01/10-16:40:00 
+  *** STEP=         702  TIME=0000/01/10-17:00:00 
+  *** STEP=         703  TIME=0000/01/10-17:20:00 
+  *** STEP=         704  TIME=0000/01/10-17:40:00 
+  *** STEP=         705  TIME=0000/01/10-18:00:00 
+ **** MAX.EDDY-WIND :   17.4019011660864       AT:          75          26
+          12
+  *** STEP=         706  TIME=0000/01/10-18:20:00 
+  *** STEP=         707  TIME=0000/01/10-18:40:00 
+  *** STEP=         708  TIME=0000/01/10-19:00:00 
+  *** STEP=         709  TIME=0000/01/10-19:20:00 
+  *** STEP=         710  TIME=0000/01/10-19:40:00 
+  *** STEP=         711  TIME=0000/01/10-20:00:00 
+ **** MAX.EDDY-WIND :   17.4852068683441       AT:          75          26
+          12
+  *** STEP=         712  TIME=0000/01/10-20:20:00 
+  *** STEP=         713  TIME=0000/01/10-20:40:00 
+  *** STEP=         714  TIME=0000/01/10-21:00:00 
+  *** STEP=         715  TIME=0000/01/10-21:20:00 
+  *** STEP=         716  TIME=0000/01/10-21:40:00 
+  *** STEP=         717  TIME=0000/01/10-22:00:00 
+ **** MAX.EDDY-WIND :   17.5667618109453       AT:          75          26
+          12
+  *** STEP=         718  TIME=0000/01/10-22:20:00 
+  *** STEP=         719  TIME=0000/01/10-22:40:00 
+  *** STEP=         720  TIME=0000/01/10-23:00:00 
+  *** STEP=         721  TIME=0000/01/10-23:20:00 
+  *** STEP=         722  TIME=0000/01/10-23:40:00 
+  *** OUTPUT U                TIME= 0000/01/10-12:00:00 
+  *** OUTPUT V                TIME= 0000/01/10-12:00:00 
+  *** OUTPUT T                TIME= 0000/01/10-12:00:00 
+  *** OUTPUT PS               TIME= 0000/01/10-12:00:00 
+  *** OUTPUT PSI              TIME= 0000/01/10-12:00:00 
+  *** OUTPUT CHI              TIME= 0000/01/10-12:00:00 
+  *** OUTPUT OMGF             TIME= 0000/01/10-12:00:00 
+  *** OUTPUT Z                TIME= 0000/01/10-12:00:00 
+  *** STEP=         723  TIME=0000/01/11-00:00:00 
+ **** MAX.EDDY-WIND :   17.6472453574191       AT:          75          26
+          12
+  *** STEP=         724  TIME=0000/01/11-00:20:00 
+  *** STEP=         725  TIME=0000/01/11-00:40:00 
+  *** STEP=         726  TIME=0000/01/11-01:00:00 
+  *** STEP=         727  TIME=0000/01/11-01:20:00 
+  *** STEP=         728  TIME=0000/01/11-01:40:00 
+  *** STEP=         729  TIME=0000/01/11-02:00:00 
+ **** MAX.EDDY-WIND :   17.7269769294013       AT:          75          26
+          12
+  *** STEP=         730  TIME=0000/01/11-02:20:00 
+  *** STEP=         731  TIME=0000/01/11-02:40:00 
+  *** STEP=         732  TIME=0000/01/11-03:00:00 
+  *** STEP=         733  TIME=0000/01/11-03:20:00 
+  *** STEP=         734  TIME=0000/01/11-03:40:00 
+  *** STEP=         735  TIME=0000/01/11-04:00:00 
+ **** MAX.EDDY-WIND :   17.8064828407657       AT:          75          26
+          12
+  *** STEP=         736  TIME=0000/01/11-04:20:00 
+  *** STEP=         737  TIME=0000/01/11-04:40:00 
+  *** STEP=         738  TIME=0000/01/11-05:00:00 
+  *** STEP=         739  TIME=0000/01/11-05:20:00 
+  *** STEP=         740  TIME=0000/01/11-05:40:00 
+  *** STEP=         741  TIME=0000/01/11-06:00:00 
+ **** MAX.EDDY-WIND :   17.8855936032964       AT:          75          26
+          12
+  *** STEP=         742  TIME=0000/01/11-06:20:00 
+  *** STEP=         743  TIME=0000/01/11-06:40:00 
+  *** STEP=         744  TIME=0000/01/11-07:00:00 
+  *** STEP=         745  TIME=0000/01/11-07:20:00 
+  *** STEP=         746  TIME=0000/01/11-07:40:00 
+  *** STEP=         747  TIME=0000/01/11-08:00:00 
+ **** MAX.EDDY-WIND :   17.9637691372228       AT:          75          26
+          12
+  *** STEP=         748  TIME=0000/01/11-08:20:00 
+  *** STEP=         749  TIME=0000/01/11-08:40:00 
+  *** STEP=         750  TIME=0000/01/11-09:00:00 
+  *** STEP=         751  TIME=0000/01/11-09:20:00 
+  *** STEP=         752  TIME=0000/01/11-09:40:00 
+  *** STEP=         753  TIME=0000/01/11-10:00:00 
+ **** MAX.EDDY-WIND :   18.0405747308956       AT:          75          26
+          12
+  *** STEP=         754  TIME=0000/01/11-10:20:00 
+  *** STEP=         755  TIME=0000/01/11-10:40:00 
+  *** STEP=         756  TIME=0000/01/11-11:00:00 
+  *** STEP=         757  TIME=0000/01/11-11:20:00 
+  *** STEP=         758  TIME=0000/01/11-11:40:00 
+  *** STEP=         759  TIME=0000/01/11-12:00:00 
+ **** MAX.EDDY-WIND :   18.1161809543533       AT:          75          26
+          12
+  *** STEP=         760  TIME=0000/01/11-12:20:00 
+  *** STEP=         761  TIME=0000/01/11-12:40:00 
+  *** STEP=         762  TIME=0000/01/11-13:00:00 
+  *** STEP=         763  TIME=0000/01/11-13:20:00 
+  *** STEP=         764  TIME=0000/01/11-13:40:00 
+  *** STEP=         765  TIME=0000/01/11-14:00:00 
+ **** MAX.EDDY-WIND :   18.1905366177042       AT:          75          26
+          12
+  *** STEP=         766  TIME=0000/01/11-14:20:00 
+  *** STEP=         767  TIME=0000/01/11-14:40:00 
+  *** STEP=         768  TIME=0000/01/11-15:00:00 
+  *** STEP=         769  TIME=0000/01/11-15:20:00 
+  *** STEP=         770  TIME=0000/01/11-15:40:00 
+  *** STEP=         771  TIME=0000/01/11-16:00:00 
+ **** MAX.EDDY-WIND :   18.2641014503437       AT:          75          26
+          12
+  *** STEP=         772  TIME=0000/01/11-16:20:00 
+  *** STEP=         773  TIME=0000/01/11-16:40:00 
+  *** STEP=         774  TIME=0000/01/11-17:00:00 
+  *** STEP=         775  TIME=0000/01/11-17:20:00 
+  *** STEP=         776  TIME=0000/01/11-17:40:00 
+  *** STEP=         777  TIME=0000/01/11-18:00:00 
+ **** MAX.EDDY-WIND :   18.3372877208940       AT:          75          26
+          12
+  *** STEP=         778  TIME=0000/01/11-18:20:00 
+  *** STEP=         779  TIME=0000/01/11-18:40:00 
+  *** STEP=         780  TIME=0000/01/11-19:00:00 
+  *** STEP=         781  TIME=0000/01/11-19:20:00 
+  *** STEP=         782  TIME=0000/01/11-19:40:00 
+  *** STEP=         783  TIME=0000/01/11-20:00:00 
+ **** MAX.EDDY-WIND :   18.4097845565130       AT:          75          26
+          12
+  *** STEP=         784  TIME=0000/01/11-20:20:00 
+  *** STEP=         785  TIME=0000/01/11-20:40:00 
+  *** STEP=         786  TIME=0000/01/11-21:00:00 
+  *** STEP=         787  TIME=0000/01/11-21:20:00 
+  *** STEP=         788  TIME=0000/01/11-21:40:00 
+  *** STEP=         789  TIME=0000/01/11-22:00:00 
+ **** MAX.EDDY-WIND :   18.4813652364876       AT:          75          26
+          12
+  *** STEP=         790  TIME=0000/01/11-22:20:00 
+  *** STEP=         791  TIME=0000/01/11-22:40:00 
+  *** STEP=         792  TIME=0000/01/11-23:00:00 
+  *** STEP=         793  TIME=0000/01/11-23:20:00 
+  *** STEP=         794  TIME=0000/01/11-23:40:00 
+  *** OUTPUT U                TIME= 0000/01/11-12:00:00 
+  *** OUTPUT V                TIME= 0000/01/11-12:00:00 
+  *** OUTPUT T                TIME= 0000/01/11-12:00:00 
+  *** OUTPUT PS               TIME= 0000/01/11-12:00:00 
+  *** OUTPUT PSI              TIME= 0000/01/11-12:00:00 
+  *** OUTPUT CHI              TIME= 0000/01/11-12:00:00 
+  *** OUTPUT OMGF             TIME= 0000/01/11-12:00:00 
+  *** OUTPUT Z                TIME= 0000/01/11-12:00:00 
+  *** STEP=         795  TIME=0000/01/12-00:00:00 
+ **** MAX.EDDY-WIND :   18.5520127286137       AT:          75          26
+          12
+  *** STEP=         796  TIME=0000/01/12-00:20:00 
+  *** STEP=         797  TIME=0000/01/12-00:40:00 
+  *** STEP=         798  TIME=0000/01/12-01:00:00 
+  *** STEP=         799  TIME=0000/01/12-01:20:00 
+  *** STEP=         800  TIME=0000/01/12-01:40:00 
+  *** STEP=         801  TIME=0000/01/12-02:00:00 
+ **** MAX.EDDY-WIND :   18.6215902821373       AT:          75          26
+          12
+  *** STEP=         802  TIME=0000/01/12-02:20:00 
+  *** STEP=         803  TIME=0000/01/12-02:40:00 
+  *** STEP=         804  TIME=0000/01/12-03:00:00 
+  *** STEP=         805  TIME=0000/01/12-03:20:00 
+  *** STEP=         806  TIME=0000/01/12-03:40:00 
+  *** STEP=         807  TIME=0000/01/12-04:00:00 
+ **** MAX.EDDY-WIND :   18.6904128321178       AT:          75          26
+          12
+  *** STEP=         808  TIME=0000/01/12-04:20:00 
+  *** STEP=         809  TIME=0000/01/12-04:40:00 
+  *** STEP=         810  TIME=0000/01/12-05:00:00 
+  *** STEP=         811  TIME=0000/01/12-05:20:00 
+  *** STEP=         812  TIME=0000/01/12-05:40:00 
+  *** STEP=         813  TIME=0000/01/12-06:00:00 
+ **** MAX.EDDY-WIND :   18.7583902364236       AT:          75          26
+          12
+  *** STEP=         814  TIME=0000/01/12-06:20:00 
+  *** STEP=         815  TIME=0000/01/12-06:40:00 
+  *** STEP=         816  TIME=0000/01/12-07:00:00 
+  *** STEP=         817  TIME=0000/01/12-07:20:00 
+  *** STEP=         818  TIME=0000/01/12-07:40:00 
+  *** STEP=         819  TIME=0000/01/12-08:00:00 
+ **** MAX.EDDY-WIND :   18.8250990617398       AT:          75          26
+          12
+  *** STEP=         820  TIME=0000/01/12-08:20:00 
+  *** STEP=         821  TIME=0000/01/12-08:40:00 
+  *** STEP=         822  TIME=0000/01/12-09:00:00 
+  *** STEP=         823  TIME=0000/01/12-09:20:00 
+  *** STEP=         824  TIME=0000/01/12-09:40:00 
+  *** STEP=         825  TIME=0000/01/12-10:00:00 
+ **** MAX.EDDY-WIND :   18.8905192245109       AT:          75          26
+          12
+  *** STEP=         826  TIME=0000/01/12-10:20:00 
+  *** STEP=         827  TIME=0000/01/12-10:40:00 
+  *** STEP=         828  TIME=0000/01/12-11:00:00 
+  *** STEP=         829  TIME=0000/01/12-11:20:00 
+  *** STEP=         830  TIME=0000/01/12-11:40:00 
+  *** STEP=         831  TIME=0000/01/12-12:00:00 
+ **** MAX.EDDY-WIND :   18.9552490183615       AT:          75          26
+          12
+  *** STEP=         832  TIME=0000/01/12-12:20:00 
+  *** STEP=         833  TIME=0000/01/12-12:40:00 
+  *** STEP=         834  TIME=0000/01/12-13:00:00 
+  *** STEP=         835  TIME=0000/01/12-13:20:00 
+  *** STEP=         836  TIME=0000/01/12-13:40:00 
+  *** STEP=         837  TIME=0000/01/12-14:00:00 
+ **** MAX.EDDY-WIND :   19.0194226777916       AT:          75          26
+          12
+  *** STEP=         838  TIME=0000/01/12-14:20:00 
+  *** STEP=         839  TIME=0000/01/12-14:40:00 
+  *** STEP=         840  TIME=0000/01/12-15:00:00 
+  *** STEP=         841  TIME=0000/01/12-15:20:00 
+  *** STEP=         842  TIME=0000/01/12-15:40:00 
+  *** STEP=         843  TIME=0000/01/12-16:00:00 
+ **** MAX.EDDY-WIND :   19.0825772096535       AT:          75          26
+          12
+  *** STEP=         844  TIME=0000/01/12-16:20:00 
+  *** STEP=         845  TIME=0000/01/12-16:40:00 
+  *** STEP=         846  TIME=0000/01/12-17:00:00 
+  *** STEP=         847  TIME=0000/01/12-17:20:00 
+  *** STEP=         848  TIME=0000/01/12-17:40:00 
+  *** STEP=         849  TIME=0000/01/12-18:00:00 
+ **** MAX.EDDY-WIND :   19.1448434377054       AT:          75          26
+          12
+  *** STEP=         850  TIME=0000/01/12-18:20:00 
+  *** STEP=         851  TIME=0000/01/12-18:40:00 
+  *** STEP=         852  TIME=0000/01/12-19:00:00 
+  *** STEP=         853  TIME=0000/01/12-19:20:00 
+  *** STEP=         854  TIME=0000/01/12-19:40:00 
+  *** STEP=         855  TIME=0000/01/12-20:00:00 
+ **** MAX.EDDY-WIND :   19.2062976051512       AT:          75          26
+          12
+  *** STEP=         856  TIME=0000/01/12-20:20:00 
+  *** STEP=         857  TIME=0000/01/12-20:40:00 
+  *** STEP=         858  TIME=0000/01/12-21:00:00 
+  *** STEP=         859  TIME=0000/01/12-21:20:00 
+  *** STEP=         860  TIME=0000/01/12-21:40:00 
+  *** STEP=         861  TIME=0000/01/12-22:00:00 
+ **** MAX.EDDY-WIND :   19.2667419000385       AT:          75          26
+          12
+  *** STEP=         862  TIME=0000/01/12-22:20:00 
+  *** STEP=         863  TIME=0000/01/12-22:40:00 
+  *** STEP=         864  TIME=0000/01/12-23:00:00 
+  *** STEP=         865  TIME=0000/01/12-23:20:00 
+  *** STEP=         866  TIME=0000/01/12-23:40:00 
+  *** OUTPUT U                TIME= 0000/01/12-12:00:00 
+  *** OUTPUT V                TIME= 0000/01/12-12:00:00 
+  *** OUTPUT T                TIME= 0000/01/12-12:00:00 
+  *** OUTPUT PS               TIME= 0000/01/12-12:00:00 
+  *** OUTPUT PSI              TIME= 0000/01/12-12:00:00 
+  *** OUTPUT CHI              TIME= 0000/01/12-12:00:00 
+  *** OUTPUT OMGF             TIME= 0000/01/12-12:00:00 
+  *** OUTPUT Z                TIME= 0000/01/12-12:00:00 
+  *** STEP=         867  TIME=0000/01/13-00:00:00 
+ **** MAX.EDDY-WIND :   19.3257436153045       AT:          75          26
+          12
+  *** STEP=         868  TIME=0000/01/13-00:20:00 
+  *** STEP=         869  TIME=0000/01/13-00:40:00 
+  *** STEP=         870  TIME=0000/01/13-01:00:00 
+  *** STEP=         871  TIME=0000/01/13-01:20:00 
+  *** STEP=         872  TIME=0000/01/13-01:40:00 
+  *** STEP=         873  TIME=0000/01/13-02:00:00 
+ **** MAX.EDDY-WIND :   19.3835344953210       AT:          75          26
+          12
+  *** STEP=         874  TIME=0000/01/13-02:20:00 
+  *** STEP=         875  TIME=0000/01/13-02:40:00 
+  *** STEP=         876  TIME=0000/01/13-03:00:00 
+  *** STEP=         877  TIME=0000/01/13-03:20:00 
+  *** STEP=         878  TIME=0000/01/13-03:40:00 
+  *** STEP=         879  TIME=0000/01/13-04:00:00 
+ **** MAX.EDDY-WIND :   19.4406057426643       AT:          75          26
+          12
+  *** STEP=         880  TIME=0000/01/13-04:20:00 
+  *** STEP=         881  TIME=0000/01/13-04:40:00 
+  *** STEP=         882  TIME=0000/01/13-05:00:00 
+  *** STEP=         883  TIME=0000/01/13-05:20:00 
+  *** STEP=         884  TIME=0000/01/13-05:40:00 
+  *** STEP=         885  TIME=0000/01/13-06:00:00 
+ **** MAX.EDDY-WIND :   19.4972597092170       AT:          75          26
+          12
+  *** STEP=         886  TIME=0000/01/13-06:20:00 
+  *** STEP=         887  TIME=0000/01/13-06:40:00 
+  *** STEP=         888  TIME=0000/01/13-07:00:00 
+  *** STEP=         889  TIME=0000/01/13-07:20:00 
+  *** STEP=         890  TIME=0000/01/13-07:40:00 
+  *** STEP=         891  TIME=0000/01/13-08:00:00 
+ **** MAX.EDDY-WIND :   19.5533966985749       AT:          75          26
+          12
+  *** STEP=         892  TIME=0000/01/13-08:20:00 
+  *** STEP=         893  TIME=0000/01/13-08:40:00 
+  *** STEP=         894  TIME=0000/01/13-09:00:00 
+  *** STEP=         895  TIME=0000/01/13-09:20:00 
+  *** STEP=         896  TIME=0000/01/13-09:40:00 
+  *** STEP=         897  TIME=0000/01/13-10:00:00 
+ **** MAX.EDDY-WIND :   19.6086454230565       AT:          75          26
+          12
+  *** STEP=         898  TIME=0000/01/13-10:20:00 
+  *** STEP=         899  TIME=0000/01/13-10:40:00 
+  *** STEP=         900  TIME=0000/01/13-11:00:00 
+  *** STEP=         901  TIME=0000/01/13-11:20:00 
+  *** STEP=         902  TIME=0000/01/13-11:40:00 
+  *** STEP=         903  TIME=0000/01/13-12:00:00 
+ **** MAX.EDDY-WIND :   19.6629280699318       AT:          75          26
+          12
+  *** STEP=         904  TIME=0000/01/13-12:20:00 
+  *** STEP=         905  TIME=0000/01/13-12:40:00 
+  *** STEP=         906  TIME=0000/01/13-13:00:00 
+  *** STEP=         907  TIME=0000/01/13-13:20:00 
+  *** STEP=         908  TIME=0000/01/13-13:40:00 
+  *** STEP=         909  TIME=0000/01/13-14:00:00 
+ **** MAX.EDDY-WIND :   19.7165913163753       AT:          75          26
+          12
+  *** STEP=         910  TIME=0000/01/13-14:20:00 
+  *** STEP=         911  TIME=0000/01/13-14:40:00 
+  *** STEP=         912  TIME=0000/01/13-15:00:00 
+  *** STEP=         913  TIME=0000/01/13-15:20:00 
+  *** STEP=         914  TIME=0000/01/13-15:40:00 
+  *** STEP=         915  TIME=0000/01/13-16:00:00 
+ **** MAX.EDDY-WIND :   19.7697373929379       AT:          75          26
+          12
+  *** STEP=         916  TIME=0000/01/13-16:20:00 
+  *** STEP=         917  TIME=0000/01/13-16:40:00 
+  *** STEP=         918  TIME=0000/01/13-17:00:00 
+  *** STEP=         919  TIME=0000/01/13-17:20:00 
+  *** STEP=         920  TIME=0000/01/13-17:40:00 
+  *** STEP=         921  TIME=0000/01/13-18:00:00 
+ **** MAX.EDDY-WIND :   19.8219985033081       AT:          75          26
+          12
+  *** STEP=         922  TIME=0000/01/13-18:20:00 
+  *** STEP=         923  TIME=0000/01/13-18:40:00 
+  *** STEP=         924  TIME=0000/01/13-19:00:00 
+  *** STEP=         925  TIME=0000/01/13-19:20:00 
+  *** STEP=         926  TIME=0000/01/13-19:40:00 
+  *** STEP=         927  TIME=0000/01/13-20:00:00 
+ **** MAX.EDDY-WIND :   19.8731895412181       AT:          75          26
+          12
+  *** STEP=         928  TIME=0000/01/13-20:20:00 
+  *** STEP=         929  TIME=0000/01/13-20:40:00 
+  *** STEP=         930  TIME=0000/01/13-21:00:00 
+  *** STEP=         931  TIME=0000/01/13-21:20:00 
+  *** STEP=         932  TIME=0000/01/13-21:40:00 
+  *** STEP=         933  TIME=0000/01/13-22:00:00 
+ **** MAX.EDDY-WIND :   19.9236674634486       AT:          75          26
+          12
+  *** STEP=         934  TIME=0000/01/13-22:20:00 
+  *** STEP=         935  TIME=0000/01/13-22:40:00 
+  *** STEP=         936  TIME=0000/01/13-23:00:00 
+  *** STEP=         937  TIME=0000/01/13-23:20:00 
+  *** STEP=         938  TIME=0000/01/13-23:40:00 
+  *** OUTPUT U                TIME= 0000/01/13-12:00:00 
+  *** OUTPUT V                TIME= 0000/01/13-12:00:00 
+  *** OUTPUT T                TIME= 0000/01/13-12:00:00 
+  *** OUTPUT PS               TIME= 0000/01/13-12:00:00 
+  *** OUTPUT PSI              TIME= 0000/01/13-12:00:00 
+  *** OUTPUT CHI              TIME= 0000/01/13-12:00:00 
+  *** OUTPUT OMGF             TIME= 0000/01/13-12:00:00 
+  *** OUTPUT Z                TIME= 0000/01/13-12:00:00 
+  *** STEP=         939  TIME=0000/01/14-00:00:00 
+ **** MAX.EDDY-WIND :   19.9736871745741       AT:          75          26
+          12
+  *** STEP=         940  TIME=0000/01/14-00:20:00 
+  *** STEP=         941  TIME=0000/01/14-00:40:00 
+  *** STEP=         942  TIME=0000/01/14-01:00:00 
+  *** STEP=         943  TIME=0000/01/14-01:20:00 
+  *** STEP=         944  TIME=0000/01/14-01:40:00 
+  *** STEP=         945  TIME=0000/01/14-02:00:00 
+ **** MAX.EDDY-WIND :   20.0229984470898       AT:          75          26
+          12
+  *** STEP=         946  TIME=0000/01/14-02:20:00 
+  *** STEP=         947  TIME=0000/01/14-02:40:00 
+  *** STEP=         948  TIME=0000/01/14-03:00:00 
+  *** STEP=         949  TIME=0000/01/14-03:20:00 
+  *** STEP=         950  TIME=0000/01/14-03:40:00 
+  *** STEP=         951  TIME=0000/01/14-04:00:00 
+ **** MAX.EDDY-WIND :   20.0713724292672       AT:          75          26
+          12
+  *** STEP=         952  TIME=0000/01/14-04:20:00 
+  *** STEP=         953  TIME=0000/01/14-04:40:00 
+  *** STEP=         954  TIME=0000/01/14-05:00:00 
+  *** STEP=         955  TIME=0000/01/14-05:20:00 
+  *** STEP=         956  TIME=0000/01/14-05:40:00 
+  *** STEP=         957  TIME=0000/01/14-06:00:00 
+ **** MAX.EDDY-WIND :   20.1189386241225       AT:          75          26
+          12
+  *** STEP=         958  TIME=0000/01/14-06:20:00 
+  *** STEP=         959  TIME=0000/01/14-06:40:00 
+  *** STEP=         960  TIME=0000/01/14-07:00:00 
+  *** STEP=         961  TIME=0000/01/14-07:20:00 
+  *** STEP=         962  TIME=0000/01/14-07:40:00 
+  *** STEP=         963  TIME=0000/01/14-08:00:00 
+ **** MAX.EDDY-WIND :   20.1655609020732       AT:          75          26
+          12
+  *** STEP=         964  TIME=0000/01/14-08:20:00 
+  *** STEP=         965  TIME=0000/01/14-08:40:00 
+  *** STEP=         966  TIME=0000/01/14-09:00:00 
+  *** STEP=         967  TIME=0000/01/14-09:20:00 
+  *** STEP=         968  TIME=0000/01/14-09:40:00 
+  *** STEP=         969  TIME=0000/01/14-10:00:00 
+ **** MAX.EDDY-WIND :   20.2109176033437       AT:          75          26
+          12
+  *** STEP=         970  TIME=0000/01/14-10:20:00 
+  *** STEP=         971  TIME=0000/01/14-10:40:00 
+  *** STEP=         972  TIME=0000/01/14-11:00:00 
+  *** STEP=         973  TIME=0000/01/14-11:20:00 
+  *** STEP=         974  TIME=0000/01/14-11:40:00 
+  *** STEP=         975  TIME=0000/01/14-12:00:00 
+ **** MAX.EDDY-WIND :   20.2551258429238       AT:          75          26
+          12
+  *** STEP=         976  TIME=0000/01/14-12:20:00 
+  *** STEP=         977  TIME=0000/01/14-12:40:00 
+  *** STEP=         978  TIME=0000/01/14-13:00:00 
+  *** STEP=         979  TIME=0000/01/14-13:20:00 
+  *** STEP=         980  TIME=0000/01/14-13:40:00 
+  *** STEP=         981  TIME=0000/01/14-14:00:00 
+ **** MAX.EDDY-WIND :   20.2988637961214       AT:          75          26
+          12
+  *** STEP=         982  TIME=0000/01/14-14:20:00 
+  *** STEP=         983  TIME=0000/01/14-14:40:00 
+  *** STEP=         984  TIME=0000/01/14-15:00:00 
+  *** STEP=         985  TIME=0000/01/14-15:20:00 
+  *** STEP=         986  TIME=0000/01/14-15:40:00 
+  *** STEP=         987  TIME=0000/01/14-16:00:00 
+ **** MAX.EDDY-WIND :   20.3422832958145       AT:          75          26
+          12
+  *** STEP=         988  TIME=0000/01/14-16:20:00 
+  *** STEP=         989  TIME=0000/01/14-16:40:00 
+  *** STEP=         990  TIME=0000/01/14-17:00:00 
+  *** STEP=         991  TIME=0000/01/14-17:20:00 
+  *** STEP=         992  TIME=0000/01/14-17:40:00 
+  *** STEP=         993  TIME=0000/01/14-18:00:00 
+ **** MAX.EDDY-WIND :   20.3849365562873       AT:          75          26
+          12
+  *** STEP=         994  TIME=0000/01/14-18:20:00 
+  *** STEP=         995  TIME=0000/01/14-18:40:00 
+  *** STEP=         996  TIME=0000/01/14-19:00:00 
+  *** STEP=         997  TIME=0000/01/14-19:20:00 
+  *** STEP=         998  TIME=0000/01/14-19:40:00 
+  *** STEP=         999  TIME=0000/01/14-20:00:00 
+ **** MAX.EDDY-WIND :   20.4267750386236       AT:          75          26
+          12
+  *** STEP=        1000  TIME=0000/01/14-20:20:00 
+  *** STEP=        1001  TIME=0000/01/14-20:40:00 
+  *** STEP=        1002  TIME=0000/01/14-21:00:00 
+  *** STEP=        1003  TIME=0000/01/14-21:20:00 
+  *** STEP=        1004  TIME=0000/01/14-21:40:00 
+  *** STEP=        1005  TIME=0000/01/14-22:00:00 
+ **** MAX.EDDY-WIND :   20.4678135632617       AT:          75          26
+          12
+  *** STEP=        1006  TIME=0000/01/14-22:20:00 
+  *** STEP=        1007  TIME=0000/01/14-22:40:00 
+  *** STEP=        1008  TIME=0000/01/14-23:00:00 
+  *** STEP=        1009  TIME=0000/01/14-23:20:00 
+  *** STEP=        1010  TIME=0000/01/14-23:40:00 
+  *** OUTPUT U                TIME= 0000/01/14-12:00:00 
+  *** OUTPUT V                TIME= 0000/01/14-12:00:00 
+  *** OUTPUT T                TIME= 0000/01/14-12:00:00 
+  *** OUTPUT PS               TIME= 0000/01/14-12:00:00 
+  *** OUTPUT PSI              TIME= 0000/01/14-12:00:00 
+  *** OUTPUT CHI              TIME= 0000/01/14-12:00:00 
+  *** OUTPUT OMGF             TIME= 0000/01/14-12:00:00 
+  *** OUTPUT Z                TIME= 0000/01/14-12:00:00 
+  *** STEP=        1011  TIME=0000/01/15-00:00:00 
+ **** MAX.EDDY-WIND :   20.5081788471652       AT:          75          26
+          12
+  *** STEP=        1012  TIME=0000/01/15-00:20:00 
+  *** STEP=        1013  TIME=0000/01/15-00:40:00 
+  *** STEP=        1014  TIME=0000/01/15-01:00:00 
+  *** STEP=        1015  TIME=0000/01/15-01:20:00 
+  *** STEP=        1016  TIME=0000/01/15-01:40:00 
+  *** STEP=        1017  TIME=0000/01/15-02:00:00 
+ **** MAX.EDDY-WIND :   20.5482657627601       AT:          75          26
+          12
+  *** STEP=        1018  TIME=0000/01/15-02:20:00 
+  *** STEP=        1019  TIME=0000/01/15-02:40:00 
+  *** STEP=        1020  TIME=0000/01/15-03:00:00 
+  *** STEP=        1021  TIME=0000/01/15-03:20:00 
+  *** STEP=        1022  TIME=0000/01/15-03:40:00 
+  *** STEP=        1023  TIME=0000/01/15-04:00:00 
+ **** MAX.EDDY-WIND :   20.5881918382450       AT:          75          26
+          12
+  *** STEP=        1024  TIME=0000/01/15-04:20:00 
+  *** STEP=        1025  TIME=0000/01/15-04:40:00 
+  *** STEP=        1026  TIME=0000/01/15-05:00:00 
+  *** STEP=        1027  TIME=0000/01/15-05:20:00 
+  *** STEP=        1028  TIME=0000/01/15-05:40:00 
+  *** STEP=        1029  TIME=0000/01/15-06:00:00 
+ **** MAX.EDDY-WIND :   20.6276229987088       AT:          75          26
+          12
+  *** STEP=        1030  TIME=0000/01/15-06:20:00 
+  *** STEP=        1031  TIME=0000/01/15-06:40:00 
+  *** STEP=        1032  TIME=0000/01/15-07:00:00 
+  *** STEP=        1033  TIME=0000/01/15-07:20:00 
+  *** STEP=        1034  TIME=0000/01/15-07:40:00 
+  *** STEP=        1035  TIME=0000/01/15-08:00:00 
+ **** MAX.EDDY-WIND :   20.6664936057692       AT:          75          26
+          12
+  *** STEP=        1036  TIME=0000/01/15-08:20:00 
+  *** STEP=        1037  TIME=0000/01/15-08:40:00 
+  *** STEP=        1038  TIME=0000/01/15-09:00:00 
+  *** STEP=        1039  TIME=0000/01/15-09:20:00 
+  *** STEP=        1040  TIME=0000/01/15-09:40:00 
+  *** STEP=        1041  TIME=0000/01/15-10:00:00 
+ **** MAX.EDDY-WIND :   20.7049746278904       AT:          75          26
+          12
+  *** STEP=        1042  TIME=0000/01/15-10:20:00 
+  *** STEP=        1043  TIME=0000/01/15-10:40:00 
+  *** STEP=        1044  TIME=0000/01/15-11:00:00 
+  *** STEP=        1045  TIME=0000/01/15-11:20:00 
+  *** STEP=        1046  TIME=0000/01/15-11:40:00 
+  *** STEP=        1047  TIME=0000/01/15-12:00:00 
+ **** MAX.EDDY-WIND :   20.7432236843909       AT:          75          26
+          12
+  *** STEP=        1048  TIME=0000/01/15-12:20:00 
+  *** STEP=        1049  TIME=0000/01/15-12:40:00 
+  *** STEP=        1050  TIME=0000/01/15-13:00:00 
+  *** STEP=        1051  TIME=0000/01/15-13:20:00 
+  *** STEP=        1052  TIME=0000/01/15-13:40:00 
+  *** STEP=        1053  TIME=0000/01/15-14:00:00 
+ **** MAX.EDDY-WIND :   20.7811273628445       AT:          75          26
+          12
+  *** STEP=        1054  TIME=0000/01/15-14:20:00 
+  *** STEP=        1055  TIME=0000/01/15-14:40:00 
+  *** STEP=        1056  TIME=0000/01/15-15:00:00 
+  *** STEP=        1057  TIME=0000/01/15-15:20:00 
+  *** STEP=        1058  TIME=0000/01/15-15:40:00 
+  *** STEP=        1059  TIME=0000/01/15-16:00:00 
+ **** MAX.EDDY-WIND :   20.8182660730319       AT:          75          26
+          12
+  *** STEP=        1060  TIME=0000/01/15-16:20:00 
+  *** STEP=        1061  TIME=0000/01/15-16:40:00 
+  *** STEP=        1062  TIME=0000/01/15-17:00:00 
+  *** STEP=        1063  TIME=0000/01/15-17:20:00 
+  *** STEP=        1064  TIME=0000/01/15-17:40:00 
+  *** STEP=        1065  TIME=0000/01/15-18:00:00 
+ **** MAX.EDDY-WIND :   20.8545407296056       AT:          75          26
+          12
+  *** STEP=        1066  TIME=0000/01/15-18:20:00 
+  *** STEP=        1067  TIME=0000/01/15-18:40:00 
+  *** STEP=        1068  TIME=0000/01/15-19:00:00 
+  *** STEP=        1069  TIME=0000/01/15-19:20:00 
+  *** STEP=        1070  TIME=0000/01/15-19:40:00 
+  *** STEP=        1071  TIME=0000/01/15-20:00:00 
+ **** MAX.EDDY-WIND :   20.8900488593107       AT:          75          26
+          12
+  *** STEP=        1072  TIME=0000/01/15-20:20:00 
+  *** STEP=        1073  TIME=0000/01/15-20:40:00 
+  *** STEP=        1074  TIME=0000/01/15-21:00:00 
+  *** STEP=        1075  TIME=0000/01/15-21:20:00 
+  *** STEP=        1076  TIME=0000/01/15-21:40:00 
+  *** STEP=        1077  TIME=0000/01/15-22:00:00 
+ **** MAX.EDDY-WIND :   20.9247665867158       AT:          75          26
+          12
+  *** STEP=        1078  TIME=0000/01/15-22:20:00 
+  *** STEP=        1079  TIME=0000/01/15-22:40:00 
+  *** STEP=        1080  TIME=0000/01/15-23:00:00 
+  *** STEP=        1081  TIME=0000/01/15-23:20:00 
+  *** STEP=        1082  TIME=0000/01/15-23:40:00 
+  *** OUTPUT U                TIME= 0000/01/15-12:00:00 
+  *** OUTPUT V                TIME= 0000/01/15-12:00:00 
+  *** OUTPUT T                TIME= 0000/01/15-12:00:00 
+  *** OUTPUT PS               TIME= 0000/01/15-12:00:00 
+  *** OUTPUT PSI              TIME= 0000/01/15-12:00:00 
+  *** OUTPUT CHI              TIME= 0000/01/15-12:00:00 
+  *** OUTPUT OMGF             TIME= 0000/01/15-12:00:00 
+  *** OUTPUT Z                TIME= 0000/01/15-12:00:00 
+  *** STEP=        1083  TIME=0000/01/16-00:00:00 
+ **** MAX.EDDY-WIND :   20.9588894021492       AT:          75          26
+          12
+  *** STEP=        1084  TIME=0000/01/16-00:20:00 
+  *** STEP=        1085  TIME=0000/01/16-00:40:00 
+  *** STEP=        1086  TIME=0000/01/16-01:00:00 
+  *** STEP=        1087  TIME=0000/01/16-01:20:00 
+  *** STEP=        1088  TIME=0000/01/16-01:40:00 
+  *** STEP=        1089  TIME=0000/01/16-02:00:00 
+ **** MAX.EDDY-WIND :   20.9925931335192       AT:          75          26
+          12
+  *** STEP=        1090  TIME=0000/01/16-02:20:00 
+  *** STEP=        1091  TIME=0000/01/16-02:40:00 
+  *** STEP=        1092  TIME=0000/01/16-03:00:00 
+  *** STEP=        1093  TIME=0000/01/16-03:20:00 
+  *** STEP=        1094  TIME=0000/01/16-03:40:00 
+  *** STEP=        1095  TIME=0000/01/16-04:00:00 
+ **** MAX.EDDY-WIND :   21.0257577915362       AT:          75          26
+          12
+  *** STEP=        1096  TIME=0000/01/16-04:20:00 
+  *** STEP=        1097  TIME=0000/01/16-04:40:00 
+  *** STEP=        1098  TIME=0000/01/16-05:00:00 
+  *** STEP=        1099  TIME=0000/01/16-05:20:00 
+  *** STEP=        1100  TIME=0000/01/16-05:40:00 
+  *** STEP=        1101  TIME=0000/01/16-06:00:00 
+ **** MAX.EDDY-WIND :   21.0582329788727       AT:          75          26
+          12
+  *** STEP=        1102  TIME=0000/01/16-06:20:00 
+  *** STEP=        1103  TIME=0000/01/16-06:40:00 
+  *** STEP=        1104  TIME=0000/01/16-07:00:00 
+  *** STEP=        1105  TIME=0000/01/16-07:20:00 
+  *** STEP=        1106  TIME=0000/01/16-07:40:00 
+  *** STEP=        1107  TIME=0000/01/16-08:00:00 
+ **** MAX.EDDY-WIND :   21.0901640584822       AT:          75          26
+          12
+  *** STEP=        1108  TIME=0000/01/16-08:20:00 
+  *** STEP=        1109  TIME=0000/01/16-08:40:00 
+  *** STEP=        1110  TIME=0000/01/16-09:00:00 
+  *** STEP=        1111  TIME=0000/01/16-09:20:00 
+  *** STEP=        1112  TIME=0000/01/16-09:40:00 
+  *** STEP=        1113  TIME=0000/01/16-10:00:00 
+ **** MAX.EDDY-WIND :   21.1215292954910       AT:          75          26
+          12
+  *** STEP=        1114  TIME=0000/01/16-10:20:00 
+  *** STEP=        1115  TIME=0000/01/16-10:40:00 
+  *** STEP=        1116  TIME=0000/01/16-11:00:00 
+  *** STEP=        1117  TIME=0000/01/16-11:20:00 
+  *** STEP=        1118  TIME=0000/01/16-11:40:00 
+  *** STEP=        1119  TIME=0000/01/16-12:00:00 
+ **** MAX.EDDY-WIND :   21.1522417405322       AT:          75          26
+          12
+  *** STEP=        1120  TIME=0000/01/16-12:20:00 
+  *** STEP=        1121  TIME=0000/01/16-12:40:00 
+  *** STEP=        1122  TIME=0000/01/16-13:00:00 
+  *** STEP=        1123  TIME=0000/01/16-13:20:00 
+  *** STEP=        1124  TIME=0000/01/16-13:40:00 
+  *** STEP=        1125  TIME=0000/01/16-14:00:00 
+ **** MAX.EDDY-WIND :   21.1825559343219       AT:          75          26
+          12
+  *** STEP=        1126  TIME=0000/01/16-14:20:00 
+  *** STEP=        1127  TIME=0000/01/16-14:40:00 
+  *** STEP=        1128  TIME=0000/01/16-15:00:00 
+  *** STEP=        1129  TIME=0000/01/16-15:20:00 
+  *** STEP=        1130  TIME=0000/01/16-15:40:00 
+  *** STEP=        1131  TIME=0000/01/16-16:00:00 
+ **** MAX.EDDY-WIND :   21.2125342497286       AT:          75          26
+          12
+  *** STEP=        1132  TIME=0000/01/16-16:20:00 
+  *** STEP=        1133  TIME=0000/01/16-16:40:00 
+  *** STEP=        1134  TIME=0000/01/16-17:00:00 
+  *** STEP=        1135  TIME=0000/01/16-17:20:00 
+  *** STEP=        1136  TIME=0000/01/16-17:40:00 
+  *** STEP=        1137  TIME=0000/01/16-18:00:00 
+ **** MAX.EDDY-WIND :   21.2420820510265       AT:          75          26
+          12
+  *** STEP=        1138  TIME=0000/01/16-18:20:00 
+  *** STEP=        1139  TIME=0000/01/16-18:40:00 
+  *** STEP=        1140  TIME=0000/01/16-19:00:00 
+  *** STEP=        1141  TIME=0000/01/16-19:20:00 
+  *** STEP=        1142  TIME=0000/01/16-19:40:00 
+  *** STEP=        1143  TIME=0000/01/16-20:00:00 
+ **** MAX.EDDY-WIND :   21.2713692619561       AT:          75          26
+          12
+  *** STEP=        1144  TIME=0000/01/16-20:20:00 
+  *** STEP=        1145  TIME=0000/01/16-20:40:00 
+  *** STEP=        1146  TIME=0000/01/16-21:00:00 
+  *** STEP=        1147  TIME=0000/01/16-21:20:00 
+  *** STEP=        1148  TIME=0000/01/16-21:40:00 
+  *** STEP=        1149  TIME=0000/01/16-22:00:00 
+ **** MAX.EDDY-WIND :   21.3005357481686       AT:          75          26
+          12
+  *** STEP=        1150  TIME=0000/01/16-22:20:00 
+  *** STEP=        1151  TIME=0000/01/16-22:40:00 
+  *** STEP=        1152  TIME=0000/01/16-23:00:00 
+  *** STEP=        1153  TIME=0000/01/16-23:20:00 
+  *** STEP=        1154  TIME=0000/01/16-23:40:00 
+  *** OUTPUT U                TIME= 0000/01/16-12:00:00 
+  *** OUTPUT V                TIME= 0000/01/16-12:00:00 
+  *** OUTPUT T                TIME= 0000/01/16-12:00:00 
+  *** OUTPUT PS               TIME= 0000/01/16-12:00:00 
+  *** OUTPUT PSI              TIME= 0000/01/16-12:00:00 
+  *** OUTPUT CHI              TIME= 0000/01/16-12:00:00 
+  *** OUTPUT OMGF             TIME= 0000/01/16-12:00:00 
+  *** OUTPUT Z                TIME= 0000/01/16-12:00:00 
+  *** STEP=        1155  TIME=0000/01/17-00:00:00 
+ **** MAX.EDDY-WIND :   21.3293815814403       AT:          75          26
+          12
+  *** STEP=        1156  TIME=0000/01/17-00:20:00 
+  *** STEP=        1157  TIME=0000/01/17-00:40:00 
+  *** STEP=        1158  TIME=0000/01/17-01:00:00 
+  *** STEP=        1159  TIME=0000/01/17-01:20:00 
+  *** STEP=        1160  TIME=0000/01/17-01:40:00 
+  *** STEP=        1161  TIME=0000/01/17-02:00:00 
+ **** MAX.EDDY-WIND :   21.3577171041838       AT:          75          26
+          12
+  *** STEP=        1162  TIME=0000/01/17-02:20:00 
+  *** STEP=        1163  TIME=0000/01/17-02:40:00 
+  *** STEP=        1164  TIME=0000/01/17-03:00:00 
+  *** STEP=        1165  TIME=0000/01/17-03:20:00 
+  *** STEP=        1166  TIME=0000/01/17-03:40:00 
+  *** STEP=        1167  TIME=0000/01/17-04:00:00 
+ **** MAX.EDDY-WIND :   21.3853575242411       AT:          75          26
+          12
+  *** STEP=        1168  TIME=0000/01/17-04:20:00 
+  *** STEP=        1169  TIME=0000/01/17-04:40:00 
+  *** STEP=        1170  TIME=0000/01/17-05:00:00 
+  *** STEP=        1171  TIME=0000/01/17-05:20:00 
+  *** STEP=        1172  TIME=0000/01/17-05:40:00 
+  *** STEP=        1173  TIME=0000/01/17-06:00:00 
+ **** MAX.EDDY-WIND :   21.4122698134016       AT:          75          26
+          12
+  *** STEP=        1174  TIME=0000/01/17-06:20:00 
+  *** STEP=        1175  TIME=0000/01/17-06:40:00 
+  *** STEP=        1176  TIME=0000/01/17-07:00:00 
+  *** STEP=        1177  TIME=0000/01/17-07:20:00 
+  *** STEP=        1178  TIME=0000/01/17-07:40:00 
+  *** STEP=        1179  TIME=0000/01/17-08:00:00 
+ **** MAX.EDDY-WIND :   21.4385827655688       AT:          75          26
+          12
+  *** STEP=        1180  TIME=0000/01/17-08:20:00 
+  *** STEP=        1181  TIME=0000/01/17-08:40:00 
+  *** STEP=        1182  TIME=0000/01/17-09:00:00 
+  *** STEP=        1183  TIME=0000/01/17-09:20:00 
+  *** STEP=        1184  TIME=0000/01/17-09:40:00 
+  *** STEP=        1185  TIME=0000/01/17-10:00:00 
+ **** MAX.EDDY-WIND :   21.4642894631694       AT:          75          26
+          12
+  *** STEP=        1186  TIME=0000/01/17-10:20:00 
+  *** STEP=        1187  TIME=0000/01/17-10:40:00 
+  *** STEP=        1188  TIME=0000/01/17-11:00:00 
+  *** STEP=        1189  TIME=0000/01/17-11:20:00 
+  *** STEP=        1190  TIME=0000/01/17-11:40:00 
+  *** STEP=        1191  TIME=0000/01/17-12:00:00 
+ **** MAX.EDDY-WIND :   21.4894963612416       AT:          75          26
+          12
+  *** STEP=        1192  TIME=0000/01/17-12:20:00 
+  *** STEP=        1193  TIME=0000/01/17-12:40:00 
+  *** STEP=        1194  TIME=0000/01/17-13:00:00 
+  *** STEP=        1195  TIME=0000/01/17-13:20:00 
+  *** STEP=        1196  TIME=0000/01/17-13:40:00 
+  *** STEP=        1197  TIME=0000/01/17-14:00:00 
+ **** MAX.EDDY-WIND :   21.5142480149948       AT:          75          26
+          12
+  *** STEP=        1198  TIME=0000/01/17-14:20:00 
+  *** STEP=        1199  TIME=0000/01/17-14:40:00 
+  *** STEP=        1200  TIME=0000/01/17-15:00:00 
+  *** STEP=        1201  TIME=0000/01/17-15:20:00 
+  *** STEP=        1202  TIME=0000/01/17-15:40:00 
+  *** STEP=        1203  TIME=0000/01/17-16:00:00 
+ **** MAX.EDDY-WIND :   21.5383777113806       AT:          75          26
+          12
+  *** STEP=        1204  TIME=0000/01/17-16:20:00 
+  *** STEP=        1205  TIME=0000/01/17-16:40:00 
+  *** STEP=        1206  TIME=0000/01/17-17:00:00 
+  *** STEP=        1207  TIME=0000/01/17-17:20:00 
+  *** STEP=        1208  TIME=0000/01/17-17:40:00 
+  *** STEP=        1209  TIME=0000/01/17-18:00:00 
+ **** MAX.EDDY-WIND :   21.5617994484870       AT:          75          26
+          12
+  *** STEP=        1210  TIME=0000/01/17-18:20:00 
+  *** STEP=        1211  TIME=0000/01/17-18:40:00 
+  *** STEP=        1212  TIME=0000/01/17-19:00:00 
+  *** STEP=        1213  TIME=0000/01/17-19:20:00 
+  *** STEP=        1214  TIME=0000/01/17-19:40:00 
+  *** STEP=        1215  TIME=0000/01/17-20:00:00 
+ **** MAX.EDDY-WIND :   21.5844729690562       AT:          75          26
+          12
+  *** STEP=        1216  TIME=0000/01/17-20:20:00 
+  *** STEP=        1217  TIME=0000/01/17-20:40:00 
+  *** STEP=        1218  TIME=0000/01/17-21:00:00 
+  *** STEP=        1219  TIME=0000/01/17-21:20:00 
+  *** STEP=        1220  TIME=0000/01/17-21:40:00 
+  *** STEP=        1221  TIME=0000/01/17-22:00:00 
+ **** MAX.EDDY-WIND :   21.6064744060457       AT:          75          26
+          12
+  *** STEP=        1222  TIME=0000/01/17-22:20:00 
+  *** STEP=        1223  TIME=0000/01/17-22:40:00 
+  *** STEP=        1224  TIME=0000/01/17-23:00:00 
+  *** STEP=        1225  TIME=0000/01/17-23:20:00 
+  *** STEP=        1226  TIME=0000/01/17-23:40:00 
+  *** OUTPUT U                TIME= 0000/01/17-12:00:00 
+  *** OUTPUT V                TIME= 0000/01/17-12:00:00 
+  *** OUTPUT T                TIME= 0000/01/17-12:00:00 
+  *** OUTPUT PS               TIME= 0000/01/17-12:00:00 
+  *** OUTPUT PSI              TIME= 0000/01/17-12:00:00 
+  *** OUTPUT CHI              TIME= 0000/01/17-12:00:00 
+  *** OUTPUT OMGF             TIME= 0000/01/17-12:00:00 
+  *** OUTPUT Z                TIME= 0000/01/17-12:00:00 
+  *** STEP=        1227  TIME=0000/01/18-00:00:00 
+ **** MAX.EDDY-WIND :   21.6280397948846       AT:          75          26
+          12
+  *** STEP=        1228  TIME=0000/01/18-00:20:00 
+  *** STEP=        1229  TIME=0000/01/18-00:40:00 
+  *** STEP=        1230  TIME=0000/01/18-01:00:00 
+  *** STEP=        1231  TIME=0000/01/18-01:20:00 
+  *** STEP=        1232  TIME=0000/01/18-01:40:00 
+  *** STEP=        1233  TIME=0000/01/18-02:00:00 
+ **** MAX.EDDY-WIND :   21.6493374161235       AT:          75          26
+          12
+  *** STEP=        1234  TIME=0000/01/18-02:20:00 
+  *** STEP=        1235  TIME=0000/01/18-02:40:00 
+  *** STEP=        1236  TIME=0000/01/18-03:00:00 
+  *** STEP=        1237  TIME=0000/01/18-03:20:00 
+  *** STEP=        1238  TIME=0000/01/18-03:40:00 
+  *** STEP=        1239  TIME=0000/01/18-04:00:00 
+ **** MAX.EDDY-WIND :   21.6703024942619       AT:          75          26
+          12
+  *** STEP=        1240  TIME=0000/01/18-04:20:00 
+  *** STEP=        1241  TIME=0000/01/18-04:40:00 
+  *** STEP=        1242  TIME=0000/01/18-05:00:00 
+  *** STEP=        1243  TIME=0000/01/18-05:20:00 
+  *** STEP=        1244  TIME=0000/01/18-05:40:00 
+  *** STEP=        1245  TIME=0000/01/18-06:00:00 
+ **** MAX.EDDY-WIND :   21.6908144824563       AT:          75          26
+          12
+  *** STEP=        1246  TIME=0000/01/18-06:20:00 
+  *** STEP=        1247  TIME=0000/01/18-06:40:00 
+  *** STEP=        1248  TIME=0000/01/18-07:00:00 
+  *** STEP=        1249  TIME=0000/01/18-07:20:00 
+  *** STEP=        1250  TIME=0000/01/18-07:40:00 
+  *** STEP=        1251  TIME=0000/01/18-08:00:00 
+ **** MAX.EDDY-WIND :   21.7110428835445       AT:          75          26
+          12
+  *** STEP=        1252  TIME=0000/01/18-08:20:00 
+  *** STEP=        1253  TIME=0000/01/18-08:40:00 
+  *** STEP=        1254  TIME=0000/01/18-09:00:00 
+  *** STEP=        1255  TIME=0000/01/18-09:20:00 
+  *** STEP=        1256  TIME=0000/01/18-09:40:00 
+  *** STEP=        1257  TIME=0000/01/18-10:00:00 
+ **** MAX.EDDY-WIND :   21.7310921316460       AT:          75          26
+          12
+  *** STEP=        1258  TIME=0000/01/18-10:20:00 
+  *** STEP=        1259  TIME=0000/01/18-10:40:00 
+  *** STEP=        1260  TIME=0000/01/18-11:00:00 
+  *** STEP=        1261  TIME=0000/01/18-11:20:00 
+  *** STEP=        1262  TIME=0000/01/18-11:40:00 
+  *** STEP=        1263  TIME=0000/01/18-12:00:00 
+ **** MAX.EDDY-WIND :   21.7508154509543       AT:          75          26
+          12
+  *** STEP=        1264  TIME=0000/01/18-12:20:00 
+  *** STEP=        1265  TIME=0000/01/18-12:40:00 
+  *** STEP=        1266  TIME=0000/01/18-13:00:00 
+  *** STEP=        1267  TIME=0000/01/18-13:20:00 
+  *** STEP=        1268  TIME=0000/01/18-13:40:00 
+  *** STEP=        1269  TIME=0000/01/18-14:00:00 
+ **** MAX.EDDY-WIND :   21.7700598794687       AT:          75          26
+          12
+  *** STEP=        1270  TIME=0000/01/18-14:20:00 
+  *** STEP=        1271  TIME=0000/01/18-14:40:00 
+  *** STEP=        1272  TIME=0000/01/18-15:00:00 
+  *** STEP=        1273  TIME=0000/01/18-15:20:00 
+  *** STEP=        1274  TIME=0000/01/18-15:40:00 
+  *** STEP=        1275  TIME=0000/01/18-16:00:00 
+ **** MAX.EDDY-WIND :   21.7887275734064       AT:          75          26
+          12
+  *** STEP=        1276  TIME=0000/01/18-16:20:00 
+  *** STEP=        1277  TIME=0000/01/18-16:40:00 
+  *** STEP=        1278  TIME=0000/01/18-17:00:00 
+  *** STEP=        1279  TIME=0000/01/18-17:20:00 
+  *** STEP=        1280  TIME=0000/01/18-17:40:00 
+  *** STEP=        1281  TIME=0000/01/18-18:00:00 
+ **** MAX.EDDY-WIND :   21.8068094807764       AT:          75          26
+          12
+  *** STEP=        1282  TIME=0000/01/18-18:20:00 
+  *** STEP=        1283  TIME=0000/01/18-18:40:00 
+  *** STEP=        1284  TIME=0000/01/18-19:00:00 
+  *** STEP=        1285  TIME=0000/01/18-19:20:00 
+  *** STEP=        1286  TIME=0000/01/18-19:40:00 
+  *** STEP=        1287  TIME=0000/01/18-20:00:00 
+ **** MAX.EDDY-WIND :   21.8243417556103       AT:          75          26
+          12
+  *** STEP=        1288  TIME=0000/01/18-20:20:00 
+  *** STEP=        1289  TIME=0000/01/18-20:40:00 
+  *** STEP=        1290  TIME=0000/01/18-21:00:00 
+  *** STEP=        1291  TIME=0000/01/18-21:20:00 
+  *** STEP=        1292  TIME=0000/01/18-21:40:00 
+  *** STEP=        1293  TIME=0000/01/18-22:00:00 
+ **** MAX.EDDY-WIND :   21.8412902455609       AT:          75          26
+          12
+  *** STEP=        1294  TIME=0000/01/18-22:20:00 
+  *** STEP=        1295  TIME=0000/01/18-22:40:00 
+  *** STEP=        1296  TIME=0000/01/18-23:00:00 
+  *** STEP=        1297  TIME=0000/01/18-23:20:00 
+  *** STEP=        1298  TIME=0000/01/18-23:40:00 
+  *** OUTPUT U                TIME= 0000/01/18-12:00:00 
+  *** OUTPUT V                TIME= 0000/01/18-12:00:00 
+  *** OUTPUT T                TIME= 0000/01/18-12:00:00 
+  *** OUTPUT PS               TIME= 0000/01/18-12:00:00 
+  *** OUTPUT PSI              TIME= 0000/01/18-12:00:00 
+  *** OUTPUT CHI              TIME= 0000/01/18-12:00:00 
+  *** OUTPUT OMGF             TIME= 0000/01/18-12:00:00 
+  *** OUTPUT Z                TIME= 0000/01/18-12:00:00 
+  *** STEP=        1299  TIME=0000/01/19-00:00:00 
+ **** MAX.EDDY-WIND :   21.8576975023128       AT:          75          26
+          12
+  *** STEP=        1300  TIME=0000/01/19-00:20:00 
+  *** STEP=        1301  TIME=0000/01/19-00:40:00 
+  *** STEP=        1302  TIME=0000/01/19-01:00:00 
+  *** STEP=        1303  TIME=0000/01/19-01:20:00 
+  *** STEP=        1304  TIME=0000/01/19-01:40:00 
+  *** STEP=        1305  TIME=0000/01/19-02:00:00 
+ **** MAX.EDDY-WIND :   21.8736623807715       AT:          75          26
+          12
+  *** STEP=        1306  TIME=0000/01/19-02:20:00 
+  *** STEP=        1307  TIME=0000/01/19-02:40:00 
+  *** STEP=        1308  TIME=0000/01/19-03:00:00 
+  *** STEP=        1309  TIME=0000/01/19-03:20:00 
+  *** STEP=        1310  TIME=0000/01/19-03:40:00 
+  *** STEP=        1311  TIME=0000/01/19-04:00:00 
+ **** MAX.EDDY-WIND :   21.8890129235284       AT:          75          26
+          12
+  *** STEP=        1312  TIME=0000/01/19-04:20:00 
+  *** STEP=        1313  TIME=0000/01/19-04:40:00 
+  *** STEP=        1314  TIME=0000/01/19-05:00:00 
+  *** STEP=        1315  TIME=0000/01/19-05:20:00 
+  *** STEP=        1316  TIME=0000/01/19-05:40:00 
+  *** STEP=        1317  TIME=0000/01/19-06:00:00 
+ **** MAX.EDDY-WIND :   21.9036019869568       AT:          75          26
+          12
+  *** STEP=        1318  TIME=0000/01/19-06:20:00 
+  *** STEP=        1319  TIME=0000/01/19-06:40:00 
+  *** STEP=        1320  TIME=0000/01/19-07:00:00 
+  *** STEP=        1321  TIME=0000/01/19-07:20:00 
+  *** STEP=        1322  TIME=0000/01/19-07:40:00 
+  *** STEP=        1323  TIME=0000/01/19-08:00:00 
+ **** MAX.EDDY-WIND :   21.9175673361181       AT:          75          26
+          12
+  *** STEP=        1324  TIME=0000/01/19-08:20:00 
+  *** STEP=        1325  TIME=0000/01/19-08:40:00 
+  *** STEP=        1326  TIME=0000/01/19-09:00:00 
+  *** STEP=        1327  TIME=0000/01/19-09:20:00 
+  *** STEP=        1328  TIME=0000/01/19-09:40:00 
+  *** STEP=        1329  TIME=0000/01/19-10:00:00 
+ **** MAX.EDDY-WIND :   21.9311509847553       AT:          75          26
+          12
+  *** STEP=        1330  TIME=0000/01/19-10:20:00 
+  *** STEP=        1331  TIME=0000/01/19-10:40:00 
+  *** STEP=        1332  TIME=0000/01/19-11:00:00 
+  *** STEP=        1333  TIME=0000/01/19-11:20:00 
+  *** STEP=        1334  TIME=0000/01/19-11:40:00 
+  *** STEP=        1335  TIME=0000/01/19-12:00:00 
+ **** MAX.EDDY-WIND :   21.9444185474696       AT:          75          26
+          12
+  *** STEP=        1336  TIME=0000/01/19-12:20:00 
+  *** STEP=        1337  TIME=0000/01/19-12:40:00 
+  *** STEP=        1338  TIME=0000/01/19-13:00:00 
+  *** STEP=        1339  TIME=0000/01/19-13:20:00 
+  *** STEP=        1340  TIME=0000/01/19-13:40:00 
+  *** STEP=        1341  TIME=0000/01/19-14:00:00 
+ **** MAX.EDDY-WIND :   21.9572782252962       AT:          75          26
+          12
+  *** STEP=        1342  TIME=0000/01/19-14:20:00 
+  *** STEP=        1343  TIME=0000/01/19-14:40:00 
+  *** STEP=        1344  TIME=0000/01/19-15:00:00 
+  *** STEP=        1345  TIME=0000/01/19-15:20:00 
+  *** STEP=        1346  TIME=0000/01/19-15:40:00 
+  *** STEP=        1347  TIME=0000/01/19-16:00:00 
+ **** MAX.EDDY-WIND :   21.9697680060630       AT:          75          26
+          12
+  *** STEP=        1348  TIME=0000/01/19-16:20:00 
+  *** STEP=        1349  TIME=0000/01/19-16:40:00 
+  *** STEP=        1350  TIME=0000/01/19-17:00:00 
+  *** STEP=        1351  TIME=0000/01/19-17:20:00 
+  *** STEP=        1352  TIME=0000/01/19-17:40:00 
+  *** STEP=        1353  TIME=0000/01/19-18:00:00 
+ **** MAX.EDDY-WIND :   21.9820388903351       AT:          75          26
+          12
+  *** STEP=        1354  TIME=0000/01/19-18:20:00 
+  *** STEP=        1355  TIME=0000/01/19-18:40:00 
+  *** STEP=        1356  TIME=0000/01/19-19:00:00 
+  *** STEP=        1357  TIME=0000/01/19-19:20:00 
+  *** STEP=        1358  TIME=0000/01/19-19:40:00 
+  *** STEP=        1359  TIME=0000/01/19-20:00:00 
+ **** MAX.EDDY-WIND :   21.9941879916310       AT:          75          26
+          12
+  *** STEP=        1360  TIME=0000/01/19-20:20:00 
+  *** STEP=        1361  TIME=0000/01/19-20:40:00 
+  *** STEP=        1362  TIME=0000/01/19-21:00:00 
+  *** STEP=        1363  TIME=0000/01/19-21:20:00 
+  *** STEP=        1364  TIME=0000/01/19-21:40:00 
+  *** STEP=        1365  TIME=0000/01/19-22:00:00 
+ **** MAX.EDDY-WIND :   22.0062057842856       AT:          75          26
+          12
+  *** STEP=        1366  TIME=0000/01/19-22:20:00 
+  *** STEP=        1367  TIME=0000/01/19-22:40:00 
+  *** STEP=        1368  TIME=0000/01/19-23:00:00 
+  *** STEP=        1369  TIME=0000/01/19-23:20:00 
+  *** STEP=        1370  TIME=0000/01/19-23:40:00 
+  *** OUTPUT U                TIME= 0000/01/19-12:00:00 
+  *** OUTPUT V                TIME= 0000/01/19-12:00:00 
+  *** OUTPUT T                TIME= 0000/01/19-12:00:00 
+  *** OUTPUT PS               TIME= 0000/01/19-12:00:00 
+  *** OUTPUT PSI              TIME= 0000/01/19-12:00:00 
+  *** OUTPUT CHI              TIME= 0000/01/19-12:00:00 
+  *** OUTPUT OMGF             TIME= 0000/01/19-12:00:00 
+  *** OUTPUT Z                TIME= 0000/01/19-12:00:00 
+  *** STEP=        1371  TIME=0000/01/20-00:00:00 
+ **** MAX.EDDY-WIND :   22.0179224558421       AT:          75          26
+          12
+  *** STEP=        1372  TIME=0000/01/20-00:20:00 
+  *** STEP=        1373  TIME=0000/01/20-00:40:00 
+  *** STEP=        1374  TIME=0000/01/20-01:00:00 
+  *** STEP=        1375  TIME=0000/01/20-01:20:00 
+  *** STEP=        1376  TIME=0000/01/20-01:40:00 
+  *** STEP=        1377  TIME=0000/01/20-02:00:00 
+ **** MAX.EDDY-WIND :   22.0292397357810       AT:          75          26
+          12
+  *** STEP=        1378  TIME=0000/01/20-02:20:00 
+  *** STEP=        1379  TIME=0000/01/20-02:40:00 
+  *** STEP=        1380  TIME=0000/01/20-03:00:00 
+  *** STEP=        1381  TIME=0000/01/20-03:20:00 
+  *** STEP=        1382  TIME=0000/01/20-03:40:00 
+  *** STEP=        1383  TIME=0000/01/20-04:00:00 
+ **** MAX.EDDY-WIND :   22.0402222790796       AT:          75          26
+          12
+  *** STEP=        1384  TIME=0000/01/20-04:20:00 
+  *** STEP=        1385  TIME=0000/01/20-04:40:00 
+  *** STEP=        1386  TIME=0000/01/20-05:00:00 
+  *** STEP=        1387  TIME=0000/01/20-05:20:00 
+  *** STEP=        1388  TIME=0000/01/20-05:40:00 
+  *** STEP=        1389  TIME=0000/01/20-06:00:00 
+ **** MAX.EDDY-WIND :   22.0509736784775       AT:          75          26
+          12
+  *** STEP=        1390  TIME=0000/01/20-06:20:00 
+  *** STEP=        1391  TIME=0000/01/20-06:40:00 
+  *** STEP=        1392  TIME=0000/01/20-07:00:00 
+  *** STEP=        1393  TIME=0000/01/20-07:20:00 
+  *** STEP=        1394  TIME=0000/01/20-07:40:00 
+  *** STEP=        1395  TIME=0000/01/20-08:00:00 
+ **** MAX.EDDY-WIND :   22.0614886913957       AT:          75          26
+          12
+  *** STEP=        1396  TIME=0000/01/20-08:20:00 
+  *** STEP=        1397  TIME=0000/01/20-08:40:00 
+  *** STEP=        1398  TIME=0000/01/20-09:00:00 
+  *** STEP=        1399  TIME=0000/01/20-09:20:00 
+  *** STEP=        1400  TIME=0000/01/20-09:40:00 
+  *** STEP=        1401  TIME=0000/01/20-10:00:00 
+ **** MAX.EDDY-WIND :   22.0716425853560       AT:          75          26
+          12
+  *** STEP=        1402  TIME=0000/01/20-10:20:00 
+  *** STEP=        1403  TIME=0000/01/20-10:40:00 
+  *** STEP=        1404  TIME=0000/01/20-11:00:00 
+  *** STEP=        1405  TIME=0000/01/20-11:20:00 
+  *** STEP=        1406  TIME=0000/01/20-11:40:00 
+  *** STEP=        1407  TIME=0000/01/20-12:00:00 
+ **** MAX.EDDY-WIND :   22.0813179927334       AT:          75          26
+          12
+  *** STEP=        1408  TIME=0000/01/20-12:20:00 
+  *** STEP=        1409  TIME=0000/01/20-12:40:00 
+  *** STEP=        1410  TIME=0000/01/20-13:00:00 
+  *** STEP=        1411  TIME=0000/01/20-13:20:00 
+  *** STEP=        1412  TIME=0000/01/20-13:40:00 
+  *** STEP=        1413  TIME=0000/01/20-14:00:00 
+ **** MAX.EDDY-WIND :   22.0904169698117       AT:          75          26
+          12
+  *** STEP=        1414  TIME=0000/01/20-14:20:00 
+  *** STEP=        1415  TIME=0000/01/20-14:40:00 
+  *** STEP=        1416  TIME=0000/01/20-15:00:00 
+  *** STEP=        1417  TIME=0000/01/20-15:20:00 
+  *** STEP=        1418  TIME=0000/01/20-15:40:00 
+  *** STEP=        1419  TIME=0000/01/20-16:00:00 
+ **** MAX.EDDY-WIND :   22.0988466469642       AT:          75          26
+          12
+  *** STEP=        1420  TIME=0000/01/20-16:20:00 
+  *** STEP=        1421  TIME=0000/01/20-16:40:00 
+  *** STEP=        1422  TIME=0000/01/20-17:00:00 
+  *** STEP=        1423  TIME=0000/01/20-17:20:00 
+  *** STEP=        1424  TIME=0000/01/20-17:40:00 
+  *** STEP=        1425  TIME=0000/01/20-18:00:00 
+ **** MAX.EDDY-WIND :   22.1066166297028       AT:          75          26
+          12
+  *** STEP=        1426  TIME=0000/01/20-18:20:00 
+  *** STEP=        1427  TIME=0000/01/20-18:40:00 
+  *** STEP=        1428  TIME=0000/01/20-19:00:00 
+  *** STEP=        1429  TIME=0000/01/20-19:20:00 
+  *** STEP=        1430  TIME=0000/01/20-19:40:00 
+  *** STEP=        1431  TIME=0000/01/20-20:00:00 
+ **** MAX.EDDY-WIND :   22.1138868973901       AT:          75          26
+          12
+  *** STEP=        1432  TIME=0000/01/20-20:20:00 
+  *** STEP=        1433  TIME=0000/01/20-20:40:00 
+  *** STEP=        1434  TIME=0000/01/20-21:00:00 
+  *** STEP=        1435  TIME=0000/01/20-21:20:00 
+  *** STEP=        1436  TIME=0000/01/20-21:40:00 
+  *** STEP=        1437  TIME=0000/01/20-22:00:00 
+ **** MAX.EDDY-WIND :   22.1207669409381       AT:          75          26
+          12
+  *** STEP=        1438  TIME=0000/01/20-22:20:00 
+  *** STEP=        1439  TIME=0000/01/20-22:40:00 
+  *** STEP=        1440  TIME=0000/01/20-23:00:00 
+  *** STEP=        1441  TIME=0000/01/20-23:20:00 
+  *** STEP=        1442  TIME=0000/01/20-23:40:00 
+  *** OUTPUT U                TIME= 0000/01/20-12:00:00 
+  *** OUTPUT V                TIME= 0000/01/20-12:00:00 
+  *** OUTPUT T                TIME= 0000/01/20-12:00:00 
+  *** OUTPUT PS               TIME= 0000/01/20-12:00:00 
+  *** OUTPUT PSI              TIME= 0000/01/20-12:00:00 
+  *** OUTPUT CHI              TIME= 0000/01/20-12:00:00 
+  *** OUTPUT OMGF             TIME= 0000/01/20-12:00:00 
+  *** OUTPUT Z                TIME= 0000/01/20-12:00:00 
+  *** STEP=        1443  TIME=0000/01/21-00:00:00 
+ **** MAX.EDDY-WIND :   22.1272509288055       AT:          75          26
+          12
+  *** STEP=        1444  TIME=0000/01/21-00:20:00 
+  *** STEP=        1445  TIME=0000/01/21-00:40:00 
+  *** STEP=        1446  TIME=0000/01/21-01:00:00 
+  *** STEP=        1447  TIME=0000/01/21-01:20:00 
+  *** STEP=        1448  TIME=0000/01/21-01:40:00 
+  *** STEP=        1449  TIME=0000/01/21-02:00:00 
+ **** MAX.EDDY-WIND :   22.1333540539368       AT:          75          26
+          12
+  *** STEP=        1450  TIME=0000/01/21-02:20:00 
+  *** STEP=        1451  TIME=0000/01/21-02:40:00 
+  *** STEP=        1452  TIME=0000/01/21-03:00:00 
+  *** STEP=        1453  TIME=0000/01/21-03:20:00 
+  *** STEP=        1454  TIME=0000/01/21-03:40:00 
+  *** STEP=        1455  TIME=0000/01/21-04:00:00 
+ **** MAX.EDDY-WIND :   22.1391540610671       AT:          75          26
+          12
+  *** STEP=        1456  TIME=0000/01/21-04:20:00 
+  *** STEP=        1457  TIME=0000/01/21-04:40:00 
+  *** STEP=        1458  TIME=0000/01/21-05:00:00 
+  *** STEP=        1459  TIME=0000/01/21-05:20:00 
+  *** STEP=        1460  TIME=0000/01/21-05:40:00 
+  *** STEP=        1461  TIME=0000/01/21-06:00:00 
+ **** MAX.EDDY-WIND :   22.1447094171116       AT:          75          26
+          12
+  *** STEP=        1462  TIME=0000/01/21-06:20:00 
+  *** STEP=        1463  TIME=0000/01/21-06:40:00 
+  *** STEP=        1464  TIME=0000/01/21-07:00:00 
+  *** STEP=        1465  TIME=0000/01/21-07:20:00 
+  *** STEP=        1466  TIME=0000/01/21-07:40:00 
+  *** STEP=        1467  TIME=0000/01/21-08:00:00 
+ **** MAX.EDDY-WIND :   22.1500450447552       AT:          75          26
+          12
+  *** STEP=        1468  TIME=0000/01/21-08:20:00 
+  *** STEP=        1469  TIME=0000/01/21-08:40:00 
+  *** STEP=        1470  TIME=0000/01/21-09:00:00 
+  *** STEP=        1471  TIME=0000/01/21-09:20:00 
+  *** STEP=        1472  TIME=0000/01/21-09:40:00 
+  *** STEP=        1473  TIME=0000/01/21-10:00:00 
+ **** MAX.EDDY-WIND :   22.1551956320534       AT:          75          26
+          12
+  *** STEP=        1474  TIME=0000/01/21-10:20:00 
+  *** STEP=        1475  TIME=0000/01/21-10:40:00 
+  *** STEP=        1476  TIME=0000/01/21-11:00:00 
+  *** STEP=        1477  TIME=0000/01/21-11:20:00 
+  *** STEP=        1478  TIME=0000/01/21-11:40:00 
+  *** STEP=        1479  TIME=0000/01/21-12:00:00 
+ **** MAX.EDDY-WIND :   22.1601594209486       AT:          75          26
+          12
+  *** STEP=        1480  TIME=0000/01/21-12:20:00 
+  *** STEP=        1481  TIME=0000/01/21-12:40:00 
+  *** STEP=        1482  TIME=0000/01/21-13:00:00 
+  *** STEP=        1483  TIME=0000/01/21-13:20:00 
+  *** STEP=        1484  TIME=0000/01/21-13:40:00 
+  *** STEP=        1485  TIME=0000/01/21-14:00:00 
+ **** MAX.EDDY-WIND :   22.1649274404675       AT:          75          26
+          12
+  *** STEP=        1486  TIME=0000/01/21-14:20:00 
+  *** STEP=        1487  TIME=0000/01/21-14:40:00 
+  *** STEP=        1488  TIME=0000/01/21-15:00:00 
+  *** STEP=        1489  TIME=0000/01/21-15:20:00 
+  *** STEP=        1490  TIME=0000/01/21-15:40:00 
+  *** STEP=        1491  TIME=0000/01/21-16:00:00 
+ **** MAX.EDDY-WIND :   22.1695638964492       AT:          75          26
+          12
+  *** STEP=        1492  TIME=0000/01/21-16:20:00 
+  *** STEP=        1493  TIME=0000/01/21-16:40:00 
+  *** STEP=        1494  TIME=0000/01/21-17:00:00 
+  *** STEP=        1495  TIME=0000/01/21-17:20:00 
+  *** STEP=        1496  TIME=0000/01/21-17:40:00 
+  *** STEP=        1497  TIME=0000/01/21-18:00:00 
+ **** MAX.EDDY-WIND :   22.1741095079284       AT:          75          26
+          12
+  *** STEP=        1498  TIME=0000/01/21-18:20:00 
+  *** STEP=        1499  TIME=0000/01/21-18:40:00 
+  *** STEP=        1500  TIME=0000/01/21-19:00:00 
+  *** STEP=        1501  TIME=0000/01/21-19:20:00 
+  *** STEP=        1502  TIME=0000/01/21-19:40:00 
+  *** STEP=        1503  TIME=0000/01/21-20:00:00 
+ **** MAX.EDDY-WIND :   22.1784936983321       AT:          75          26
+          12
+  *** STEP=        1504  TIME=0000/01/21-20:20:00 
+  *** STEP=        1505  TIME=0000/01/21-20:40:00 
+  *** STEP=        1506  TIME=0000/01/21-21:00:00 
+  *** STEP=        1507  TIME=0000/01/21-21:20:00 
+  *** STEP=        1508  TIME=0000/01/21-21:40:00 
+  *** STEP=        1509  TIME=0000/01/21-22:00:00 
+ **** MAX.EDDY-WIND :   22.1826224673459       AT:          75          26
+          12
+  *** STEP=        1510  TIME=0000/01/21-22:20:00 
+  *** STEP=        1511  TIME=0000/01/21-22:40:00 
+  *** STEP=        1512  TIME=0000/01/21-23:00:00 
+  *** STEP=        1513  TIME=0000/01/21-23:20:00 
+  *** STEP=        1514  TIME=0000/01/21-23:40:00 
+  *** OUTPUT U                TIME= 0000/01/21-12:00:00 
+  *** OUTPUT V                TIME= 0000/01/21-12:00:00 
+  *** OUTPUT T                TIME= 0000/01/21-12:00:00 
+  *** OUTPUT PS               TIME= 0000/01/21-12:00:00 
+  *** OUTPUT PSI              TIME= 0000/01/21-12:00:00 
+  *** OUTPUT CHI              TIME= 0000/01/21-12:00:00 
+  *** OUTPUT OMGF             TIME= 0000/01/21-12:00:00 
+  *** OUTPUT Z                TIME= 0000/01/21-12:00:00 
+  *** STEP=        1515  TIME=0000/01/22-00:00:00 
+ **** MAX.EDDY-WIND :   22.1864301767108       AT:          75          26
+          12
+  *** STEP=        1516  TIME=0000/01/22-00:20:00 
+  *** STEP=        1517  TIME=0000/01/22-00:40:00 
+  *** STEP=        1518  TIME=0000/01/22-01:00:00 
+  *** STEP=        1519  TIME=0000/01/22-01:20:00 
+  *** STEP=        1520  TIME=0000/01/22-01:40:00 
+  *** STEP=        1521  TIME=0000/01/22-02:00:00 
+ **** MAX.EDDY-WIND :   22.1898308819816       AT:          75          26
+          12
+  *** STEP=        1522  TIME=0000/01/22-02:20:00 
+  *** STEP=        1523  TIME=0000/01/22-02:40:00 
+  *** STEP=        1524  TIME=0000/01/22-03:00:00 
+  *** STEP=        1525  TIME=0000/01/22-03:20:00 
+  *** STEP=        1526  TIME=0000/01/22-03:40:00 
+  *** STEP=        1527  TIME=0000/01/22-04:00:00 
+ **** MAX.EDDY-WIND :   22.1927398082619       AT:          75          26
+          12
+  *** STEP=        1528  TIME=0000/01/22-04:20:00 
+  *** STEP=        1529  TIME=0000/01/22-04:40:00 
+  *** STEP=        1530  TIME=0000/01/22-05:00:00 
+  *** STEP=        1531  TIME=0000/01/22-05:20:00 
+  *** STEP=        1532  TIME=0000/01/22-05:40:00 
+  *** STEP=        1533  TIME=0000/01/22-06:00:00 
+ **** MAX.EDDY-WIND :   22.1951598498721       AT:          75          26
+          12
+  *** STEP=        1534  TIME=0000/01/22-06:20:00 
+  *** STEP=        1535  TIME=0000/01/22-06:40:00 
+  *** STEP=        1536  TIME=0000/01/22-07:00:00 
+  *** STEP=        1537  TIME=0000/01/22-07:20:00 
+  *** STEP=        1538  TIME=0000/01/22-07:40:00 
+  *** STEP=        1539  TIME=0000/01/22-08:00:00 
+ **** MAX.EDDY-WIND :   22.1971664642419       AT:          75          26
+          12
+  *** STEP=        1540  TIME=0000/01/22-08:20:00 
+  *** STEP=        1541  TIME=0000/01/22-08:40:00 
+  *** STEP=        1542  TIME=0000/01/22-09:00:00 
+  *** STEP=        1543  TIME=0000/01/22-09:20:00 
+  *** STEP=        1544  TIME=0000/01/22-09:40:00 
+  *** STEP=        1545  TIME=0000/01/22-10:00:00 
+ **** MAX.EDDY-WIND :   22.1988196595448       AT:          75          26
+          12
+  *** STEP=        1546  TIME=0000/01/22-10:20:00 
+  *** STEP=        1547  TIME=0000/01/22-10:40:00 
+  *** STEP=        1548  TIME=0000/01/22-11:00:00 
+  *** STEP=        1549  TIME=0000/01/22-11:20:00 
+  *** STEP=        1550  TIME=0000/01/22-11:40:00 
+  *** STEP=        1551  TIME=0000/01/22-12:00:00 
+ **** MAX.EDDY-WIND :   22.2001228425577       AT:          75          26
+          12
+  *** STEP=        1552  TIME=0000/01/22-12:20:00 
+  *** STEP=        1553  TIME=0000/01/22-12:40:00 
+  *** STEP=        1554  TIME=0000/01/22-13:00:00 
+  *** STEP=        1555  TIME=0000/01/22-13:20:00 
+  *** STEP=        1556  TIME=0000/01/22-13:40:00 
+  *** STEP=        1557  TIME=0000/01/22-14:00:00 
+ **** MAX.EDDY-WIND :   22.2011005145046       AT:          75          26
+          12
+  *** STEP=        1558  TIME=0000/01/22-14:20:00 
+  *** STEP=        1559  TIME=0000/01/22-14:40:00 
+  *** STEP=        1560  TIME=0000/01/22-15:00:00 
+  *** STEP=        1561  TIME=0000/01/22-15:20:00 
+  *** STEP=        1562  TIME=0000/01/22-15:40:00 
+  *** STEP=        1563  TIME=0000/01/22-16:00:00 
+ **** MAX.EDDY-WIND :   22.2018223825593       AT:          75          26
+          12
+  *** STEP=        1564  TIME=0000/01/22-16:20:00 
+  *** STEP=        1565  TIME=0000/01/22-16:40:00 
+  *** STEP=        1566  TIME=0000/01/22-17:00:00 
+  *** STEP=        1567  TIME=0000/01/22-17:20:00 
+  *** STEP=        1568  TIME=0000/01/22-17:40:00 
+  *** STEP=        1569  TIME=0000/01/22-18:00:00 
+ **** MAX.EDDY-WIND :   22.2023342070533       AT:          75          26
+          12
+  *** STEP=        1570  TIME=0000/01/22-18:20:00 
+  *** STEP=        1571  TIME=0000/01/22-18:40:00 
+  *** STEP=        1572  TIME=0000/01/22-19:00:00 
+  *** STEP=        1573  TIME=0000/01/22-19:20:00 
+  *** STEP=        1574  TIME=0000/01/22-19:40:00 
+  *** STEP=        1575  TIME=0000/01/22-20:00:00 
+ **** MAX.EDDY-WIND :   22.2026857223093       AT:          75          26
+          12
+  *** STEP=        1576  TIME=0000/01/22-20:20:00 
+  *** STEP=        1577  TIME=0000/01/22-20:40:00 
+  *** STEP=        1578  TIME=0000/01/22-21:00:00 
+  *** STEP=        1579  TIME=0000/01/22-21:20:00 
+  *** STEP=        1580  TIME=0000/01/22-21:40:00 
+  *** STEP=        1581  TIME=0000/01/22-22:00:00 
+ **** MAX.EDDY-WIND :   22.2029458203588       AT:          75          26
+          12
+  *** STEP=        1582  TIME=0000/01/22-22:20:00 
+  *** STEP=        1583  TIME=0000/01/22-22:40:00 
+  *** STEP=        1584  TIME=0000/01/22-23:00:00 
+  *** STEP=        1585  TIME=0000/01/22-23:20:00 
+  *** STEP=        1586  TIME=0000/01/22-23:40:00 
+  *** OUTPUT U                TIME= 0000/01/22-12:00:00 
+  *** OUTPUT V                TIME= 0000/01/22-12:00:00 
+  *** OUTPUT T                TIME= 0000/01/22-12:00:00 
+  *** OUTPUT PS               TIME= 0000/01/22-12:00:00 
+  *** OUTPUT PSI              TIME= 0000/01/22-12:00:00 
+  *** OUTPUT CHI              TIME= 0000/01/22-12:00:00 
+  *** OUTPUT OMGF             TIME= 0000/01/22-12:00:00 
+  *** OUTPUT Z                TIME= 0000/01/22-12:00:00 
+  *** STEP=        1587  TIME=0000/01/23-00:00:00 
+ **** MAX.EDDY-WIND :   22.2031413485272       AT:          75          26
+          12
+  *** STEP=        1588  TIME=0000/01/23-00:20:00 
+  *** STEP=        1589  TIME=0000/01/23-00:40:00 
+  *** STEP=        1590  TIME=0000/01/23-01:00:00 
+  *** STEP=        1591  TIME=0000/01/23-01:20:00 
+  *** STEP=        1592  TIME=0000/01/23-01:40:00 
+  *** STEP=        1593  TIME=0000/01/23-02:00:00 
+ **** MAX.EDDY-WIND :   22.2033289914118       AT:          75          26
+          12
+  *** STEP=        1594  TIME=0000/01/23-02:20:00 
+  *** STEP=        1595  TIME=0000/01/23-02:40:00 
+  *** STEP=        1596  TIME=0000/01/23-03:00:00 
+  *** STEP=        1597  TIME=0000/01/23-03:20:00 
+  *** STEP=        1598  TIME=0000/01/23-03:40:00 
+  *** STEP=        1599  TIME=0000/01/23-04:00:00 
+ **** MAX.EDDY-WIND :   22.2036542015721       AT:          75          26
+          12
+  *** STEP=        1600  TIME=0000/01/23-04:20:00 
+  *** STEP=        1601  TIME=0000/01/23-04:40:00 
+  *** STEP=        1602  TIME=0000/01/23-05:00:00 
+  *** STEP=        1603  TIME=0000/01/23-05:20:00 
+  *** STEP=        1604  TIME=0000/01/23-05:40:00 
+  *** STEP=        1605  TIME=0000/01/23-06:00:00 
+ **** MAX.EDDY-WIND :   22.2041833715340       AT:          75          26
+          12
+  *** STEP=        1606  TIME=0000/01/23-06:20:00 
+  *** STEP=        1607  TIME=0000/01/23-06:40:00 
+  *** STEP=        1608  TIME=0000/01/23-07:00:00 
+  *** STEP=        1609  TIME=0000/01/23-07:20:00 
+  *** STEP=        1610  TIME=0000/01/23-07:40:00 
+  *** STEP=        1611  TIME=0000/01/23-08:00:00 
+ **** MAX.EDDY-WIND :   22.2048064593181       AT:          75          26
+          12
+  *** STEP=        1612  TIME=0000/01/23-08:20:00 
+  *** STEP=        1613  TIME=0000/01/23-08:40:00 
+  *** STEP=        1614  TIME=0000/01/23-09:00:00 
+  *** STEP=        1615  TIME=0000/01/23-09:20:00 
+  *** STEP=        1616  TIME=0000/01/23-09:40:00 
+  *** STEP=        1617  TIME=0000/01/23-10:00:00 
+ **** MAX.EDDY-WIND :   22.2053833377156       AT:          75          26
+          12
+  *** STEP=        1618  TIME=0000/01/23-10:20:00 
+  *** STEP=        1619  TIME=0000/01/23-10:40:00 
+  *** STEP=        1620  TIME=0000/01/23-11:00:00 
+  *** STEP=        1621  TIME=0000/01/23-11:20:00 
+  *** STEP=        1622  TIME=0000/01/23-11:40:00 
+  *** STEP=        1623  TIME=0000/01/23-12:00:00 
+ **** MAX.EDDY-WIND :   22.2058245073760       AT:          75          26
+          12
+  *** STEP=        1624  TIME=0000/01/23-12:20:00 
+  *** STEP=        1625  TIME=0000/01/23-12:40:00 
+  *** STEP=        1626  TIME=0000/01/23-13:00:00 
+  *** STEP=        1627  TIME=0000/01/23-13:20:00 
+  *** STEP=        1628  TIME=0000/01/23-13:40:00 
+  *** STEP=        1629  TIME=0000/01/23-14:00:00 
+ **** MAX.EDDY-WIND :   22.2060278657694       AT:          75          26
+          12
+  *** STEP=        1630  TIME=0000/01/23-14:20:00 
+  *** STEP=        1631  TIME=0000/01/23-14:40:00 
+  *** STEP=        1632  TIME=0000/01/23-15:00:00 
+  *** STEP=        1633  TIME=0000/01/23-15:20:00 
+  *** STEP=        1634  TIME=0000/01/23-15:40:00 
+  *** STEP=        1635  TIME=0000/01/23-16:00:00 
+ **** MAX.EDDY-WIND :   22.2059276165507       AT:          75          26
+          12
+  *** STEP=        1636  TIME=0000/01/23-16:20:00 
+  *** STEP=        1637  TIME=0000/01/23-16:40:00 
+  *** STEP=        1638  TIME=0000/01/23-17:00:00 
+  *** STEP=        1639  TIME=0000/01/23-17:20:00 
+  *** STEP=        1640  TIME=0000/01/23-17:40:00 
+  *** STEP=        1641  TIME=0000/01/23-18:00:00 
+ **** MAX.EDDY-WIND :   22.2055308032262       AT:          75          26
+          12
+  *** STEP=        1642  TIME=0000/01/23-18:20:00 
+  *** STEP=        1643  TIME=0000/01/23-18:40:00 
+  *** STEP=        1644  TIME=0000/01/23-19:00:00 
+  *** STEP=        1645  TIME=0000/01/23-19:20:00 
+  *** STEP=        1646  TIME=0000/01/23-19:40:00 
+  *** STEP=        1647  TIME=0000/01/23-20:00:00 
+ **** MAX.EDDY-WIND :   22.2048310197658       AT:          75          26
+          12
+  *** STEP=        1648  TIME=0000/01/23-20:20:00 
+  *** STEP=        1649  TIME=0000/01/23-20:40:00 
+  *** STEP=        1650  TIME=0000/01/23-21:00:00 
+  *** STEP=        1651  TIME=0000/01/23-21:20:00 
+  *** STEP=        1652  TIME=0000/01/23-21:40:00 
+  *** STEP=        1653  TIME=0000/01/23-22:00:00 
+ **** MAX.EDDY-WIND :   22.2037818757044       AT:          75          26
+          12
+  *** STEP=        1654  TIME=0000/01/23-22:20:00 
+  *** STEP=        1655  TIME=0000/01/23-22:40:00 
+  *** STEP=        1656  TIME=0000/01/23-23:00:00 
+  *** STEP=        1657  TIME=0000/01/23-23:20:00 
+  *** STEP=        1658  TIME=0000/01/23-23:40:00 
+  *** OUTPUT U                TIME= 0000/01/23-12:00:00 
+  *** OUTPUT V                TIME= 0000/01/23-12:00:00 
+  *** OUTPUT T                TIME= 0000/01/23-12:00:00 
+  *** OUTPUT PS               TIME= 0000/01/23-12:00:00 
+  *** OUTPUT PSI              TIME= 0000/01/23-12:00:00 
+  *** OUTPUT CHI              TIME= 0000/01/23-12:00:00 
+  *** OUTPUT OMGF             TIME= 0000/01/23-12:00:00 
+  *** OUTPUT Z                TIME= 0000/01/23-12:00:00 
+  *** STEP=        1659  TIME=0000/01/24-00:00:00 
+ **** MAX.EDDY-WIND :   22.2023266338391       AT:          75          26
+          12
+  *** STEP=        1660  TIME=0000/01/24-00:20:00 
+  *** STEP=        1661  TIME=0000/01/24-00:40:00 
+  *** STEP=        1662  TIME=0000/01/24-01:00:00 
+  *** STEP=        1663  TIME=0000/01/24-01:20:00 
+  *** STEP=        1664  TIME=0000/01/24-01:40:00 
+  *** STEP=        1665  TIME=0000/01/24-02:00:00 
+ **** MAX.EDDY-WIND :   22.2004699569124       AT:          75          26
+          12
+  *** STEP=        1666  TIME=0000/01/24-02:20:00 
+  *** STEP=        1667  TIME=0000/01/24-02:40:00 
+  *** STEP=        1668  TIME=0000/01/24-03:00:00 
+  *** STEP=        1669  TIME=0000/01/24-03:20:00 
+  *** STEP=        1670  TIME=0000/01/24-03:40:00 
+  *** STEP=        1671  TIME=0000/01/24-04:00:00 
+ **** MAX.EDDY-WIND :   22.1983261811752       AT:          75          26
+          12
+  *** STEP=        1672  TIME=0000/01/24-04:20:00 
+  *** STEP=        1673  TIME=0000/01/24-04:40:00 
+  *** STEP=        1674  TIME=0000/01/24-05:00:00 
+  *** STEP=        1675  TIME=0000/01/24-05:20:00 
+  *** STEP=        1676  TIME=0000/01/24-05:40:00 
+  *** STEP=        1677  TIME=0000/01/24-06:00:00 
+ **** MAX.EDDY-WIND :   22.1960127558209       AT:          75          26
+          12
+  *** STEP=        1678  TIME=0000/01/24-06:20:00 
+  *** STEP=        1679  TIME=0000/01/24-06:40:00 
+  *** STEP=        1680  TIME=0000/01/24-07:00:00 
+  *** STEP=        1681  TIME=0000/01/24-07:20:00 
+  *** STEP=        1682  TIME=0000/01/24-07:40:00 
+  *** STEP=        1683  TIME=0000/01/24-08:00:00 
+ **** MAX.EDDY-WIND :   22.1935889302707       AT:          75          26
+          12
+  *** STEP=        1684  TIME=0000/01/24-08:20:00 
+  *** STEP=        1685  TIME=0000/01/24-08:40:00 
+  *** STEP=        1686  TIME=0000/01/24-09:00:00 
+  *** STEP=        1687  TIME=0000/01/24-09:20:00 
+  *** STEP=        1688  TIME=0000/01/24-09:40:00 
+  *** STEP=        1689  TIME=0000/01/24-10:00:00 
+ **** MAX.EDDY-WIND :   22.1911228997039       AT:          75          26
+          12
+  *** STEP=        1690  TIME=0000/01/24-10:20:00 
+  *** STEP=        1691  TIME=0000/01/24-10:40:00 
+  *** STEP=        1692  TIME=0000/01/24-11:00:00 
+  *** STEP=        1693  TIME=0000/01/24-11:20:00 
+  *** STEP=        1694  TIME=0000/01/24-11:40:00 
+  *** STEP=        1695  TIME=0000/01/24-12:00:00 
+ **** MAX.EDDY-WIND :   22.1887199838273       AT:          75          26
+          12
+  *** STEP=        1696  TIME=0000/01/24-12:20:00 
+  *** STEP=        1697  TIME=0000/01/24-12:40:00 
+  *** STEP=        1698  TIME=0000/01/24-13:00:00 
+  *** STEP=        1699  TIME=0000/01/24-13:20:00 
+  *** STEP=        1700  TIME=0000/01/24-13:40:00 
+  *** STEP=        1701  TIME=0000/01/24-14:00:00 
+ **** MAX.EDDY-WIND :   22.1865193621268       AT:          75          26
+          12
+  *** STEP=        1702  TIME=0000/01/24-14:20:00 
+  *** STEP=        1703  TIME=0000/01/24-14:40:00 
+  *** STEP=        1704  TIME=0000/01/24-15:00:00 
+  *** STEP=        1705  TIME=0000/01/24-15:20:00 
+  *** STEP=        1706  TIME=0000/01/24-15:40:00 
+  *** STEP=        1707  TIME=0000/01/24-16:00:00 
+ **** MAX.EDDY-WIND :   22.1846280475802       AT:          75          26
+          12
+  *** STEP=        1708  TIME=0000/01/24-16:20:00 
+  *** STEP=        1709  TIME=0000/01/24-16:40:00 
+  *** STEP=        1710  TIME=0000/01/24-17:00:00 
+  *** STEP=        1711  TIME=0000/01/24-17:20:00 
+  *** STEP=        1712  TIME=0000/01/24-17:40:00 
+  *** STEP=        1713  TIME=0000/01/24-18:00:00 
+ **** MAX.EDDY-WIND :   22.1830200611908       AT:          75          26
+          12
+  *** STEP=        1714  TIME=0000/01/24-18:20:00 
+  *** STEP=        1715  TIME=0000/01/24-18:40:00 
+  *** STEP=        1716  TIME=0000/01/24-19:00:00 
+  *** STEP=        1717  TIME=0000/01/24-19:20:00 
+  *** STEP=        1718  TIME=0000/01/24-19:40:00 
+  *** STEP=        1719  TIME=0000/01/24-20:00:00 
+ **** MAX.EDDY-WIND :   22.1816100400901       AT:          75          26
+          12
+  *** STEP=        1720  TIME=0000/01/24-20:20:00 
+  *** STEP=        1721  TIME=0000/01/24-20:40:00 
+  *** STEP=        1722  TIME=0000/01/24-21:00:00 
+  *** STEP=        1723  TIME=0000/01/24-21:20:00 
+  *** STEP=        1724  TIME=0000/01/24-21:40:00 
+  *** STEP=        1725  TIME=0000/01/24-22:00:00 
+ **** MAX.EDDY-WIND :   22.1803529728650       AT:          75          26
+          12
+  *** STEP=        1726  TIME=0000/01/24-22:20:00 
+  *** STEP=        1727  TIME=0000/01/24-22:40:00 
+  *** STEP=        1728  TIME=0000/01/24-23:00:00 
+  *** STEP=        1729  TIME=0000/01/24-23:20:00 
+  *** STEP=        1730  TIME=0000/01/24-23:40:00 
+  *** OUTPUT U                TIME= 0000/01/24-12:00:00 
+  *** OUTPUT V                TIME= 0000/01/24-12:00:00 
+  *** OUTPUT T                TIME= 0000/01/24-12:00:00 
+  *** OUTPUT PS               TIME= 0000/01/24-12:00:00 
+  *** OUTPUT PSI              TIME= 0000/01/24-12:00:00 
+  *** OUTPUT CHI              TIME= 0000/01/24-12:00:00 
+  *** OUTPUT OMGF             TIME= 0000/01/24-12:00:00 
+  *** OUTPUT Z                TIME= 0000/01/24-12:00:00 
+  *** STEP=        1731  TIME=0000/01/25-00:00:00 
+ **** MAX.EDDY-WIND :   22.1792014345911       AT:          75          26
+          12
+  *** STEP=        1732  TIME=0000/01/25-00:20:00 
+  *** STEP=        1733  TIME=0000/01/25-00:40:00 
+  *** STEP=        1734  TIME=0000/01/25-01:00:00 
+  *** STEP=        1735  TIME=0000/01/25-01:20:00 
+  *** STEP=        1736  TIME=0000/01/25-01:40:00 
+  *** STEP=        1737  TIME=0000/01/25-02:00:00 
+ **** MAX.EDDY-WIND :   22.1780535652948       AT:          75          26
+          12
+  *** STEP=        1738  TIME=0000/01/25-02:20:00 
+  *** STEP=        1739  TIME=0000/01/25-02:40:00 
+  *** STEP=        1740  TIME=0000/01/25-03:00:00 
+  *** STEP=        1741  TIME=0000/01/25-03:20:00 
+  *** STEP=        1742  TIME=0000/01/25-03:40:00 
+  *** STEP=        1743  TIME=0000/01/25-04:00:00 
+ **** MAX.EDDY-WIND :   22.1767958700040       AT:          75          26
+          12
+  *** STEP=        1744  TIME=0000/01/25-04:20:00 
+  *** STEP=        1745  TIME=0000/01/25-04:40:00 
+  *** STEP=        1746  TIME=0000/01/25-05:00:00 
+  *** STEP=        1747  TIME=0000/01/25-05:20:00 
+  *** STEP=        1748  TIME=0000/01/25-05:40:00 
+  *** STEP=        1749  TIME=0000/01/25-06:00:00 
+ **** MAX.EDDY-WIND :   22.1753474036213       AT:          75          26
+          12
+  *** STEP=        1750  TIME=0000/01/25-06:20:00 
+  *** STEP=        1751  TIME=0000/01/25-06:40:00 
+  *** STEP=        1752  TIME=0000/01/25-07:00:00 
+  *** STEP=        1753  TIME=0000/01/25-07:20:00 
+  *** STEP=        1754  TIME=0000/01/25-07:40:00 
+  *** STEP=        1755  TIME=0000/01/25-08:00:00 
+ **** MAX.EDDY-WIND :   22.1736188363517       AT:          75          26
+          12
+  *** STEP=        1756  TIME=0000/01/25-08:20:00 
+  *** STEP=        1757  TIME=0000/01/25-08:40:00 
+  *** STEP=        1758  TIME=0000/01/25-09:00:00 
+  *** STEP=        1759  TIME=0000/01/25-09:20:00 
+  *** STEP=        1760  TIME=0000/01/25-09:40:00 
+  *** STEP=        1761  TIME=0000/01/25-10:00:00 
+ **** MAX.EDDY-WIND :   22.1715157613718       AT:          75          26
+          12
+  *** STEP=        1762  TIME=0000/01/25-10:20:00 
+  *** STEP=        1763  TIME=0000/01/25-10:40:00 
+  *** STEP=        1764  TIME=0000/01/25-11:00:00 
+  *** STEP=        1765  TIME=0000/01/25-11:20:00 
+  *** STEP=        1766  TIME=0000/01/25-11:40:00 
+  *** STEP=        1767  TIME=0000/01/25-12:00:00 
+ **** MAX.EDDY-WIND :   22.1689773573575       AT:          75          26
+          12
+  *** STEP=        1768  TIME=0000/01/25-12:20:00 
+  *** STEP=        1769  TIME=0000/01/25-12:40:00 
+  *** STEP=        1770  TIME=0000/01/25-13:00:00 
+  *** STEP=        1771  TIME=0000/01/25-13:20:00 
+  *** STEP=        1772  TIME=0000/01/25-13:40:00 
+  *** STEP=        1773  TIME=0000/01/25-14:00:00 
+ **** MAX.EDDY-WIND :   22.1659942551057       AT:          75          26
+          12
+  *** STEP=        1774  TIME=0000/01/25-14:20:00 
+  *** STEP=        1775  TIME=0000/01/25-14:40:00 
+  *** STEP=        1776  TIME=0000/01/25-15:00:00 
+  *** STEP=        1777  TIME=0000/01/25-15:20:00 
+  *** STEP=        1778  TIME=0000/01/25-15:40:00 
+  *** STEP=        1779  TIME=0000/01/25-16:00:00 
+ **** MAX.EDDY-WIND :   22.1626237417549       AT:          75          26
+          12
+  *** STEP=        1780  TIME=0000/01/25-16:20:00 
+  *** STEP=        1781  TIME=0000/01/25-16:40:00 
+  *** STEP=        1782  TIME=0000/01/25-17:00:00 
+  *** STEP=        1783  TIME=0000/01/25-17:20:00 
+  *** STEP=        1784  TIME=0000/01/25-17:40:00 
+  *** STEP=        1785  TIME=0000/01/25-18:00:00 
+ **** MAX.EDDY-WIND :   22.1589320710490       AT:          75          26
+          12
+  *** STEP=        1786  TIME=0000/01/25-18:20:00 
+  *** STEP=        1787  TIME=0000/01/25-18:40:00 
+  *** STEP=        1788  TIME=0000/01/25-19:00:00 
+  *** STEP=        1789  TIME=0000/01/25-19:20:00 
+  *** STEP=        1790  TIME=0000/01/25-19:40:00 
+  *** STEP=        1791  TIME=0000/01/25-20:00:00 
+ **** MAX.EDDY-WIND :   22.1549934540593       AT:          75          26
+          12
+  *** STEP=        1792  TIME=0000/01/25-20:20:00 
+  *** STEP=        1793  TIME=0000/01/25-20:40:00 
+  *** STEP=        1794  TIME=0000/01/25-21:00:00 
+  *** STEP=        1795  TIME=0000/01/25-21:20:00 
+  *** STEP=        1796  TIME=0000/01/25-21:40:00 
+  *** STEP=        1797  TIME=0000/01/25-22:00:00 
+ **** MAX.EDDY-WIND :   22.1509604205203       AT:          75          26
+          12
+  *** STEP=        1798  TIME=0000/01/25-22:20:00 
+  *** STEP=        1799  TIME=0000/01/25-22:40:00 
+  *** STEP=        1800  TIME=0000/01/25-23:00:00 
+  *** STEP=        1801  TIME=0000/01/25-23:20:00 
+  *** STEP=        1802  TIME=0000/01/25-23:40:00 
+  *** OUTPUT U                TIME= 0000/01/25-12:00:00 
+  *** OUTPUT V                TIME= 0000/01/25-12:00:00 
+  *** OUTPUT T                TIME= 0000/01/25-12:00:00 
+  *** OUTPUT PS               TIME= 0000/01/25-12:00:00 
+  *** OUTPUT PSI              TIME= 0000/01/25-12:00:00 
+  *** OUTPUT CHI              TIME= 0000/01/25-12:00:00 
+  *** OUTPUT OMGF             TIME= 0000/01/25-12:00:00 
+  *** OUTPUT Z                TIME= 0000/01/25-12:00:00 
+  *** STEP=        1803  TIME=0000/01/26-00:00:00 
+ **** MAX.EDDY-WIND :   22.1470151705384       AT:          75          26
+          12
+  *** STEP=        1804  TIME=0000/01/26-00:20:00 
+  *** STEP=        1805  TIME=0000/01/26-00:40:00 
+  *** STEP=        1806  TIME=0000/01/26-01:00:00 
+  *** STEP=        1807  TIME=0000/01/26-01:20:00 
+  *** STEP=        1808  TIME=0000/01/26-01:40:00 
+  *** STEP=        1809  TIME=0000/01/26-02:00:00 
+ **** MAX.EDDY-WIND :   22.1432954796045       AT:          75          26
+          12
+  *** STEP=        1810  TIME=0000/01/26-02:20:00 
+  *** STEP=        1811  TIME=0000/01/26-02:40:00 
+  *** STEP=        1812  TIME=0000/01/26-03:00:00 
+  *** STEP=        1813  TIME=0000/01/26-03:20:00 
+  *** STEP=        1814  TIME=0000/01/26-03:40:00 
+  *** STEP=        1815  TIME=0000/01/26-04:00:00 
+ **** MAX.EDDY-WIND :   22.1398823465224       AT:          75          26
+          12
+  *** STEP=        1816  TIME=0000/01/26-04:20:00 
+  *** STEP=        1817  TIME=0000/01/26-04:40:00 
+  *** STEP=        1818  TIME=0000/01/26-05:00:00 
+  *** STEP=        1819  TIME=0000/01/26-05:20:00 
+  *** STEP=        1820  TIME=0000/01/26-05:40:00 
+  *** STEP=        1821  TIME=0000/01/26-06:00:00 
+ **** MAX.EDDY-WIND :   22.1367987851181       AT:          75          26
+          12
+  *** STEP=        1822  TIME=0000/01/26-06:20:00 
+  *** STEP=        1823  TIME=0000/01/26-06:40:00 
+  *** STEP=        1824  TIME=0000/01/26-07:00:00 
+  *** STEP=        1825  TIME=0000/01/26-07:20:00 
+  *** STEP=        1826  TIME=0000/01/26-07:40:00 
+  *** STEP=        1827  TIME=0000/01/26-08:00:00 
+ **** MAX.EDDY-WIND :   22.1340300701738       AT:          75          26
+          12
+  *** STEP=        1828  TIME=0000/01/26-08:20:00 
+  *** STEP=        1829  TIME=0000/01/26-08:40:00 
+  *** STEP=        1830  TIME=0000/01/26-09:00:00 
+  *** STEP=        1831  TIME=0000/01/26-09:20:00 
+  *** STEP=        1832  TIME=0000/01/26-09:40:00 
+  *** STEP=        1833  TIME=0000/01/26-10:00:00 
+ **** MAX.EDDY-WIND :   22.1315558366320       AT:          75          26
+          12
+  *** STEP=        1834  TIME=0000/01/26-10:20:00 
+  *** STEP=        1835  TIME=0000/01/26-10:40:00 
+  *** STEP=        1836  TIME=0000/01/26-11:00:00 
+  *** STEP=        1837  TIME=0000/01/26-11:20:00 
+  *** STEP=        1838  TIME=0000/01/26-11:40:00 
+  *** STEP=        1839  TIME=0000/01/26-12:00:00 
+ **** MAX.EDDY-WIND :   22.1293310633839       AT:          75          26
+          12
+  *** STEP=        1840  TIME=0000/01/26-12:20:00 
+  *** STEP=        1841  TIME=0000/01/26-12:40:00 
+  *** STEP=        1842  TIME=0000/01/26-13:00:00 
+  *** STEP=        1843  TIME=0000/01/26-13:20:00 
+  *** STEP=        1844  TIME=0000/01/26-13:40:00 
+  *** STEP=        1845  TIME=0000/01/26-14:00:00 
+ **** MAX.EDDY-WIND :   22.1272731512137       AT:          75          26
+          12
+  *** STEP=        1846  TIME=0000/01/26-14:20:00 
+  *** STEP=        1847  TIME=0000/01/26-14:40:00 
+  *** STEP=        1848  TIME=0000/01/26-15:00:00 
+  *** STEP=        1849  TIME=0000/01/26-15:20:00 
+  *** STEP=        1850  TIME=0000/01/26-15:40:00 
+  *** STEP=        1851  TIME=0000/01/26-16:00:00 
+ **** MAX.EDDY-WIND :   22.1252686225232       AT:          75          26
+          12
+  *** STEP=        1852  TIME=0000/01/26-16:20:00 
+  *** STEP=        1853  TIME=0000/01/26-16:40:00 
+  *** STEP=        1854  TIME=0000/01/26-17:00:00 
+  *** STEP=        1855  TIME=0000/01/26-17:20:00 
+  *** STEP=        1856  TIME=0000/01/26-17:40:00 
+  *** STEP=        1857  TIME=0000/01/26-18:00:00 
+ **** MAX.EDDY-WIND :   22.1231774614426       AT:          75          26
+          12
+  *** STEP=        1858  TIME=0000/01/26-18:20:00 
+  *** STEP=        1859  TIME=0000/01/26-18:40:00 
+  *** STEP=        1860  TIME=0000/01/26-19:00:00 
+  *** STEP=        1861  TIME=0000/01/26-19:20:00 
+  *** STEP=        1862  TIME=0000/01/26-19:40:00 
+  *** STEP=        1863  TIME=0000/01/26-20:00:00 
+ **** MAX.EDDY-WIND :   22.1208313439867       AT:          75          26
+          12
+  *** STEP=        1864  TIME=0000/01/26-20:20:00 
+  *** STEP=        1865  TIME=0000/01/26-20:40:00 
+  *** STEP=        1866  TIME=0000/01/26-21:00:00 
+  *** STEP=        1867  TIME=0000/01/26-21:20:00 
+  *** STEP=        1868  TIME=0000/01/26-21:40:00 
+  *** STEP=        1869  TIME=0000/01/26-22:00:00 
+ **** MAX.EDDY-WIND :   22.1180517481476       AT:          75          26
+          12
+  *** STEP=        1870  TIME=0000/01/26-22:20:00 
+  *** STEP=        1871  TIME=0000/01/26-22:40:00 
+  *** STEP=        1872  TIME=0000/01/26-23:00:00 
+  *** STEP=        1873  TIME=0000/01/26-23:20:00 
+  *** STEP=        1874  TIME=0000/01/26-23:40:00 
+  *** OUTPUT U                TIME= 0000/01/26-12:00:00 
+  *** OUTPUT V                TIME= 0000/01/26-12:00:00 
+  *** OUTPUT T                TIME= 0000/01/26-12:00:00 
+  *** OUTPUT PS               TIME= 0000/01/26-12:00:00 
+  *** OUTPUT PSI              TIME= 0000/01/26-12:00:00 
+  *** OUTPUT CHI              TIME= 0000/01/26-12:00:00 
+  *** OUTPUT OMGF             TIME= 0000/01/26-12:00:00 
+  *** OUTPUT Z                TIME= 0000/01/26-12:00:00 
+  *** STEP=        1875  TIME=0000/01/27-00:00:00 
+ **** MAX.EDDY-WIND :   22.1147175818685       AT:          75          26
+          12
+  *** STEP=        1876  TIME=0000/01/27-00:20:00 
+  *** STEP=        1877  TIME=0000/01/27-00:40:00 
+  *** STEP=        1878  TIME=0000/01/27-01:00:00 
+  *** STEP=        1879  TIME=0000/01/27-01:20:00 
+  *** STEP=        1880  TIME=0000/01/27-01:40:00 
+  *** STEP=        1881  TIME=0000/01/27-02:00:00 
+ **** MAX.EDDY-WIND :   22.1107958354823       AT:          75          26
+          12
+  *** STEP=        1882  TIME=0000/01/27-02:20:00 
+  *** STEP=        1883  TIME=0000/01/27-02:40:00 
+  *** STEP=        1884  TIME=0000/01/27-03:00:00 
+  *** STEP=        1885  TIME=0000/01/27-03:20:00 
+  *** STEP=        1886  TIME=0000/01/27-03:40:00 
+  *** STEP=        1887  TIME=0000/01/27-04:00:00 
+ **** MAX.EDDY-WIND :   22.1063197592252       AT:          75          26
+          12
+  *** STEP=        1888  TIME=0000/01/27-04:20:00 
+  *** STEP=        1889  TIME=0000/01/27-04:40:00 
+  *** STEP=        1890  TIME=0000/01/27-05:00:00 
+  *** STEP=        1891  TIME=0000/01/27-05:20:00 
+  *** STEP=        1892  TIME=0000/01/27-05:40:00 
+  *** STEP=        1893  TIME=0000/01/27-06:00:00 
+ **** MAX.EDDY-WIND :   22.1013532191825       AT:          75          26
+          12
+  *** STEP=        1894  TIME=0000/01/27-06:20:00 
+  *** STEP=        1895  TIME=0000/01/27-06:40:00 
+  *** STEP=        1896  TIME=0000/01/27-07:00:00 
+  *** STEP=        1897  TIME=0000/01/27-07:20:00 
+  *** STEP=        1898  TIME=0000/01/27-07:40:00 
+  *** STEP=        1899  TIME=0000/01/27-08:00:00 
+ **** MAX.EDDY-WIND :   22.0959954283821       AT:          75          26
+          12
+  *** STEP=        1900  TIME=0000/01/27-08:20:00 
+  *** STEP=        1901  TIME=0000/01/27-08:40:00 
+  *** STEP=        1902  TIME=0000/01/27-09:00:00 
+  *** STEP=        1903  TIME=0000/01/27-09:20:00 
+  *** STEP=        1904  TIME=0000/01/27-09:40:00 
+  *** STEP=        1905  TIME=0000/01/27-10:00:00 
+ **** MAX.EDDY-WIND :   22.0904106284754       AT:          75          26
+          12
+  *** STEP=        1906  TIME=0000/01/27-10:20:00 
+  *** STEP=        1907  TIME=0000/01/27-10:40:00 
+  *** STEP=        1908  TIME=0000/01/27-11:00:00 
+  *** STEP=        1909  TIME=0000/01/27-11:20:00 
+  *** STEP=        1910  TIME=0000/01/27-11:40:00 
+  *** STEP=        1911  TIME=0000/01/27-12:00:00 
+ **** MAX.EDDY-WIND :   22.0847870635620       AT:          75          26
+          12
+  *** STEP=        1912  TIME=0000/01/27-12:20:00 
+  *** STEP=        1913  TIME=0000/01/27-12:40:00 
+  *** STEP=        1914  TIME=0000/01/27-13:00:00 
+  *** STEP=        1915  TIME=0000/01/27-13:20:00 
+  *** STEP=        1916  TIME=0000/01/27-13:40:00 
+  *** STEP=        1917  TIME=0000/01/27-14:00:00 
+ **** MAX.EDDY-WIND :   22.0792889028920       AT:          75          26
+          12
+  *** STEP=        1918  TIME=0000/01/27-14:20:00 
+  *** STEP=        1919  TIME=0000/01/27-14:40:00 
+  *** STEP=        1920  TIME=0000/01/27-15:00:00 
+  *** STEP=        1921  TIME=0000/01/27-15:20:00 
+  *** STEP=        1922  TIME=0000/01/27-15:40:00 
+  *** STEP=        1923  TIME=0000/01/27-16:00:00 
+ **** MAX.EDDY-WIND :   22.0740587490013       AT:          75          26
+          12
+  *** STEP=        1924  TIME=0000/01/27-16:20:00 
+  *** STEP=        1925  TIME=0000/01/27-16:40:00 
+  *** STEP=        1926  TIME=0000/01/27-17:00:00 
+  *** STEP=        1927  TIME=0000/01/27-17:20:00 
+  *** STEP=        1928  TIME=0000/01/27-17:40:00 
+  *** STEP=        1929  TIME=0000/01/27-18:00:00 
+ **** MAX.EDDY-WIND :   22.0692017415586       AT:          75          26
+          12
+  *** STEP=        1930  TIME=0000/01/27-18:20:00 
+  *** STEP=        1931  TIME=0000/01/27-18:40:00 
+  *** STEP=        1932  TIME=0000/01/27-19:00:00 
+  *** STEP=        1933  TIME=0000/01/27-19:20:00 
+  *** STEP=        1934  TIME=0000/01/27-19:40:00 
+  *** STEP=        1935  TIME=0000/01/27-20:00:00 
+ **** MAX.EDDY-WIND :   22.0647757253382       AT:          75          26
+          12
+  *** STEP=        1936  TIME=0000/01/27-20:20:00 
+  *** STEP=        1937  TIME=0000/01/27-20:40:00 
+  *** STEP=        1938  TIME=0000/01/27-21:00:00 
+  *** STEP=        1939  TIME=0000/01/27-21:20:00 
+  *** STEP=        1940  TIME=0000/01/27-21:40:00 
+  *** STEP=        1941  TIME=0000/01/27-22:00:00 
+ **** MAX.EDDY-WIND :   22.0608120018466       AT:          75          26
+          12
+  *** STEP=        1942  TIME=0000/01/27-22:20:00 
+  *** STEP=        1943  TIME=0000/01/27-22:40:00 
+  *** STEP=        1944  TIME=0000/01/27-23:00:00 
+  *** STEP=        1945  TIME=0000/01/27-23:20:00 
+  *** STEP=        1946  TIME=0000/01/27-23:40:00 
+  *** OUTPUT U                TIME= 0000/01/27-12:00:00 
+  *** OUTPUT V                TIME= 0000/01/27-12:00:00 
+  *** OUTPUT T                TIME= 0000/01/27-12:00:00 
+  *** OUTPUT PS               TIME= 0000/01/27-12:00:00 
+  *** OUTPUT PSI              TIME= 0000/01/27-12:00:00 
+  *** OUTPUT CHI              TIME= 0000/01/27-12:00:00 
+  *** OUTPUT OMGF             TIME= 0000/01/27-12:00:00 
+  *** OUTPUT Z                TIME= 0000/01/27-12:00:00 
+  *** STEP=        1947  TIME=0000/01/28-00:00:00 
+ **** MAX.EDDY-WIND :   22.0573114254431       AT:          75          26
+          12
+  *** STEP=        1948  TIME=0000/01/28-00:20:00 
+  *** STEP=        1949  TIME=0000/01/28-00:40:00 
+  *** STEP=        1950  TIME=0000/01/28-01:00:00 
+  *** STEP=        1951  TIME=0000/01/28-01:20:00 
+  *** STEP=        1952  TIME=0000/01/28-01:40:00 
+  *** STEP=        1953  TIME=0000/01/28-02:00:00 
+ **** MAX.EDDY-WIND :   22.0542020928504       AT:          75          26
+          12
+  *** STEP=        1954  TIME=0000/01/28-02:20:00 
+  *** STEP=        1955  TIME=0000/01/28-02:40:00 
+  *** STEP=        1956  TIME=0000/01/28-03:00:00 
+  *** STEP=        1957  TIME=0000/01/28-03:20:00 
+  *** STEP=        1958  TIME=0000/01/28-03:40:00 
+  *** STEP=        1959  TIME=0000/01/28-04:00:00 
+ **** MAX.EDDY-WIND :   22.0513347405421       AT:          75          26
+          12
+  *** STEP=        1960  TIME=0000/01/28-04:20:00 
+  *** STEP=        1961  TIME=0000/01/28-04:40:00 
+  *** STEP=        1962  TIME=0000/01/28-05:00:00 
+  *** STEP=        1963  TIME=0000/01/28-05:20:00 
+  *** STEP=        1964  TIME=0000/01/28-05:40:00 
+  *** STEP=        1965  TIME=0000/01/28-06:00:00 
+ **** MAX.EDDY-WIND :   22.0485170106624       AT:          75          26
+          12
+  *** STEP=        1966  TIME=0000/01/28-06:20:00 
+  *** STEP=        1967  TIME=0000/01/28-06:40:00 
+  *** STEP=        1968  TIME=0000/01/28-07:00:00 
+  *** STEP=        1969  TIME=0000/01/28-07:20:00 
+  *** STEP=        1970  TIME=0000/01/28-07:40:00 
+  *** STEP=        1971  TIME=0000/01/28-08:00:00 
+ **** MAX.EDDY-WIND :   22.0455396180746       AT:          75          26
+          12
+  *** STEP=        1972  TIME=0000/01/28-08:20:00 
+  *** STEP=        1973  TIME=0000/01/28-08:40:00 
+  *** STEP=        1974  TIME=0000/01/28-09:00:00 
+  *** STEP=        1975  TIME=0000/01/28-09:20:00 
+  *** STEP=        1976  TIME=0000/01/28-09:40:00 
+  *** STEP=        1977  TIME=0000/01/28-10:00:00 
+ **** MAX.EDDY-WIND :   22.0421942524002       AT:          75          26
+          12
+  *** STEP=        1978  TIME=0000/01/28-10:20:00 
+  *** STEP=        1979  TIME=0000/01/28-10:40:00 
+  *** STEP=        1980  TIME=0000/01/28-11:00:00 
+  *** STEP=        1981  TIME=0000/01/28-11:20:00 
+  *** STEP=        1982  TIME=0000/01/28-11:40:00 
+  *** STEP=        1983  TIME=0000/01/28-12:00:00 
+ **** MAX.EDDY-WIND :   22.0383101853388       AT:          75          26
+          12
+  *** STEP=        1984  TIME=0000/01/28-12:20:00 
+  *** STEP=        1985  TIME=0000/01/28-12:40:00 
+  *** STEP=        1986  TIME=0000/01/28-13:00:00 
+  *** STEP=        1987  TIME=0000/01/28-13:20:00 
+  *** STEP=        1988  TIME=0000/01/28-13:40:00 
+  *** STEP=        1989  TIME=0000/01/28-14:00:00 
+ **** MAX.EDDY-WIND :   22.0337793827144       AT:          75          26
+          12
+  *** STEP=        1990  TIME=0000/01/28-14:20:00 
+  *** STEP=        1991  TIME=0000/01/28-14:40:00 
+  *** STEP=        1992  TIME=0000/01/28-15:00:00 
+  *** STEP=        1993  TIME=0000/01/28-15:20:00 
+  *** STEP=        1994  TIME=0000/01/28-15:40:00 
+  *** STEP=        1995  TIME=0000/01/28-16:00:00 
+ **** MAX.EDDY-WIND :   22.0285416420817       AT:          75          26
+          12
+  *** STEP=        1996  TIME=0000/01/28-16:20:00 
+  *** STEP=        1997  TIME=0000/01/28-16:40:00 
+  *** STEP=        1998  TIME=0000/01/28-17:00:00 
+  *** STEP=        1999  TIME=0000/01/28-17:20:00 
+  *** STEP=        2000  TIME=0000/01/28-17:40:00 
+  *** STEP=        2001  TIME=0000/01/28-18:00:00 
+ **** MAX.EDDY-WIND :   22.0225978186190       AT:          75          26
+          12
+  *** STEP=        2002  TIME=0000/01/28-18:20:00 
+  *** STEP=        2003  TIME=0000/01/28-18:40:00 
+  *** STEP=        2004  TIME=0000/01/28-19:00:00 
+  *** STEP=        2005  TIME=0000/01/28-19:20:00 
+  *** STEP=        2006  TIME=0000/01/28-19:40:00 
+  *** STEP=        2007  TIME=0000/01/28-20:00:00 
+ **** MAX.EDDY-WIND :   22.0160429656674       AT:          75          26
+          12
+  *** STEP=        2008  TIME=0000/01/28-20:20:00 
+  *** STEP=        2009  TIME=0000/01/28-20:40:00 
+  *** STEP=        2010  TIME=0000/01/28-21:00:00 
+  *** STEP=        2011  TIME=0000/01/28-21:20:00 
+  *** STEP=        2012  TIME=0000/01/28-21:40:00 
+  *** STEP=        2013  TIME=0000/01/28-22:00:00 
+ **** MAX.EDDY-WIND :   22.0090558511994       AT:          75          26
+          12
+  *** STEP=        2014  TIME=0000/01/28-22:20:00 
+  *** STEP=        2015  TIME=0000/01/28-22:40:00 
+  *** STEP=        2016  TIME=0000/01/28-23:00:00 
+  *** STEP=        2017  TIME=0000/01/28-23:20:00 
+  *** STEP=        2018  TIME=0000/01/28-23:40:00 
+  *** OUTPUT U                TIME= 0000/01/28-12:00:00 
+  *** OUTPUT V                TIME= 0000/01/28-12:00:00 
+  *** OUTPUT T                TIME= 0000/01/28-12:00:00 
+  *** OUTPUT PS               TIME= 0000/01/28-12:00:00 
+  *** OUTPUT PSI              TIME= 0000/01/28-12:00:00 
+  *** OUTPUT CHI              TIME= 0000/01/28-12:00:00 
+  *** OUTPUT OMGF             TIME= 0000/01/28-12:00:00 
+  *** OUTPUT Z                TIME= 0000/01/28-12:00:00 
+  *** STEP=        2019  TIME=0000/01/29-00:00:00 
+ **** MAX.EDDY-WIND :   22.0018475204346       AT:          75          26
+          12
+  *** STEP=        2020  TIME=0000/01/29-00:20:00 
+  *** STEP=        2021  TIME=0000/01/29-00:40:00 
+  *** STEP=        2022  TIME=0000/01/29-01:00:00 
+  *** STEP=        2023  TIME=0000/01/29-01:20:00 
+  *** STEP=        2024  TIME=0000/01/29-01:40:00 
+  *** STEP=        2025  TIME=0000/01/29-02:00:00 
+ **** MAX.EDDY-WIND :   21.9946182004942       AT:          75          26
+          12
+  *** STEP=        2026  TIME=0000/01/29-02:20:00 
+  *** STEP=        2027  TIME=0000/01/29-02:40:00 
+  *** STEP=        2028  TIME=0000/01/29-03:00:00 
+  *** STEP=        2029  TIME=0000/01/29-03:20:00 
+  *** STEP=        2030  TIME=0000/01/29-03:40:00 
+  *** STEP=        2031  TIME=0000/01/29-04:00:00 
+ **** MAX.EDDY-WIND :   21.9875566593472       AT:          75          26
+          12
+  *** STEP=        2032  TIME=0000/01/29-04:20:00 
+  *** STEP=        2033  TIME=0000/01/29-04:40:00 
+  *** STEP=        2034  TIME=0000/01/29-05:00:00 
+  *** STEP=        2035  TIME=0000/01/29-05:20:00 
+  *** STEP=        2036  TIME=0000/01/29-05:40:00 
+  *** STEP=        2037  TIME=0000/01/29-06:00:00 
+ **** MAX.EDDY-WIND :   21.9808514399803       AT:          75          26
+          12
+  *** STEP=        2038  TIME=0000/01/29-06:20:00 
+  *** STEP=        2039  TIME=0000/01/29-06:40:00 
+  *** STEP=        2040  TIME=0000/01/29-07:00:00 
+  *** STEP=        2041  TIME=0000/01/29-07:20:00 
+  *** STEP=        2042  TIME=0000/01/29-07:40:00 
+  *** STEP=        2043  TIME=0000/01/29-08:00:00 
+ **** MAX.EDDY-WIND :   21.9746799815562       AT:          75          26
+          12
+  *** STEP=        2044  TIME=0000/01/29-08:20:00 
+  *** STEP=        2045  TIME=0000/01/29-08:40:00 
+  *** STEP=        2046  TIME=0000/01/29-09:00:00 
+  *** STEP=        2047  TIME=0000/01/29-09:20:00 
+  *** STEP=        2048  TIME=0000/01/29-09:40:00 
+  *** STEP=        2049  TIME=0000/01/29-10:00:00 
+ **** MAX.EDDY-WIND :   21.9691784121747       AT:          75          26
+          12
+  *** STEP=        2050  TIME=0000/01/29-10:20:00 
+  *** STEP=        2051  TIME=0000/01/29-10:40:00 
+  *** STEP=        2052  TIME=0000/01/29-11:00:00 
+  *** STEP=        2053  TIME=0000/01/29-11:20:00 
+  *** STEP=        2054  TIME=0000/01/29-11:40:00 
+  *** STEP=        2055  TIME=0000/01/29-12:00:00 
+ **** MAX.EDDY-WIND :   21.9643961091424       AT:          75          26
+          12
+  *** STEP=        2056  TIME=0000/01/29-12:20:00 
+  *** STEP=        2057  TIME=0000/01/29-12:40:00 
+  *** STEP=        2058  TIME=0000/01/29-13:00:00 
+  *** STEP=        2059  TIME=0000/01/29-13:20:00 
+  *** STEP=        2060  TIME=0000/01/29-13:40:00 
+  *** STEP=        2061  TIME=0000/01/29-14:00:00 
+ **** MAX.EDDY-WIND :   21.9602680376231       AT:          75          26
+          12
+  *** STEP=        2062  TIME=0000/01/29-14:20:00 
+  *** STEP=        2063  TIME=0000/01/29-14:40:00 
+  *** STEP=        2064  TIME=0000/01/29-15:00:00 
+  *** STEP=        2065  TIME=0000/01/29-15:20:00 
+  *** STEP=        2066  TIME=0000/01/29-15:40:00 
+  *** STEP=        2067  TIME=0000/01/29-16:00:00 
+ **** MAX.EDDY-WIND :   21.9566441124446       AT:          75          26
+          12
+  *** STEP=        2068  TIME=0000/01/29-16:20:00 
+  *** STEP=        2069  TIME=0000/01/29-16:40:00 
+  *** STEP=        2070  TIME=0000/01/29-17:00:00 
+  *** STEP=        2071  TIME=0000/01/29-17:20:00 
+  *** STEP=        2072  TIME=0000/01/29-17:40:00 
+  *** STEP=        2073  TIME=0000/01/29-18:00:00 
+ **** MAX.EDDY-WIND :   21.9533285921841       AT:          75          26
+          12
+  *** STEP=        2074  TIME=0000/01/29-18:20:00 
+  *** STEP=        2075  TIME=0000/01/29-18:40:00 
+  *** STEP=        2076  TIME=0000/01/29-19:00:00 
+  *** STEP=        2077  TIME=0000/01/29-19:20:00 
+  *** STEP=        2078  TIME=0000/01/29-19:40:00 
+  *** STEP=        2079  TIME=0000/01/29-20:00:00 
+ **** MAX.EDDY-WIND :   21.9500784290349       AT:          75          26
+          12
+  *** STEP=        2080  TIME=0000/01/29-20:20:00 
+  *** STEP=        2081  TIME=0000/01/29-20:40:00 
+  *** STEP=        2082  TIME=0000/01/29-21:00:00 
+  *** STEP=        2083  TIME=0000/01/29-21:20:00 
+  *** STEP=        2084  TIME=0000/01/29-21:40:00 
+  *** STEP=        2085  TIME=0000/01/29-22:00:00 
+ **** MAX.EDDY-WIND :   21.9466199092271       AT:          75          26
+          12
+  *** STEP=        2086  TIME=0000/01/29-22:20:00 
+  *** STEP=        2087  TIME=0000/01/29-22:40:00 
+  *** STEP=        2088  TIME=0000/01/29-23:00:00 
+  *** STEP=        2089  TIME=0000/01/29-23:20:00 
+  *** STEP=        2090  TIME=0000/01/29-23:40:00 
+  *** OUTPUT U                TIME= 0000/01/29-12:00:00 
+  *** OUTPUT V                TIME= 0000/01/29-12:00:00 
+  *** OUTPUT T                TIME= 0000/01/29-12:00:00 
+  *** OUTPUT PS               TIME= 0000/01/29-12:00:00 
+  *** OUTPUT PSI              TIME= 0000/01/29-12:00:00 
+  *** OUTPUT CHI              TIME= 0000/01/29-12:00:00 
+  *** OUTPUT OMGF             TIME= 0000/01/29-12:00:00 
+  *** OUTPUT Z                TIME= 0000/01/29-12:00:00 
+  *** OUTPUT GAU              TIME= 0000/01/30-00:00:00 
+  *** OUTPUT GAV              TIME= 0000/01/30-00:00:00 
+  *** OUTPUT GAT              TIME= 0000/01/30-00:00:00 
+  *** OUTPUT GAPS             TIME= 0000/01/30-00:00:00 
+  *** OUTPUT GAQ              TIME= 0000/01/30-00:00:00 
+  *** OUTPUT GBU              TIME= 0000/01/30-00:00:00 
+  *** OUTPUT GBV              TIME= 0000/01/30-00:00:00 
+  *** OUTPUT GBT              TIME= 0000/01/30-00:00:00 
+  *** OUTPUT GBPS             TIME= 0000/01/30-00:00:00 
+  *** OUTPUT GBQ              TIME= 0000/01/30-00:00:00 
+ ############## CPU TIME SUMMARY ################
+ DYNMCS            -8.162615E-01  -8.162615E-01
+    TOTAL TIME =    2.206430E-01   2.206430E-01
+job end at Fri 27 Oct 2023 06:11:20 PM PDT

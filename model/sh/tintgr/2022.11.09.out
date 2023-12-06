@@ -1,0 +1,14 @@
+nohup: ignoring input
+forrtl: severe (67): input statement requires too much data, unit 88, file /project/projectdirs/m1867/zmchen/Work/2022_2/NH_SummerStationaryWave/Data/07.LBM/LBMhist/data/Forcing/frc.t42l20.Ziming.grd
+Image              PC                Routine            Line        Source             
+lbm2.t42ml20ctint  000000000046B59B  Unknown               Unknown  Unknown
+lbm2.t42ml20ctint  0000000000491FBB  Unknown               Unknown  Unknown
+lbm2.t42ml20ctint  000000000048F620  Unknown               Unknown  Unknown
+lbm2.t42ml20ctint  0000000000405E29  Unknown               Unknown  Unknown
+lbm2.t42ml20ctint  0000000000405848  Unknown               Unknown  Unknown
+lbm2.t42ml20ctint  0000000000405275  Unknown               Unknown  Unknown
+lbm2.t42ml20ctint  000000000040391D  Unknown               Unknown  Unknown
+lbm2.t42ml20ctint  0000000000403852  Unknown               Unknown  Unknown
+libc-2.26.so       0000155554A403EA  __libc_start_main     Unknown  Unknown
+lbm2.t42ml20ctint  000000000040376A  Unknown               Unknown  Unknown
+gt2gr: Command not found.

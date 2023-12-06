@@ -1,0 +1,67 @@
+ &nmfgt cfs='/pscratch/sd/c/chenzm/my_data/Model/LBM_NetCDF/data/Output/psi',
+        cfc='/pscratch/sd/c/chenzm/my_data/Model/LBM_NetCDF/data/Output/chi',
+        cfu='/pscratch/sd/c/chenzm/my_data/Model/LBM_NetCDF/data/Output/u',
+        cfv='/pscratch/sd/c/chenzm/my_data/Model/LBM_NetCDF/data/Output/v',
+        cfw='/pscratch/sd/c/chenzm/my_data/Model/LBM_NetCDF/data/Output/w',
+        cft='/pscratch/sd/c/chenzm/my_data/Model/LBM_NetCDF/data/Output/t',
+        cfz='/pscratch/sd/c/chenzm/my_data/Model/LBM_NetCDF/data/Output/z',
+        cfp='/pscratch/sd/c/chenzm/my_data/Model/LBM_NetCDF/data/Output/p',
+        cfo='/pscratch/sd/c/chenzm/my_data/Model/LBM_NetCDF/data/Output/TestRun.grd',
+        fact=1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,
+        opl=t,
+ &end
+
+ &nmncp cncep='/pscratch/sd/c/chenzm/my_data/Model/LBM_NetCDF/bs/ncep/ncep.clim.y58-97.t42.grd',
+        
+        cncep2='/pscratch/sd/c/chenzm/my_data/Model/LBM_NetCDF/bs/ncep/ncep.clim.y58-97.ps.t42.grd',
+        
+        calt='/pscratch/sd/c/chenzm/my_data/Model/LBM_NetCDF/bs/gt3/grz.t42',
+        
+        kmo=6, navg=3, ozm=f, osw=f, ousez=t
+ &end
+
+ &nmbs  cbs0='/pscratch/sd/c/chenzm/my_data/Model/LBM_NetCDF/bs/gt3/ziming.sum1.t42l20',
+        cbs='/pscratch/sd/c/chenzm/my_data/Model/LBM_NetCDF/bs/grads/ziming.sum1.t42l20.grd'
+ &end
+
+ &nmecm cecm='/home/qqf/Model/LBM/bs/ecmwf/ERA40.clim.t42.grd',
+        calt='/home/qqf/Model/LBM/bs/gt3/grz.t42',
+        kmo=6, navg=3, ozm=f, osw=f
+ &end
+
+ &nmfin cfm='/pscratch/sd/c/chenzm/my_data/Model/LBM_NetCDF/data/Forcing/frc.t42l20.Ziming_test.mat',
+
+        cfg='/pscratch/sd/c/chenzm/my_data/Model/LBM_NetCDF/data/Forcing/frc.t42l20.Ziming_test.grd'
+
+        cfg_mine='/pscratch/sd/c/chenzm/my_data/Model/LBM_NetCDF/data/Forcing/frc.t42l20.Ziming.Heating_CP20N150W.nc'
+
+        fact=1.0,1.0,1.0,1.0,1.0
+ &end
+
+ &nmvar ovor=t, odiv=t, otmp=t, ops=t, osph=f
+ &end
+
+ &nmhpr khpr=1,
+        hamp=1,
+        xdil=40.,
+        ydil=12.,
+        xcnt=210.,
+        ycnt=0.
+ &end
+
+ &nmvpr kvpr=2,
+        vamp=8.,
+        vdil=20.,
+        vcnt=0.45
+ &end
+
+
+ &nmred cdr='/project/projectdirs/m1867/zmchen/my_data/Models/LBM/Test/data/matrix',
+        cfo='/project/projectdirs/m1867/zmchen/my_data/Models/LBM/Test/data/matrix/MAT.t42l20m6.ncepsum.moi.tmp.dat'
+ &end
+
+ &nmall owall=t
+ &end
+
+ &nmcls oclassic=t
+ &end

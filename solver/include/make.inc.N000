@@ -1,0 +1,63 @@
+####################################################################
+#  LAPACK make include file.                                       #
+#  LAPACK, Version 2.0                                             #
+#  September 30, 1994                                                 #
+####################################################################
+#
+#  The machine (platform) identifier to append to the library names
+#
+PLAT = N000
+#  
+#  Modify the FORTRAN and OPTS definitions to refer to the
+#  compiler and desired compiler options for your machine.  NOOPT
+#  refers to the compiler options desired when NO OPTIMIZATION is
+#  selected.  Define LOADER and LOADOPTS to refer to the loader and 
+#  desired load options for your machine.
+#
+FORTRAN  = ifort
+OPTS     = -O -u -convert big_endian -fpe3 -no-vec
+NOOPT    = -u -convert big_endian -fpe3 -no-vec
+LOADER   = ifort
+LOADOPTS = 
+#
+#  The archiver and the flag(s) to use when building archive (library)
+#  If you system has no ranlib, set RANLIB = echo.
+#
+ARCH     = ar
+ARCHFLAGS= cr
+RANLIB   = ranlib
+#
+RM       = rm -f
+CP	 = cp -f
+MV	 = mv -f
+#
+#  The location of the libraries to which you will link.  (The 
+#  machine-specific, optimized BLAS library should be used whenever
+#  possible.)
+#
+# 2022.11.04: Ziming Chen
+BLASLIB      = $(LNHOME)/solver/lib/$(ARC)/librefblas.a
+LAPACKLIB    = $(LNHOME)/solver/lib/$(ARC)/liblapack.a
+TMGLIB       = $(LNHOME)/solver/lib/$(ARC)/libtmglib.a
+
+NETCDF_I 	 = ${NETCDF}/include
+NETCDF_L 	 = ${NETCDF}/lib
+#NETCDF 	     = /opt/cray/pe/netcdf/4.8.1.1/intel/19.1/lib/libnetcdf.a
+#NETCDF_INTEL = /opt/cray/pe/netcdf/4.8.1.1/intel/19.1/lib/libnetcdf_intel.a
+#NETCDFF      = /opt/cray/pe/netcdf/4.8.1.1/intel/19.1/lib/libnetcdff.a
+#NETCDFF_INTEL= /opt/cray/pe/netcdf/4.8.1.1/intel/19.1/lib/libnetcdff_intel.a
+
+#BLASLIB      = $(LNHOME)/solver/lib/$(ARC)/blas_$(PLAT).a
+#LAPACKLIB    = $(LNHOME)/solver/lib/$(ARC)/lapack_$(PLAT).a
+#TMGLIB       = 
+# 2022.11.04: Ziming Chen
+#
+EIGSRCLIB    = 
+#
+#  LBM library
+#
+LDLIBS       = $(LNHOME)/model/lib/$(ARC)/liblbm2$(HRES)m$(VRES)c.a
+#
+# byte unit
+#
+MBYT	= 1
